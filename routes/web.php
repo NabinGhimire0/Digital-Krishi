@@ -1,8 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\CureController;
+use App\Http\Controllers\Admin\DiseaseController;
+use App\Http\Controllers\Admin\FertilizerController;
+use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\PesticideController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
+use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Province;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +44,12 @@ Route::get('/dashboard', function () {
 Route::resource('province',ProvinceController::class);
 Route::resource('city',CityController::class);
 Route::resource('subadmin',RegisterSubAdmins::class);
+Route::resource('notice',NoticeController::class);
+Route::resource('disease',DiseaseController::class);
+Route::resource('cure',CureController::class);
+Route::resource('seeds',SeedController::class);
+Route::resource('pesticide',PesticideController::class);
+Route::resource('fertilizer',FertilizerController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

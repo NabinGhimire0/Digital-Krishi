@@ -23,8 +23,9 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/city" method="POST" enctype="multipart/form-data">
+                        <form action="/subadmin/{{ $subadmin->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Name:</label>
@@ -57,7 +58,8 @@
                                             <label>City</label>
                                             <select class="form-control select2" name="city_id" style="width: 100%;">
                                                 <option selected="selected">Select City</option>
-                                                @foreach ($province as $province)
+                                                @foreach ($city as $city)
+                                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

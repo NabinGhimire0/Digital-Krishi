@@ -1,11 +1,21 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('city/create') }}
+            {{ __('subadmin/create') }}
         </h2>
     </x-slot>
     <section class="content">
         <div class="container-fluid">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            @endif
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -45,8 +55,8 @@
                                             <select class="form-control select2" name="province_id"
                                                 style="width: 100%;">
                                                 <option selected="selected">Select Province</option>
-                                                @foreach ($province as $province)
-                                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                                @foreach ($province as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -57,7 +67,6 @@
                                             <select class="form-control select2" name="city_id" style="width: 100%;">
                                                 <option selected="selected">Select City</option>
                                                 @foreach ($city as $city)
-                                                {{-- fetch only those cities which are in the same province as the selected province --}}
                                                     <option value="{{ $city->id }}">{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
@@ -102,6 +111,12 @@
                                             </select>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Password:</label>
+                                    <input type="text" class="form-control" name="password" {{ old('password') }}
+                                        id="password" placeholder="Enter Address">
+                                    <x-input-error :messages="$errors->get('password')" />
                                 </div>
                                 <div class="form-check">
                                     <input type="checkbox" name="status" class="form-check-input" id="status">

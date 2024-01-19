@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('City') }}
+            {{ __('Notices') }}
         </h2>
     </x-slot>
     <!-- Main content -->
@@ -13,10 +13,10 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <h3 class="card-title">Users</h3>
+                                    <h3 class="card-title">Diseases</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/subadmin/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/disease/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -26,25 +26,18 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Image</th>
-                                        <th>phone</th>
-                                        <th>Role</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (isset($subadmin))
-                                        @foreach ($subadmin as $subadmin)
+                                    @if (isset($disease))
+                                        @foreach ($disease as $disease)
                                             <tr>
-                                                <td>{{ $subadmin->name }}</td>
-                                                <td><img src="{{ asset('storage/' . $subadmin->image) }}"
-                                                        width="100px" height="100px"></td>
-                                                <td>{{ $subadmin->phone }}</td>
-                                                <td>{{ $subadmin->role }}</td>
+                                                <td>{{ $disease->name }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'subadmin/' . $subadmin->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'subadmin/' . $subadmin->id }}" method="post">
+                                                        href="{{ 'disease/' . $disease->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ 'disease/' . $disease->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"
@@ -57,13 +50,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                    <tr>
                                         <th>Name</th>
-                                        <th>Image</th>
-                                        <th>phone</th>
-                                        <th>Role</th>
                                         <th>Action</th>
-                                    </tr>
                                     </tr>
                                 </tfoot>
                             </table>
