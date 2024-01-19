@@ -1,0 +1,115 @@
+:root {
+    --fs-base: 16px;
+    --fs-heading: 25px;
+    --fw-900: 700;
+    --fw-600: 500;
+    --fw-400: 400;
+    --clr-bg: #e7f5e0;
+    --clr-bg-card: #cec9c9;
+    --clr-bg-card-cnt: #d9d8d8;
+    --button-color-secondary: #4d504A;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+html {
+    background: rgb(84, 89, 72);
+    background: linear-gradient(90deg, rgba(84, 89, 72, 1) 0%, rgba(11, 255, 187, 1) 0%, rgba(1, 135, 73, 1) 100%, rgba(41, 215, 184, 1) 100%);
+    display: grid;
+    align-items: center;
+    height: 100svh;
+    justify-content: center;
+}
+
+
+.login {
+    width: 25vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 65vh;
+    display: grid;
+    grid-template-rows: repeat(12, 1fr); 
+
+}
+.login >div{
+    text-align: center;
+    margin-block-start: 0.5rem;
+}
+.submit{
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(90deg, rgba(84, 89, 72, 1) 0%, rgba(11, 255, 187, 1) 0%, rgba(1, 135, 73, 1) 100%, rgba(41, 215, 184, 1) 100%);
+    padding: 5px 22px;
+    border-radius: 6px;
+    color: black;
+}
+form{
+
+}
+form > label,input{
+
+    margin-block:0.5rem ;
+    margin-inline: 1rem;
+    padding: 2px 25px;
+}
+form >label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: #4d504A;
+    font-size: 16px;
+}
+@media screen and (max-width:800px) {
+    .login {
+        min-width: 60vw;
+        min-height: 50vh;
+
+        justify-content:space-around;
+    }
+
+}
+@media screen and (max-width:1000px) {
+    .login {
+        min-width: 100%;
+        min-height: 50vh;
+    }
+
+}
