@@ -58,7 +58,7 @@ $pesticites=[
       <h2>pesticides</h2>
       <button>View all</button>
     </div>
-      <div class="presticides__grid">
+      <div class="presticides__grid " id="services">
         @foreach ($pesticites as $category)
         <x-seed-card categoryName="{{ $category['name'] }}" src="{{ $category['src'] }}"
             url="{{ $category['url'] }}" />
