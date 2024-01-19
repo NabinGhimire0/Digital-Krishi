@@ -536,6 +536,23 @@ table {
     /* height: 10vw; */
     /* background: var(--clr-bg-card); */
   }
+
+  .expert-grid{
+    /* background: var(--clr-bg-primary); */
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(20rem,3fr));
+    gap: 2rem;
+margin-block: 2rem;    
+  }
+  .expert-grid .expert-grid__card{
+    border: 2px solid rgb(178, 238, 149);
+    min-height:24svh
+  }
+  .expert-grid .expert-grid__card:hover{
+    transform: scaleZ(1.4);
+  }
+
+
 @media screen and (max-width:700px) {
   .seed__detail .seed_detail-info{
     margin-block: 1re;

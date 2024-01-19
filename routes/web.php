@@ -57,7 +57,9 @@ Route::get("/seed/{id}", function ($id) {
     $seed = Seed::where('id', $id)->first();
     return view('frontend.pages.seed', compact('seed'));
 });
-
+Route::get("/about-us", function () {
+    return view('frontend.pages.aboutUs');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
