@@ -17,7 +17,8 @@ class RegisterSubAdmins extends Controller
      */
     public function index()
     {
-        return view('admin.pages.subadmin.index');
+        $subadmin = User::all();
+        return view('admin.pages.subadmin.index', compact('subadmin'));
     }
 
     /**
@@ -38,10 +39,12 @@ class RegisterSubAdmins extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed'],
-            'phone' => ['required', 'string', 'max:255', 'unique:' . User::class],
-            'province_id' => ['required'],
-            'city_id' => ['required'],
+            'password' => 'required',
+            'phone' => ['required', 'regex:/^(\d{10}|\d{3}-\d{3}-\d{4})$/', 'unique:' . User::class],
+            'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
+            'role' => 'required',
+            'province_id' => 'required',
+            'city_id' =>'required'
         ]);
         $user = new User();
         $user->name = $request->name;
@@ -51,7 +54,7 @@ class RegisterSubAdmins extends Controller
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('users', 'public');
             $user->image = $imagePath;
-        };
+        }
         $user->province_id = $request->province_id;
         $user->city_id = $request->city_id;
         $user->address = $request->address;

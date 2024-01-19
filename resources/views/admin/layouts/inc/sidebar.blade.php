@@ -104,7 +104,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/subadmin/create" class="nav-link {{ request()->is('subadmin/create') ? 'active' : '' }}">
+                            <a href="/subadmin/create"
+                                class="nav-link {{ request()->is('subadmin/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -116,6 +117,179 @@
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Users
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu-open">
+                    <a href="#"
+                        class="nav-link {{ request()->is('disease') ? 'active' : '' }} || {{ request()->is('disease/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Disease
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/disease/create"
+                                class="nav-link {{ request()->is('disease/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/disease" class="nav-link {{ request()->is('disease') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Disease
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu-open">
+                    <a href="#"
+                        class="nav-link {{ request()->is('cure') ? 'active' : '' }} || {{ request()->is('cure/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Cure
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/cure/create" class="nav-link {{ request()->is('cure/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/cure" class="nav-link {{ request()->is('cure') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Cures
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu-open">
+                    <a href="#"
+                        class="nav-link {{ request()->is('seeds') ? 'active' : '' }} || {{ request()->is('seeds/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Seeds
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/seeds/create"
+                                class="nav-link {{ request()->is('seeds/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/seeds" class="nav-link {{ request()->is('seeds') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Seeds
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu-open">
+                    <a href="#"
+                        class="nav-link {{ request()->is('pesticide') ? 'active' : '' }} || {{ request()->is('pesticide/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Pesticide
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/pesticide/create"
+                                class="nav-link {{ request()->is('pesticide/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pesticide" class="nav-link {{ request()->is('pesticide') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Pesticide
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu-open">
+                    <a href="#"
+                        class="nav-link {{ request()->is('fertilizer') ? 'active' : '' }} || {{ request()->is('fertilizer/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Fertilizer
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/fertilizer/create"
+                                class="nav-link {{ request()->is('fertilizer/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/fertilizer" class="nav-link {{ request()->is('fertilizer') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Fertilizer
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu-open">
+                    <a href="#"
+                        class="nav-link {{ request()->is('notice') ? 'active' : '' }} || {{ request()->is('notice/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Notices
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/notice/create"
+                                class="nav-link {{ request()->is('notice/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/notice" class="nav-link {{ request()->is('notice') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Notice List
                                 </p>
                             </a>
                         </li>
