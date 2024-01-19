@@ -27,7 +27,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.pages.home');
 });
-
+Route::get('/disease', function () {
+    return view('frontend.pages.disease');
+});
+Route::get("/seed", function () {
+ return view('frontend.pages.seed');
+});
 Route::get('/multistep', function () {
     return view('admin.pages.city.multistep');
 });

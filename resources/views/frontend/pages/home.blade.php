@@ -17,7 +17,7 @@ $pesticites=[
 
 <x-guest-layout>
   <div class="gif-area">
-    <div class="bg-blur">
+    {{-- <div class="bg-blur"> --}}
 
         @include('frontend/layouts/inc/nav')
         
@@ -36,7 +36,7 @@ $pesticites=[
       <x-notice-card />
       </div>
         </div>
-    </div>
+    {{-- </div> --}}
   </div>
   <div class="seed wrapper">
     <div class="heading">

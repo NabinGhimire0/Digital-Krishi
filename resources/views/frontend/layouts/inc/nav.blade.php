@@ -7,9 +7,9 @@
             <div class="nav__links">
 
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>
-                        <a href="">Servicese</a>
+                        <a href="/">Services</a>
                     </li>
                     <li>
                         <a href="">Seeds</a>
