@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
+use App\Models\Province;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +22,9 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $provinces = Province::all();
+        $city = City::all();
+        return view('auth.register', compact('provinces', 'city'));
     }
 
     /**
@@ -32,9 +36,9 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'phone' => ['required', 'string', 'max:255', 'unique:'.User::class],
+            'phone' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'province_id' => ['required'],
             'city_id' => ['required'],
         ]);
@@ -50,7 +54,7 @@ class RegisteredUserController extends Controller
             'status' => $request->status ? 1 : 0,
             'password' => Hash::make($request->password),
         ]);
-        
+
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('users', 'public');
             $user->image = $imagePath;
