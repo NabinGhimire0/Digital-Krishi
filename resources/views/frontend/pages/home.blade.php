@@ -64,6 +64,7 @@
             @endforeach
         </div>
     </div>
+<<<<<<< HEAD
 
 
     <div class="presticides wrapper">
@@ -77,6 +78,13 @@
                     url="pesticides-/{{ $category->id }}" />
             @endforeach
         </div>
+=======
+      <div class="presticides__grid " id="services">
+        @foreach ($pesticites as $category)
+        <x-seed-card categoryName="{{ $category['name'] }}" src="{{ $category['src'] }}"
+            url="{{ $category['url'] }}" />
+        @endforeach
+>>>>>>> f70a263e8cae308c40feea60745f21b75ad0eee6
     </div>
 
     {{-- hero section --}}

@@ -9,12 +9,12 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li>
-                        <a href="/">Services</a>
+                        <a href="#services">Services</a>
                     </li>
                     <li>
-                        <a href="">Seeds</a>
+                        <a href="/seed">Seeds</a>
                     </li>
-                    <li> <a href="">Products</a></li>
+                    <li> <a href="#">Products</a></li>
                 </ul>
 
             </div>
