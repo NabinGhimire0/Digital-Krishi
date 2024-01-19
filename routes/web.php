@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\ProvinceController;
+use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\ProfileController;
+use App\Models\Province;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +22,17 @@ Route::get('/', function () {
     return view('frontend.pages.home');
 });
 
+Route::get('/multistep', function () {
+    return view('admin.pages.city.multistep');
+});
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::resource('province',ProvinceController::class);
+Route::resource('city',CityController::class);
+Route::resource('subadmin',RegisterSubAdmins::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
