@@ -49,7 +49,7 @@
         </div>
         <div class="seed__grid">
             @foreach ($seeds as $seed)
-                <a href="seed/.{{ $seed->id }}">
+                <a href="seed/{{ $seed->id }}">
                     <div>
                         <div>
                             <img src="{{ 'storage/' . $seed->image }}" alt="">

@@ -1,18 +1,39 @@
 <x-guest-layout>
-    <div style="background: rgba(106,169,108);
+    <div
+        style="background: rgba(106,169,108);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 0px );
     -webkit-backdrop-filter: blur( 0px );
 ">
         @include('frontend/layouts/inc/nav')
     </div>
-<div class="imgarea" style="background-image: url('{{asset('assets/images/corn-seed.png')}}');" >
-</div>
-<div style="min-height:25vh;">
-    <x-seed-detail-card name='corn'  climate='humid' altitude='1000' :marked_price='100' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.0' short_desc='loremdjflkasfjajf' />
+    <div class="imgarea" style="background-image: url('{{ asset('storage/'.$seed->image) }}');">
+    </div>
+    <div style="min-height:25vh;">
+        <div class="seed__detail">
+            <div class="seed__detail-card">
+                <center>
 
-</div>
-<pre>
+                    <h1>{{ $seed->name }}</h1>
+                    <p>{{ $seed->shortdesc }}</p>
+                </center>
+            </div>
+            <div class="seed_detail-info">
+                <p><span style="color:green;margin-inline-end: 2.85rem">Climate </span>: {{ $seed->climate }}<br>
+                    <span style="color:green;margin-inline-end: 2.7rem"> Altitude </span>: {{ $seed->altitude }}<br>
+                    <span style="color:green;margin-inline-end: 1rem">
+                        market price
+                    </span>
+                    : {{ $seed->market_price }}<br>
+                </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            {{ $seed->description }}
+        </div>
+
+    </div>
+    <pre>
 </pre>
 
 </x-guest-layout>

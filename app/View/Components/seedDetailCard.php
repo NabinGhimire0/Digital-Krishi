@@ -23,10 +23,6 @@ class seedDetailCard extends Component
         $this->description = $description;
         $this->short_desc = $short_desc;
 
-
-
-
-
         // $this->short_desc = $short_desc;
         // $this->description = $description;
         // $this->market_price = $market_price;
