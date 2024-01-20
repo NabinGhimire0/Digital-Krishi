@@ -238,12 +238,12 @@ h6 {
 .hero .hero__notice {
     grid-column: 10/13;
     color: white;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     padding: 5px;
     width: clamp(100%, 80%, 60%);
     /* display: grid; */
     min-height: clamp(15rem, 8rem, 4rem);
-    background-image: url('../images/Rectangle\ 4.png');
+    background-image: url('../images/Rectangle\ 4-2.png');
     border-radius: 5%;
 }
 
@@ -275,7 +275,7 @@ footer {
   }
 
   .footer-content {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;

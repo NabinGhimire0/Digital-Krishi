@@ -1,4 +1,4 @@
-<footer>
+<footer style="width: 100%">
     <div class="footer-content">
       <div class="footer-section">
         <h2>Contact Us</h2>

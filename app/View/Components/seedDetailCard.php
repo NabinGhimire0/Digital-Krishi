@@ -11,9 +11,25 @@ class seedDetailCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    // public $short_desc, $description, $market_price;
+    // public function __construct($short_desc, $description, $market_price)
+    public $climate,$altitude,$marked_price,$description,$short_desc,$name;
+    public function __construct($name,$climate,$altitude,$marked_price,$description,$short_desc)
     {
-        //
+        $this->name = $name;
+        $this->climate = $climate;
+        $this->altitude = $altitude;
+        $this->marked_price = $marked_price;
+        $this->description = $description;
+        $this->short_desc = $short_desc;
+
+
+
+
+
+        // $this->short_desc = $short_desc;
+        // $this->description = $description;
+        // $this->market_price = $market_price;
     }
 
     /**

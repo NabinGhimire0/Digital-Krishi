@@ -57,6 +57,12 @@ Route::get("/seed/{id}", function ($id) {
     $seed = Seed::where('id', $id)->first();
     return view('frontend.pages.seed', compact('seed'));
 });
+Route::get("/pesticides-/{id}", function ($id) {
+    $pesticides = Pesticide::where('id', $id)->first();
+    return view('frontend.pages.pesticides', compact('pesticides'));
+});
+
+
 Route::get("/about-us", function () {
     return view('frontend.pages.aboutUs');
 });
