@@ -6,11 +6,37 @@
 ">
         @include('frontend/layouts/inc/nav')
     </div>
-<div class="imgarea" style="background-image: url('{{asset('assets/images/Glypho.png')}}');" >
+    {{-- {{ asset('storage/'.$pesticides->image) }}
+    style="background-image: url('{{ asset('storage/'.$pesticides->image) }}');"
+    --}}
+<div class="imgarea" >
+    <img src=" {{ asset('storage/'.$pesticides->image) }}" alt="">
 </div>
 <div style="min-height:25vh;">
 
-<x-seed-detail-card name='corn' />
+    <div class="seed__detail">
+        <div class="seed__detail-card">
+            <center>
+    
+                <h1>{{ $pesticides->name }}</h1>
+                <p>{{ $pesticides->shortdesc }}</p>
+            </center>
+        </div>
+        <div class="seed_detail-info">
+            <p>
+                <span style="color:green;margin-inline-end: 1rem">
+                    market price
+                </span>
+                : {{ $pesticides->price }}<br>
+            </p>
+
+    
+        </div>
+    </div>
+    <div class="wrapper">
+        {{ $pesticides->description }}
+    </div>
+    
 </div>
 <pre>
 

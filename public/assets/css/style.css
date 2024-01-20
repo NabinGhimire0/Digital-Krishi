@@ -353,7 +353,7 @@ table {
     object-fit: cover;
     object-position: center;
     /* background-repeat: no-repeat; */
-    background-size:  50% 100%;
+    background-size:  100% 100%;
     background-color: var(--clr-bg-card);
   }
   .imgarea img{

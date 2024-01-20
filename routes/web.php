@@ -59,6 +59,7 @@ Route::get("/seed/{id}", function ($id) {
 });
 Route::get("/pesticides-/{id}", function ($id) {
     $pesticides = Pesticide::where('id', $id)->first();
+    // var_dump($pesticides);
     return view('frontend.pages.pesticides', compact('pesticides'));
 });
 

@@ -7,7 +7,8 @@
 ">
         @include('frontend/layouts/inc/nav')
     </div>
-    <div class="imgarea" style="background-image: url('{{ asset('storage/'.$seed->image) }}');">
+    <div class="imgarea" >
+        <img src=" {{ asset('storage/'.$seed->image) }}" alt="">
     </div>
     <div style="min-height:25vh;">
         <div class="seed__detail">

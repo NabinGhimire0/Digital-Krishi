@@ -41,7 +41,7 @@
                                                 <td>{{ $fertilizer->price }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ '/admin/fertilizer/' . $fertilizer->id . '/edit' }}">Edit</a>
+                                                        href="{{ 'fertilizer/' . $fertilizer->id . '/edit' }}">Edit</a>
                                                     <form action="{{ '/admin/fertilizer/' . $fertilizer->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
