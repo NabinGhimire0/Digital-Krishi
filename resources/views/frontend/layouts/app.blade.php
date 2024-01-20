@@ -13,7 +13,7 @@
 
     {{ $slot }}
     @include('frontend.layouts.inc.footer')
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 
 </html>

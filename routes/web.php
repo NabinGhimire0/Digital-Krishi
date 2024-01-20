@@ -71,7 +71,6 @@ Route::get('/notice', function () {
 
 Route::get('/notice/{id}', function ($id) {
     $notice = Notice::where('id', $id)->first();
-    // var_dump($notice);
     return view('frontend.pages.notice', compact('notice'));
 });
 Route::get("/seed", function () {
@@ -89,20 +88,28 @@ Route::get("/pesticides-/{id}", function ($id) {
 });
 Route::get("/pesticides/all", function () {
     $pesticides = Pesticide::all();
-    // var_dump($pesticides);
+
     return view('frontend.pages.allPesticides', compact('pesticides'));
 });
 Route::get("/fertilizers/all", function () {
     $fertilizers = Fertilizer::all();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a31f12e0023bb9e2b08bdace58da4c0305e10c0
     return view('frontend.pages.allFertilizers', compact('fertilizers'));
+});
+
+Route::get("/about-us", function () {
+    return view('frontend.pages.aboutUs');
 });
 
 Route::get("/fertilizer/{id}", function ($id) {
     $fertilizer = Fertilizer::where('id', $id)->first();
     return view('frontend.pages.fertilizer', compact('fertilizer'));
 });
-Route::get("/about-us", function () {
-    return view('frontend.pages.aboutUs');
+Route::get("/our-expert", function () {
+    return view('frontend.pages.ourExpert');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

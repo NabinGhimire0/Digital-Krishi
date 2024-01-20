@@ -7,6 +7,13 @@
         @include('frontend/layouts/inc/nav')
 
     </div>
+<<<<<<< HEAD
+=======
+    <center>
+        <h1>Disease and Symptom</h1>
+    </center>
+    <div class="wrapper table">
+>>>>>>> 2a31f12e0023bb9e2b08bdace58da4c0305e10c0
 
     <div class="wrapper">
         <div style="text-align: center;margin-block-start: 2rem">

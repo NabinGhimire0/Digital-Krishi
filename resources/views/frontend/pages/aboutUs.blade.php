@@ -7,28 +7,31 @@
         @include('frontend/layouts/inc/nav')
 
     </div>
-    <div class="banner">
-        <img src="{{asset('assets/images/Banner.png')}}" alt="">
-    </div>
-    <main style="style="background: var(--clr-bg-primary);"">
-    
-    <div class="wrapper" >
-            <center><h1>Our Agro Expert</h1>
-            <p>Here are our expert who are very helpful top provide support to your filed </p>
+
+    <main style="">
+
+        <div class="wrapper" style="min-height: 53svh;margin-block: 2rem">
+            <center>
+                <h1>About us</h1>
             </center>
-            <div class="expert-grid">
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-                <x-expert-card />
-            </div>
+                <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam, impedit hic, nam dolor
+                    similique cupiditate molestias molestiae mollitia esse vero voluptatum nesciunt adipisci cum ut.
+                    Quia iste laboriosam non vel natus magnam doloremque! Exercitationem natus facere minima porro quis
+                    quidem atque rem, minus quo consequatur delectus amet dolores ex. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Dignissimos veritatis assumenda repellendus numquam accusamus nostrum
+                    obcaecati minus accusantium illo, dicta pariatur porro rerum eveniet corrupti, natus eaque molestiae
+                    iure adipisci, commodi exercitationem beatae libero? Placeat voluptatem a pariatur error asperiores
+                    tenetur earum, at alias adipisci. Id obcaecati ipsa vero a. </p>
+                    <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam, impedit hic, nam dolor
+                        similique cupiditate molestias molestiae mollitia esse vero voluptatum nesciunt adipisci cum ut.
+                        Quia iste laboriosam non vel natus magnam doloremque! Exercitationem natus facere minima porro quis
+                        quidem atque rem, minus quo consequatur delectus amet dolores ex. Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Dignissimos veritatis assumenda repellendus numquam accusamus nostrum
+                        obcaecati minus accusantium illo, dicta pariatur porro rerum eveniet corrupti, natus eaque molestiae
+                        iure adipisci, commodi exercitationem beatae libero? Placeat voluptatem a pariatur error asperiores
+                        tenetur earum, at alias adipisci. Id obcaecati ipsa vero a. </p>
+    
         </div>
     </main>
-        
-    </x-guest-layout>
+
+</x-guest-layout>
