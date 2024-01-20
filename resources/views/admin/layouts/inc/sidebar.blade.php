@@ -56,7 +56,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/province" class="nav-link {{ request()->is('admin/province') ? 'active' : '' }}">
+                            <a href="/admin/province"
+                                class="nav-link {{ request()->is('admin/province') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Province List
@@ -76,7 +77,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/city/create" class="nav-link {{ request()->is('admin/city/create') ? 'active' : '' }}">
+                            <a href="/admin/city/create"
+                                class="nav-link {{ request()->is('admin/city/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -113,7 +115,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/subadmin" class="nav-link {{ request()->is('admin/subadmin') ? 'active' : '' }}">
+                            <a href="/admin/subadmin"
+                                class="nav-link {{ request()->is('admin/subadmin') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Users
@@ -162,7 +165,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/cure/create" class="nav-link {{ request()->is('admin/cure/create') ? 'active' : '' }}">
+                            <a href="/admin/cure/create"
+                                class="nav-link {{ request()->is('admin/cure/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -199,7 +203,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/seeds" class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }}">
+                            <a href="/admin/seeds"
+                                class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Seeds
@@ -228,7 +233,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/pesticide" class="nav-link {{ request()->is('admin/pesticide') ? 'active' : '' }}">
+                            <a href="/admin/pesticide"
+                                class="nav-link {{ request()->is('admin/pesticide') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Pesticide
@@ -257,10 +263,41 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/fertilizer" class="nav-link {{ request()->is('admin/fertilizer') ? 'active' : '' }}">
+                            <a href="/admin/fertilizer"
+                                class="nav-link {{ request()->is('admin/fertilizer') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Fertilizer
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link {{ request()->is('admin/agroexpert') ? 'active' : '' }} || {{ request()->is('admin/agroexpert/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>
+                            Agro Expert
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/agroexpert/create"
+                                class="nav-link {{ request()->is('admin/agroexpert/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/agroexpert"
+                                class="nav-link {{ request()->is('admin/agroexpert') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                     Experts
                                 </p>
                             </a>
                         </li>
@@ -286,7 +323,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/notice" class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }}">
+                            <a href="/admin/notice"
+                                class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Notice List

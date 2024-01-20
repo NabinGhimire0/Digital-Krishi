@@ -1,7 +1,7 @@
 <div class="notice__card">
     <marquee behavior="" direction="">
         <p>
-            this is card
+            {{ $slot }}
         </p>
     </marquee>
 </div>

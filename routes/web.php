@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AgroExpertController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CureController;
 use App\Http\Controllers\Admin\DiseaseController;
@@ -45,15 +46,17 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('/seeds', SeedController::class);
         Route::resource('/pesticide', PesticideController::class);
         Route::resource('/fertilizer', FertilizerController::class);
+        Route::resource('/agroexpert', AgroExpertController::class);
     });
 });
 
 //user routes
 Route::get('/', function () {
+    $notices = Notice::orderBy('created_at', 'asc')->take(4)->get();
     $seeds = Seed::all();
     $pesticides = Pesticide::all();
     $fertilizers = Fertilizer::all();
-    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers'));
+    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers','notices'));
 });
 Route::get('/diseases', function () {
     $diseases = Disease::all();
@@ -61,8 +64,8 @@ Route::get('/diseases', function () {
 });
 Route::get('/diseases/{id}', function ($id) {
     $diseases = Disease::find($id);
-    $cure = Cure::where('disease_id',$id)->first();
-    return view('frontend.pages.diseaseDetail', compact('diseases','cure'));
+    $cure = Cure::where('disease_id', $id)->first();
+    return view('frontend.pages.diseaseDetail', compact('diseases', 'cure'));
 });
 Route::get('/notice', function () {
     $notices = Notice::all();

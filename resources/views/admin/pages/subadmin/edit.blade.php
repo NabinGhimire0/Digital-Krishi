@@ -48,7 +48,9 @@
                                                 style="width: 100%;">
                                                 <option selected="selected">Select Province</option>
                                                 @foreach ($province as $province)
-                                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                                    <option value="{{ $province->id }}"
+                                                        {{ $subadmin->province_id == $province->id ? 'selected' : '' }}>
+                                                        {{ $province->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -59,7 +61,9 @@
                                             <select class="form-control select2" name="city_id" style="width: 100%;">
                                                 <option selected="selected">Select City</option>
                                                 @foreach ($city as $city)
-                                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                                    <option value="{{ $city->id }}"
+                                                        {{ $subadmin->city_id == $city->id ? 'selected' : '' }}>
+                                                        {{ $city->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -108,19 +112,23 @@
                                             <label>Role</label>
                                             <select class="form-control select2" name="role" style="width: 100%;">
                                                 <option selected="selected">Select Role</option>
-                                                <option value="farmer" {{ $subadmin->role == 'farmer' ? 'selected' : '' }}>
+                                                <option value="farmer"
+                                                    {{ $subadmin->role == 'farmer' ? 'selected' : '' }}>
                                                     Farmer</option>
-                                                <option value="admin" {{ $subadmin->role == 'admin' ? 'selected' : '' }}>
+                                                <option value="admin"
+                                                    {{ $subadmin->role == 'admin' ? 'selected' : '' }}>
                                                     Admin</option>
                                                 <option value="subadmin"
-                                                    {{ $subadmin->role == 'subadmin' ? 'selected' : '' }}>Sub Admin</option>
+                                                    {{ $subadmin->role == 'subadmin' ? 'selected' : '' }}>Sub Admin
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-check">
                                     <input type="checkbox" name="status" class="form-check-input" id="status">
-                                    <label class="form-check-label" for="status" {{ $subadmin->status ? 'checked':'' }}>Status</label>
+                                    <label class="form-check-label" for="status"
+                                        {{ $subadmin->status ? 'checked' : '' }}>Status</label>
                                     <x-input-error :messages="$errors->get('status')" />
                                 </div>
                             </div>

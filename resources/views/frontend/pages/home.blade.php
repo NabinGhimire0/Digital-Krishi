@@ -17,9 +17,9 @@
 
                 <div class="hero__notice" style="overflow: hidden">
                     <h2>Notice</h2>
-                    <x-notice-card />
-                    <x-notice-card />
-                    <x-notice-card />
+                    @foreach ($notices as $item)
+                    <x-notice-card>{{ $item->title }}</x-notice-card>
+                    @endforeach
                 </div>
          
         </div>
