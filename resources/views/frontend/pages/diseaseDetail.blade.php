@@ -35,14 +35,7 @@
                         <td>
                             <h2>Medicine: {{ $cure->medicine }}</h2>
                             <div>
-                                {{-- {!! $cure->procedure !!} --}}
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cumque ipsa quam, maiores
-                                dicta libero ut tempore blanditiis laudantium delectus odio? Eos commodi, ducimus quos
-                                id, adipisci ipsam sint amet libero tempore nulla similique reiciendis, eum voluptatem
-                                vero! Quod numquam voluptatibus similique inventore culpa id modi eum obcaecati sunt,
-                                nulla illo molestias maiores provident facilis, corrupti temporibus magnam quam ipsum
-                                sit error, impedit omnis! Deleniti iste, autem atque ipsam ducimus eos sapiente, optio,
-                                odit quia numquam nobis consequatur temporibus! Quae.
+                                {!! $cure->procedure !!}
                             </div>
                         </td>
                     </tr>

@@ -23,7 +23,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="admin/pesticide/{{ $pesticide->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/pesticide/{{ $pesticide->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-body">

@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="wrapper">
-        {{ $pesticides->description }}
+        {!! $pesticides->description !!}
     </div>
     
 </div>
