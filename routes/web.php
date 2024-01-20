@@ -9,6 +9,10 @@ use App\Http\Controllers\Admin\PesticideController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
+use App\Http\Controllers\ProfileController;
+use App\Models\Fertilizer;
+use App\Models\Notice;
+use App\Models\Pesticide;
 use App\Models\Seed;
 use Illuminate\Support\Facades\Route;
 
@@ -45,7 +49,7 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
 Route::get('/', function () {
     $seeds = Seed::all();
     $pesticides = Pesticide::all();
-    $fertilizers = Fertilizer::all();
+    $fertilizers =Fertilizer::all();
     return view('frontend.pages.home', compact('seeds', 'pesticides','fertilizers'));
 });
 Route::get('/diseases', function () {
