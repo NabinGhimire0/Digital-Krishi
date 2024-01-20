@@ -64,6 +64,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        $role = Auth::user()->role;
+        if ($role == 'farmer') {
+            return redirect('/');
+        }else{
+            return redirect(RouteServiceProvider::HOME);
+        }
     }
 }

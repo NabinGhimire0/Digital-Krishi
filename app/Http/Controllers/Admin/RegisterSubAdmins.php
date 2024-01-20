@@ -62,7 +62,7 @@ class RegisterSubAdmins extends Controller
         $user->status = $request->status ? 1 : 0;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('/subadmin')->with('status', 'Subadmin created.');
+        return redirect('admin/subadmin')->with('status', 'Subadmin created.');
     }
 
     /**
@@ -115,7 +115,7 @@ class RegisterSubAdmins extends Controller
         $user->crop_area = $request->crop_area;
         $user->status = $request->status ? 1 : 0;
         $user->update();
-        return redirect('/subadmin')->with('status', 'Subadmin updated.');
+        return redirect('admin/subadmin')->with('status', 'Subadmin updated.');
     }
 
     /**
@@ -125,6 +125,6 @@ class RegisterSubAdmins extends Controller
     {
         $subadmin = User::find($id);
         $subadmin->delete();
-        return redirect('/subadmin')->with('status', 'Subadmin deleted.');
+        return redirect('admin/subadmin')->with('status', 'Subadmin deleted.');
     }
 }

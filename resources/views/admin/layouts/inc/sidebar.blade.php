@@ -8,7 +8,7 @@
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar scrollbar">
+    <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -36,7 +36,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/province') ? 'active' : '' }} || {{ request()->is('admin/province/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -65,7 +65,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/city') ? 'active' : '' }} || {{ request()->is('admin/city/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -93,7 +93,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/subadmin') ? 'active' : '' }} || {{ request()->is('admin/subadmin/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -122,7 +122,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/disease') ? 'active' : '' }} || {{ request()->is('admin/disease/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -151,7 +151,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/cure') ? 'active' : '' }} || {{ request()->is('admin/cure/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -179,7 +179,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }} || {{ request()->is('admin/seeds/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -208,7 +208,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/pesticide') ? 'active' : '' }} || {{ request()->is('admin/pesticide/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -237,7 +237,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/fertilizer') ? 'active' : '' }} || {{ request()->is('admin/fertilizer/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -266,7 +266,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }} || {{ request()->is('admin/notice/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
@@ -294,15 +294,6 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Simple Link
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">

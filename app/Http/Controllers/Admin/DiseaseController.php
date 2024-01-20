@@ -38,7 +38,7 @@ class DiseaseController extends Controller
         $disease->name = $request->name;
         $disease->symptoms = $request->symptoms;
         $disease->save();
-        return redirect('/disease')->with('success', 'Disease created successfully!');
+        return redirect('admin/disease')->with('success', 'Disease created successfully!');
     }
 
     /**
@@ -71,7 +71,7 @@ class DiseaseController extends Controller
         $disease->name = $request->name;
         $disease->symptoms = $request->symptoms;
         $disease->update();
-        return redirect('/disease')->with('success', 'Disease updated successfully!');
+        return redirect('admin/disease')->with('success', 'Disease updated successfully!');
     }
 
     /**
@@ -81,6 +81,6 @@ class DiseaseController extends Controller
     {
         $disease = Disease::find($id);
         $disease->delete();
-        return redirect('/disease')->with('success', 'Disease deleted successfully!');
+        return redirect('admin/disease')->with('success', 'Disease deleted successfully!');
     }
 }

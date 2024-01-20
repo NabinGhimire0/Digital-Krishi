@@ -46,7 +46,7 @@ class FertilizerController extends Controller
         $fertilizer->price = $request->price;
         $fertilizer->description = $request->description;
         $fertilizer->save();
-        return redirect('/fertilizer')->with('success', 'Pesticide created successfully.');
+        return redirect('admin/fertilizer')->with('success', 'Pesticide created successfully.');
     }
 
     /**
@@ -91,7 +91,7 @@ class FertilizerController extends Controller
         $fertilizer->price = $request->price;
         $fertilizer->description = $request->description;
         $fertilizer->update();
-        return redirect('/fertilizer')->with('success', 'Pesticide updated successfully.');
+        return redirect('admin/fertilizer')->with('success', 'Pesticide updated successfully.');
     }
 
     /**
@@ -101,6 +101,6 @@ class FertilizerController extends Controller
     {
         $fertilizer = Fertilizer::find($id);
         $fertilizer->delete();
-        return redirect('/fertilizer')->with('success', 'Pesticide deleted successfully.');
+        return redirect('admin/fertilizer')->with('success', 'Pesticide deleted successfully.');
     }
 }

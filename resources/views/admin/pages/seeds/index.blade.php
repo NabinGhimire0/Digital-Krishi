@@ -6,6 +6,11 @@
     </x-slot>
     <!-- Main content -->
     <section class="content">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">

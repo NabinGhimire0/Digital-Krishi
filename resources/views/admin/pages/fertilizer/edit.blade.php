@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Description:</label>
-                                    <textarea name="description" id="description" class="form-control" cols="30" rows="10">{!! $fertilizer->description !!}</textarea>
+                                    <textarea id="summernote" name="description" id="description" class="form-control" cols="30" rows="10">{!! $fertilizer->description !!}</textarea>
                                     <x-input-error :messages="$errors->get('description')" />
                                 </div>
                             </div>

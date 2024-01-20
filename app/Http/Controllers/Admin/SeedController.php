@@ -52,7 +52,7 @@ class SeedController extends Controller
         $seed->description = $request->description;
         $seed->user_id = auth()->user()->id;
         $seed->save();
-        return redirect('/seeds')->with('success', 'Seed created successfully.');
+        return redirect('admin/seeds')->with('success', 'Seed created successfully.');
     }
 
     /**
@@ -102,7 +102,7 @@ class SeedController extends Controller
         $seed->description = $request->description;
         $seed->user_id = auth()->user()->id;
         $seed->update();
-        return redirect('/seeds')->with('success', 'Seed updated successfully.');
+        return redirect('admin/seeds')->with('success', 'Seed updated successfully.');
     }
 
     /**
@@ -112,6 +112,6 @@ class SeedController extends Controller
     {
         $seed = Seed::find($id);
         $seed->delete();
-        return redirect('/seeds')->with('success', 'Seed deleted successfully.');
+        return redirect('admin/seeds')->with('success', 'Seed deleted successfully.');
     }
 }

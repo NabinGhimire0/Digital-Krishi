@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Symptoms:</label>
-                                    <textarea name="symptoms" id="symptoms" class="form-control" cols="30" rows="10">{!! $disease->symptoms !!}</textarea>
+                                    <textarea id="summernote" name="symptoms" id="symptoms" class="form-control" cols="30" rows="10">{!! $disease->symptoms !!}</textarea>
                                     <x-input-error :messages="$errors->get('symptoms')" />
                                 </div>
                             </div>

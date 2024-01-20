@@ -36,7 +36,7 @@ class ProvinceController extends Controller
         $province = new Province();
         $province -> name = $request->name;
         $province->save();
-        return redirect('/province')->with('status','province created.');
+        return redirect('admin/province')->with('status','province created.');
     }
 
     /**
@@ -67,7 +67,7 @@ class ProvinceController extends Controller
         $province = Province::find($id);
         $province -> name = $request->name;
         $province->save();
-        return redirect('/province')->with('status','province Updated.');
+        return redirect('admin/province')->with('status','province Updated.');
     }
 
     /**
@@ -77,6 +77,6 @@ class ProvinceController extends Controller
     {
         $province = Province::find($id);
         $province->delete();
-        return redirect('/province')->with('status','province deleted');
+        return redirect('admin/province')->with('status','province deleted');
     }   
 }

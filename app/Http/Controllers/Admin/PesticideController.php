@@ -47,7 +47,7 @@ class PesticideController extends Controller
         $pesticide->price = $request->price;
         $pesticide->description = $request->description;
         $pesticide->save();
-        return redirect('/admin/pesticide')->with('success', 'Pesticide created successfully.');
+        return redirect('admin/pesticide')->with('success', 'Pesticide created successfully.');
         
     }
 
@@ -93,7 +93,7 @@ class PesticideController extends Controller
         $pesticide->price = $request->price;
         $pesticide->description = $request->description;
         $pesticide->update();
-        return redirect('/admin/pesticide')->with('success', 'Pesticide updated successfully.');
+        return redirect('admin/pesticide')->with('success', 'Pesticide updated successfully.');
     }
 
     /**
@@ -103,6 +103,6 @@ class PesticideController extends Controller
     {
         $pesticide = Pesticide::find($id);
         $pesticide->delete();
-        return redirect('pesticide')->with('success', 'Pesticide deleted successfully.');
+        return redirect('admin/pesticide')->with('success', 'Pesticide deleted successfully.');
     }
 }

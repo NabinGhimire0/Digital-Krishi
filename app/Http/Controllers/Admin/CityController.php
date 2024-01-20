@@ -39,7 +39,7 @@ class CityController extends Controller
         $city->name = $request->name;
         $city->province_id = $request->province_id;
         $city->save();
-        return redirect('/city')->with('status', 'city created.');
+        return redirect('admin/city')->with('status', 'city created.');
     }
 
     /**
@@ -72,7 +72,7 @@ class CityController extends Controller
         $city->name = $request->name;
         $city->province_id = $request->province_id;
         $city->save();
-        return redirect('/city')->with('status', 'city updated.');
+        return redirect('admin/city')->with('status', 'city updated.');
     }
 
     /**
@@ -82,6 +82,6 @@ class CityController extends Controller
     {
         $city = City::find($id);
         $city->delete();
-        return redirect('/city')->with('status', 'city deleted.');
+        return redirect('admin/city')->with('status', 'city deleted.');
     }
 }

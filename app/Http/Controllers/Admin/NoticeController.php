@@ -43,7 +43,7 @@ class NoticeController extends Controller
         $notice->user_id = auth()->user()->id;
         $notice->status = $request->status ? 1 : 0;
         $notice->save();
-        return redirect('/notice')->with('success', 'Notice created successfully.');
+        return redirect('admin/notice')->with('success', 'Notice created successfully.');
     }
 
     /**

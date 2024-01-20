@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Notice;
 use App\Models\Pesticide;
 use App\Models\Province;
 use App\Models\Seed;
@@ -64,7 +65,6 @@ Route::get("/seed/{id}", function ($id) {
 });
 Route::get("/pesticides-/{id}", function ($id) {
     $pesticides = Pesticide::where('id', $id)->first();
-    // var_dump($pesticides);
     return view('frontend.pages.pesticides', compact('pesticides'));
 });
 

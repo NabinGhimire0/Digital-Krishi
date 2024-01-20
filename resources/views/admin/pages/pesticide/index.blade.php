@@ -36,13 +36,14 @@
                                         @foreach ($pesticide as $pesticide)
                                             <tr>
                                                 <td>{{ $pesticide->name }}</td>
-                                                <td><img src="{{ asset('storage/' . $pesticide->image) }}" alt=""
-                                                        style="width: 80px; height: 80px"></td>
+                                                <td><img src="{{ asset('storage/' . $pesticide->image) }}"
+                                                        alt="" style="width: 80px; height: 80px"></td>
                                                 <td>{{ $pesticide->price }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
                                                         href="{{ '/admin/pesticide/' . $pesticide->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ '/admin/pesticide/' . $pesticide->id }}" method="post">
+                                                    <form action="{{ '/admin/pesticide/' . $pesticide->id }}"
+                                                        method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

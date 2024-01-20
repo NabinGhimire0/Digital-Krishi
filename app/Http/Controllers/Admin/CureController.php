@@ -45,7 +45,7 @@ class CureController extends Controller
         $cure->medicine = $request->medicine;
         $cure->procedure = $request->procedure;
         $cure->save();
-        return redirect('/cure')->with('success', 'Cure created successfully!');
+        return redirect('admin/cure')->with('success', 'Cure created successfully!');
     }
 
     /**
@@ -81,7 +81,7 @@ class CureController extends Controller
         $cure->medicine = $request->medicine;
         $cure->procedure = $request->procedure;
         $cure->update();
-        return redirect('/cure')->with('success', 'Cure updated successfully!');
+        return redirect('admin/cure')->with('success', 'Cure updated successfully!');
     }
 
     /**
@@ -91,6 +91,6 @@ class CureController extends Controller
     {
         $cure = Cure::find($id);
         $cure->delete();
-        return redirect('/cure')->with('success', 'Cure deleted successfully!');
+        return redirect('admin/cure')->with('success', 'Cure deleted successfully!');
     }
 }

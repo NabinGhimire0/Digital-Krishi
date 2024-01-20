@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="wrapper">
-            {{ $seed->description }}
+            {!! $seed->description  !!}
         </div>
 
     </div>
