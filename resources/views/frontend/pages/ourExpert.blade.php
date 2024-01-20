@@ -18,20 +18,21 @@
                 <h1>Our Agro Expert</h1>
                 <p>Here are our expert who are very helpful top provide support to your filed </p>
             </center>
-            <div class="expert-grid">
-                @foreach ($experts as $item)
-                    <div style="" class="expert-grid__card">
+          
 
+            <div class="seed__grid" >
+                @foreach ($experts as $item)
+                    <a href="" onclick="return false">
                         <div>
-                            <div>
-                                <img src="{{ asset('storage/'.$item->image) }}" alt="">
+                            <div style="">
+                                <img src="{{ 'storage/' . $item->image }}" alt="">
                             </div>
                             <center>
-                                <h3>{{ $item->name }}</h3>
+    
+                                <p>{{ $item->name }}</p>
                             </center>
                         </div>
-
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>

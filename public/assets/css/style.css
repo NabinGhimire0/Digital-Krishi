@@ -618,19 +618,25 @@ th {
 
 .expert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 3fr));
-  gap: 2rem;
-  margin-block: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 5fr));
+  padding: 1rem 0;
+  gap: 10px;
+
 }
 
 .expert-grid .expert-grid__card {
-  border: 2px solid rgb(178, 238, 149);
-  min-height: 1svh
+  width: 11vw;
+  min-width: 150px;
+  border-radius: 5px;
+  height: 10vw;
+  min-height: 150px;
+  background: var(--clr-bg-card);
+  cursor: pointer;
+  margin-inline: auto;
+  
 }
 
-.expert-grid .expert-grid__card:hover {
-  transform: scale(1.1);
-}
+
 
 
 @media screen and (max-width:768px) {
