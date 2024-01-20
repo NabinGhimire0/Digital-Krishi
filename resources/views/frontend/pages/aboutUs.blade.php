@@ -14,23 +14,24 @@
             <center>
                 <h1>About us</h1>
             </center>
-                <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam, impedit hic, nam dolor
-                    similique cupiditate molestias molestiae mollitia esse vero voluptatum nesciunt adipisci cum ut.
-                    Quia iste laboriosam non vel natus magnam doloremque! Exercitationem natus facere minima porro quis
-                    quidem atque rem, minus quo consequatur delectus amet dolores ex. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Dignissimos veritatis assumenda repellendus numquam accusamus nostrum
-                    obcaecati minus accusantium illo, dicta pariatur porro rerum eveniet corrupti, natus eaque molestiae
-                    iure adipisci, commodi exercitationem beatae libero? Placeat voluptatem a pariatur error asperiores
-                    tenetur earum, at alias adipisci. Id obcaecati ipsa vero a. </p>
-                    <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam, impedit hic, nam dolor
-                        similique cupiditate molestias molestiae mollitia esse vero voluptatum nesciunt adipisci cum ut.
-                        Quia iste laboriosam non vel natus magnam doloremque! Exercitationem natus facere minima porro quis
-                        quidem atque rem, minus quo consequatur delectus amet dolores ex. Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Dignissimos veritatis assumenda repellendus numquam accusamus nostrum
-                        obcaecati minus accusantium illo, dicta pariatur porro rerum eveniet corrupti, natus eaque molestiae
-                        iure adipisci, commodi exercitationem beatae libero? Placeat voluptatem a pariatur error asperiores
-                        tenetur earum, at alias adipisci. Id obcaecati ipsa vero a. </p>
-    
+            <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Welcome to Digital
+                Krishi, where our main goal is to help farmers succeed and make farming better for everyone. We want to
+                use new and smart ways to support farmers in growing crops that are good for the environment and bring
+                success. Farmers are like the strong backbone of our society, providing food for everyone and making our
+                communities thrive.
+
+                At Digital Krishi, we believe in making things easier for farmers and giving them the tools they need.
+                We know that farmers are essential for our well-being, and we're here to make their journey easier.
+                Whether you're a new farmer or have been doing it for a while, we're here to provide helpful information
+                and support. </p>
+            <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">We also think it's
+                important for farmers to work together and share their knowledge. That's why we have a community where
+                farmers can connect, learn from each other, and support one another. It's like a digital neighborhood
+                for farmers!
+
+                Our digital marketplace is another way we help farmers. We connect them with reliable suppliers and
+                buyers, making it simpler for them to get what they need and sell their products at fair prices.</p>
+
         </div>
     </main>
 

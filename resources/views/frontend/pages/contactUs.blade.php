@@ -12,25 +12,27 @@
 
         <div class="wrapper" style="min-height: 53svh;margin-block: 2rem">
             <center>
-                <h1>About us</h1>
+                <h1>Contact us</h1>
             </center>
-                <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam, impedit hic, nam dolor
-                    similique cupiditate molestias molestiae mollitia esse vero voluptatum nesciunt adipisci cum ut.
-                    Quia iste laboriosam non vel natus magnam doloremque! Exercitationem natus facere minima porro quis
-                    quidem atque rem, minus quo consequatur delectus amet dolores ex. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Dignissimos veritatis assumenda repellendus numquam accusamus nostrum
-                    obcaecati minus accusantium illo, dicta pariatur porro rerum eveniet corrupti, natus eaque molestiae
-                    iure adipisci, commodi exercitationem beatae libero? Placeat voluptatem a pariatur error asperiores
-                    tenetur earum, at alias adipisci. Id obcaecati ipsa vero a. </p>
-                    <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam, impedit hic, nam dolor
-                        similique cupiditate molestias molestiae mollitia esse vero voluptatum nesciunt adipisci cum ut.
-                        Quia iste laboriosam non vel natus magnam doloremque! Exercitationem natus facere minima porro quis
-                        quidem atque rem, minus quo consequatur delectus amet dolores ex. Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Dignissimos veritatis assumenda repellendus numquam accusamus nostrum
-                        obcaecati minus accusantium illo, dicta pariatur porro rerum eveniet corrupti, natus eaque molestiae
-                        iure adipisci, commodi exercitationem beatae libero? Placeat voluptatem a pariatur error asperiores
-                        tenetur earum, at alias adipisci. Id obcaecati ipsa vero a. </p>
-    
+            <main style="">
+                <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Welcome to Digital
+                    Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat dolores
+                    consequatur aliquid neque ea totam itaque nemo laudantium velit? Quasi incidunt dolor fuga numquam
+                    architecto tempore voluptates temporibus sit saepe praesentium similique nemo, fugit ipsa neque ab
+                    facilis quibusdam cupiditate error beatae sapiente dicta. Quod, eveniet exercitationem. Quas,
+                    exercitationem! ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab similique non labore
+                    rem
+                    recusandae, itaque eligendi aspernatur inventore saepe corporis ea ad. Asperiores aspernatur
+                    voluptate reprehenderit deserunt hic atque? </p>
+                <p style="text-align: justify; width:80%; margin-inline: auto;margin-block: 1.8rem">Lorem ipsum, dolor
+                    sit amet consectetur adipisicing elit. O
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci est quo eum dolore illum
+                    nulla ipsam necessitatibus, ab distinctio ut illo pariatur incidunt, aut quam similique animi rem
+                    libero? fficiis nobis nostrum ab necessitatibus sapiente sit
+                    doloribus minima consequuntur maxime, delectus rerum reiciendis qui unde odit sed tempore repellat
+                    dignissimos modi veritatis accusantium, tenetur beatae repellendus!</p>
+
+            </main>
         </div>
     </main>
 

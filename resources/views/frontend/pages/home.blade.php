@@ -29,7 +29,7 @@
 
 
     <div class="seed wrapper">
-        <div class="heading" style="margin-block: 1 rem">
+        <div class="heading" style="margin-block: 1.5rem">
             <h2 id="seed">Seeds</h2>
             {{-- <a href="seed"> --}}
                 <button onclick="window.location.href='/seed'" style="cursor: pointer">View all</button>

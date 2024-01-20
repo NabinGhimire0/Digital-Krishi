@@ -13,8 +13,6 @@ class FertilizerSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('fertilizers')->insert([
-            []
-        ]);
+    
     }
 }
