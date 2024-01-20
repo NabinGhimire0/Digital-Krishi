@@ -8,7 +8,7 @@
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar scrollbar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -38,7 +38,7 @@
                 data-accordion="false">
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('province') ? 'active' : '' }} || {{ request()->is('province/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/province') ? 'active' : '' }} || {{ request()->is('admin/province/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Province
@@ -47,8 +47,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/province/create"
-                                class="nav-link {{ request()->is('province/create') ? 'active' : '' }}">
+                            <a href="/admin/province/create"
+                                class="nav-link {{ request()->is('admin/province/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/province" class="nav-link {{ request()->is('province') ? 'active' : '' }}">
+                            <a href="/admin/province" class="nav-link {{ request()->is('admin/province') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Province List
@@ -67,7 +67,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('city') ? 'active' : '' }} || {{ request()->is('city/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/city') ? 'active' : '' }} || {{ request()->is('admin/city/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Cities
@@ -76,7 +76,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/city/create" class="nav-link {{ request()->is('city/create') ? 'active' : '' }}">
+                            <a href="/admin/city/create" class="nav-link {{ request()->is('admin/city/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -84,7 +84,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/city" class="nav-link {{ request()->is('city') ? 'active' : '' }}">
+                            <a href="/admin/city" class="nav-link {{ request()->is('admin/city') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Cities List
@@ -95,7 +95,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('subadmin') ? 'active' : '' }} || {{ request()->is('subadmin/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/subadmin') ? 'active' : '' }} || {{ request()->is('admin/subadmin/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Users
@@ -104,8 +104,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/subadmin/create"
-                                class="nav-link {{ request()->is('subadmin/create') ? 'active' : '' }}">
+                            <a href="/admin/subadmin/create"
+                                class="nav-link {{ request()->is('admin/subadmin/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/subadmin" class="nav-link {{ request()->is('subadmin') ? 'active' : '' }}">
+                            <a href="/admin/subadmin" class="nav-link {{ request()->is('admin/subadmin') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Users
@@ -124,7 +124,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('disease') ? 'active' : '' }} || {{ request()->is('disease/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/disease') ? 'active' : '' }} || {{ request()->is('admin/disease/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Disease
@@ -133,8 +133,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/disease/create"
-                                class="nav-link {{ request()->is('disease/create') ? 'active' : '' }}">
+                            <a href="/admin/disease/create"
+                                class="nav-link {{ request()->is('admin/disease/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -142,7 +142,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/disease" class="nav-link {{ request()->is('disease') ? 'active' : '' }}">
+                            <a href="/admin/disease" class="nav-link {{ request()->is('disease') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Disease
@@ -153,7 +153,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('cure') ? 'active' : '' }} || {{ request()->is('cure/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/cure') ? 'active' : '' }} || {{ request()->is('admin/cure/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Cure
@@ -162,7 +162,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/cure/create" class="nav-link {{ request()->is('cure/create') ? 'active' : '' }}">
+                            <a href="/admin/cure/create" class="nav-link {{ request()->is('admin/cure/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -170,7 +170,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/cure" class="nav-link {{ request()->is('cure') ? 'active' : '' }}">
+                            <a href="/admin/cure" class="nav-link {{ request()->is('admin/cure') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Cures
@@ -181,7 +181,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('seeds') ? 'active' : '' }} || {{ request()->is('seeds/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }} || {{ request()->is('admin/seeds/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Seeds
@@ -190,8 +190,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/seeds/create"
-                                class="nav-link {{ request()->is('seeds/create') ? 'active' : '' }}">
+                            <a href="/admin/seeds/create"
+                                class="nav-link {{ request()->is('admin/seeds/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -199,7 +199,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/seeds" class="nav-link {{ request()->is('seeds') ? 'active' : '' }}">
+                            <a href="/admin/seeds" class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Seeds
@@ -210,7 +210,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('pesticide') ? 'active' : '' }} || {{ request()->is('pesticide/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/pesticide') ? 'active' : '' }} || {{ request()->is('admin/pesticide/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Pesticide
@@ -219,8 +219,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/pesticide/create"
-                                class="nav-link {{ request()->is('pesticide/create') ? 'active' : '' }}">
+                            <a href="/admin/pesticide/create"
+                                class="nav-link {{ request()->is('admin/pesticide/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -228,7 +228,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pesticide" class="nav-link {{ request()->is('pesticide') ? 'active' : '' }}">
+                            <a href="/admin/pesticide" class="nav-link {{ request()->is('admin/pesticide') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Pesticide
@@ -239,7 +239,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('fertilizer') ? 'active' : '' }} || {{ request()->is('fertilizer/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/fertilizer') ? 'active' : '' }} || {{ request()->is('admin/fertilizer/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Fertilizer
@@ -248,8 +248,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/fertilizer/create"
-                                class="nav-link {{ request()->is('fertilizer/create') ? 'active' : '' }}">
+                            <a href="/admin/fertilizer/create"
+                                class="nav-link {{ request()->is('admin/fertilizer/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -257,7 +257,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/fertilizer" class="nav-link {{ request()->is('fertilizer') ? 'active' : '' }}">
+                            <a href="/admin/fertilizer" class="nav-link {{ request()->is('admin/fertilizer') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Fertilizer
@@ -268,7 +268,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#"
-                        class="nav-link {{ request()->is('notice') ? 'active' : '' }} || {{ request()->is('notice/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }} || {{ request()->is('admin/notice/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-location-dot"></i>
                         <p>
                             Notices
@@ -277,8 +277,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/notice/create"
-                                class="nav-link {{ request()->is('notice/create') ? 'active' : '' }}">
+                            <a href="/admin/notice/create"
+                                class="nav-link {{ request()->is('admin/notice/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
                                     Create
@@ -286,7 +286,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/notice" class="nav-link {{ request()->is('notice') ? 'active' : '' }}">
+                            <a href="/admin/notice" class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Notice List

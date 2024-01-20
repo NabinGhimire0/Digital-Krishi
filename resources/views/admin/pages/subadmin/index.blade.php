@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Users</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/subadmin/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/subadmin/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +43,8 @@
                                                 <td>{{ $subadmin->role }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'subadmin/' . $subadmin->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'subadmin/' . $subadmin->id }}" method="post">
+                                                        href="{{ '/admin/subadmin/' . $subadmin->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ '/admin/subadmin/' . $subadmin->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

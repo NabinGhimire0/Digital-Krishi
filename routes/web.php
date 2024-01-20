@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // admin routes
-Route::group(['middleware' => 'rolebaseauth:admin,subadmin'], function () {
+Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', function () {
             return view('admin.dashboard');

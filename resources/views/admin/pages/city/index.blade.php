@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Cities</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/city/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/city/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                                                 <td>{{ $city->name }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'city/' . $city->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'city/' . $city->id }}" method="post">
+                                                        href="{{ '/admin/city/' . $city->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ '/admin/city/' . $city->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

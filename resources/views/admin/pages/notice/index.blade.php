@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Notices</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/notice/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="admin/notice/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -38,8 +38,8 @@
                                                 <td>{{ $notice->status ? 'Active' : 'Inactive' }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'notice/' . $notice->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'notice/' . $notice->id }}" method="post">
+                                                        href="{{ 'admin/notice/' . $notice->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ 'admin/notice/' . $notice->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

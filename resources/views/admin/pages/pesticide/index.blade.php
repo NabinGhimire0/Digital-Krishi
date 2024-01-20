@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Pesticides</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/pesticide/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="admin/pesticide/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -41,8 +41,8 @@
                                                 <td>{{ $pesticide->price }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'pesticide/' . $pesticide->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'pesticide/' . $pesticide->id }}" method="post">
+                                                        href="{{ 'admin/pesticide/' . $pesticide->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ 'admin/pesticide/' . $pesticide->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

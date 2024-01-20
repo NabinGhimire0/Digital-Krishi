@@ -17,13 +17,13 @@
                                     <h3 class="card-title">Create</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/city">Back</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/city">Back</a>
                                 </div>
                             </div>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/notice" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/notice" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">

@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Cure</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/cure/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/cure/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -38,8 +38,8 @@
                                                 <td>{{ $cure->medicine }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'cure/' . $cure->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'cure/' . $cure->id }}" method="post">
+                                                        href="{{ '/admin/cure/' . $cure->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ '/admin/cure/' . $cure->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

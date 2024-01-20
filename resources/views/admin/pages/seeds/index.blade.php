@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Provinces</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/seeds/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/seeds/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +43,8 @@
                                                 <td>{{ $seed->price }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'seeds/' . $seed->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'seeds/' . $seed->id }}" method="post">
+                                                        href="{{ '/admin/seeds/' . $seed->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ '/admin/seeds/' . $seed->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

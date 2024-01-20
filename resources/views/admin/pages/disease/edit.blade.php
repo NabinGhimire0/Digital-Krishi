@@ -17,13 +17,13 @@
                                     <h3 class="card-title">Edit</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/disease">Back</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/disease">Back</a>
                                 </div>
                             </div>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/disease/{{ $disease->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/disease/{{ $disease->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
