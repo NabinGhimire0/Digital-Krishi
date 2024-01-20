@@ -20,16 +20,30 @@
                 </center>
             </div>
             <div class="seed_detail-info">
-                <p><span style="color:green;margin-inline-end: 2.85rem">Climate </span>: {{ $seed->climate }}<br>
+                {{-- <p><span style="color:green;margin-inline-end: 2.85rem">Climate </span>: {{ $seed->climate }}<br>
                     <span style="color:green;margin-inline-end: 2.7rem"> Altitude </span>: {{ $seed->altitude }}<br>
                     <span style="color:green;margin-inline-end: 1rem">
                         market price
                     </span>
                     : {{ $seed->market_price }}<br>
-                </p>
+                </p> --}}
+                <table class="seed-table" border="0">
+                    <tr>
+                        <td    style="color: green;width: 100px">Climate</td>
+                        <td >{{ $seed->climate }}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: green;">Altitude</td>
+                        <td >{{ $seed->altitude }}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: green;">Market Price</td>
+                        <td >{{ $seed->market_price }}</td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <div class="wrapper">
+        <div class="wrapper" style="margin-block: 1.5rem;width:66rem">
             {!! $seed->description  !!}
         </div>
 

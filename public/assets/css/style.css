@@ -358,10 +358,7 @@ table {
   border-collapse: collapse;
 }
 
-/* Zebra striping */
-tr:nth-of-type(odd) {
-  background: #eee;
-}
+
 
 th {
   background: #333;
@@ -413,7 +410,7 @@ th {
   border-left: 1px solid rgb(255, 255, 255);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  grid-column: 10/13;
+  grid-column: 9/13;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -424,8 +421,31 @@ th {
   color: green;
   padding: 0;
 }
+.seed-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.seed-table td, .seed-table th {
+
+  text-align: left;
+  padding: 2px;
+}
+
 
 @media screen and (max-width:1000px) {
+  .seed-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.seed-table td, .seed-table th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 2px;
+}
+
+
   .wrapper .grid_layout .nav__button:not(.hidden) {
     grid-column: 13;
   }
@@ -449,7 +469,7 @@ th {
 
   th,
   td {
-    border: 1px solid #dddddd;
+  
     text-align: left;
     padding: 8px;
   }
@@ -638,10 +658,13 @@ th {
 
 
 @media screen and (max-width:768px) {
-  /* .seed__detail .seed_detail-info {
+  .seed__detail-card{
+    margin-block: 1rem;
+  }
+  .seed__detail .seed_detail-info {
     margin-block: 1re;
     margin-inline: 1re;
-  } */
+  }
 
   .wrapper .grid_layout .nav__links:not(.hidden) {
     display: none;
@@ -691,4 +714,18 @@ th {
     text-align: center;
 
   }
+  .seed-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.seed-table td, .seed-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 2px;
+}
+
+.seed-table th {
+    background-color: #f2f2f2;
+}
 }

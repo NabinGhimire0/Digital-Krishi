@@ -33,7 +33,7 @@
     
         </div>
     </div>
-    <div class="wrapper">
+    <div class="wrapper" style="margin-block: 1.5rem;width:66rem">
         {!! $pesticides->description !!}
     </div>
     
