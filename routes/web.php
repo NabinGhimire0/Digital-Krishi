@@ -112,6 +112,9 @@ Route::get("/our-expert", function () {
     $experts = AgroExpert::all();
     return view('frontend.pages.ourExpert',compact('experts'));
 });
+Route::get("/contact-us", function () {
+    return view('frontend.pages.contactUs');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

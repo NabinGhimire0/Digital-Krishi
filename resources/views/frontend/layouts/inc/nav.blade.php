@@ -25,24 +25,28 @@
                     </li>
 
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="/contact-us">Contact</a>
+                    </li>
+
+                    <li>
+                        <a id="supportButton">Support</a>
                     </li>
                 </ul>
-
             </div>
             <div class="nav__links-mobl hidden " id="menu-responsive">
 
                 <a href="/">Home</a>
 
-                <a href="/services">Services</a>
+                <a href="/our-expert">Experts</a>
 
                 <a href="/seed">Seeds</a>
 
-                <a href="/disease-solutions">Diseases</a>
+                <a href="/diseases">Diseases</a>
 
                 <a href="/about-us">About</a>
 
-                <a href="/contact">Contact</a>
+                <a href="/contact-us">Contact</a>
+                <a id="mbsupportButton">Support</a>
 
                 <div style="display:grid">
                     <center>

@@ -6,19 +6,15 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProvinceSeeder extends Seeder
+class FertilizerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('provinces')->insert([
-            ['name' => 'Province 1'],
-            ['name' => 'Province 2'],
-            ['name' => 'Province 3'],
-            ['name' => 'Province 4'],
-            ['name' => 'Province 5'],
+        DB::table('fertilizers')->insert([
+            []
         ]);
     }
 }
