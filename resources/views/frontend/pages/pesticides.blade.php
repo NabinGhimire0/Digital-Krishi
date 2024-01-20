@@ -33,8 +33,10 @@
     
         </div>
     </div>
-    <div class="wrapper" style="margin-block: 1.5rem;width:66rem">
-        {!! $pesticides->description !!}
+    <div class="wrapper" style="margin-block: 1.5rem;width:80%">
+      <p>
+      {!! $pesticides->description !!}
+    </p>
     </div>
     
 </div>
