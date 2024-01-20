@@ -9,3 +9,7 @@ hamMenu.addEventListener('click',()=>{
     MiddleBar.classList.toggle("middle-active")
     menuResponsive.classList.toggle("hidden")
 })
+const notice = document.getElementById('notice')
+notice.addEventListener('click',()=>{
+    window.location.href = '/notice'
+})
