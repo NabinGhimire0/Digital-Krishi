@@ -53,6 +53,11 @@ Route::get('/', function () {
 Route::get('/diseases', function () {
     return view('frontend.pages.disease');
 });
+Route::get('/notice', function () {
+    $notice = Notice::all();
+    return view('frontend.pages.notices');
+});
+
 Route::get("/seed/{id}", function ($id) {
     $seed = Seed::where('id', $id)->first();
     return view('frontend.pages.seed', compact('seed'));
