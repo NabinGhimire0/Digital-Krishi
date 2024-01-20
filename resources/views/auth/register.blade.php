@@ -13,12 +13,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            /* height: 100vh; */
         }
 
         form {
             background-color: #fff;
-            padding: 30px;
+            padding: 15px;
+            margin-block: 1rem;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 400px;
@@ -27,12 +28,12 @@
         h2 {
             color: #4caf50;
             text-align: center;
-            margin-bottom: 20px;
+            margin-block: 1rem;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: #333;
         }
 
@@ -49,7 +50,7 @@
         button {
             background-color: #4caf50;
             color: #fff;
-            padding: 12px 20px;
+            padding: 10px 18px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -65,8 +66,8 @@
 
 <body>
     <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+        <h2>Registration Form</h2>      
         @csrf
-        <h2>Registration Form</h2>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <x-input-error :messages="$errors->get('name')" />
@@ -84,7 +85,7 @@
         <x-input-error :messages="$errors->get('address')" />
 
         <label for="province">Province:</label>
-        <select id="province" name="province_id" required>
+        <select  name="province_id" required>
             <option value=""selected default>Select Province</option>
             @foreach ($provinces as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -92,7 +93,7 @@
             <x-input-error :messages="$errors->get('province_id')" />
         </select>
         <label for="province">Province:</label>
-        <select id="province" name="city_id" required>
+        <select name="city_id" required>
             <option value=""selected default>Select Cities</option>
             @foreach ($city as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>

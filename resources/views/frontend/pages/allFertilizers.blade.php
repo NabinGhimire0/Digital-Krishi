@@ -2,8 +2,7 @@
     <div style="background: rgba(106,169,108);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 0px );
-    -webkit-backdrop-filter: blur( 0px );
-">
+    -webkit-backdrop-filter: blur( 0px );">
         @include('frontend/layouts/inc/nav')
 
     </div>
@@ -17,12 +16,11 @@
                 <div class="seed wrapper">
                    
                     <div class="seed__grid">
-
                         @foreach ($fertilizers as $category)
-                        <a href="fertilizer/{{ $category->id }}">
+                        <a href="/fertilizer/{{ $category->id }}">
                             <div>
                                 <div style="display: flex;align-items: center;justify-content: center">
-                                    <img src="{{ 'storage/'.$category->image }}" alt="">
+                                    <img src="{{ asset('storage/'.$category->image) }}" alt="">
                                 </div>
                                 <center>
                     
