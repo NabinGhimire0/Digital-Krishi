@@ -57,13 +57,11 @@ Route::get('/diseases', function () {
 });
 Route::get('/notice', function () {
     $notices = Notice::all();
-    // var_dump($notice);
     return view('frontend.pages.notices', compact('notices'));
 });
 
 Route::get('/notice/{id}', function ($id) {
     $notice = Notice::where('id', $id)->first();
-    // var_dump($notice);
     return view('frontend.pages.notice', compact('notice'));
 });
 Route::get("/seed", function () {
@@ -81,12 +79,12 @@ Route::get("/pesticides-/{id}", function ($id) {
 });
 Route::get("/pesticides/all", function () {
     $pesticides = Pesticide::all();
-    // var_dump($pesticides);
+
     return view('frontend.pages.allPesticides', compact('pesticides'));
 });
 Route::get("/fertilizers/all", function () {
     $fertilizers = Fertilizer::all();
-    // var_dump($fertilizers);
+
     return view('frontend.pages.allFertilizers', compact('fertilizers'));
 });
 
@@ -94,7 +92,7 @@ Route::get("/fertilizer/{id}", function ($id) {
     $fertilizer = Fertilizer::where('id', $id)->first();
     return view('frontend.pages.fertilizer', compact('fertilizer'));
 });
-Route::get("/about-us", function () {
+Route::get("/our-expert", function () {
     return view('frontend.pages.aboutUs');
 });
 Route::middleware('auth')->group(function () {

@@ -8,7 +8,7 @@
 
     </div>
     <center>
-        <h1>Disease and Solution</h1>
+        <h1>Disease and Symptom</h1>
     </center>
     <div class="wrapper table">
 

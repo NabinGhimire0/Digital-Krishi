@@ -8,7 +8,6 @@
                 <h1>Digital Krishi</h1>
                 <p>Hajur ko parishram maa hamro saath</p>
                 <a href="#seed">
-
                     <button>
                         Explore
                     </button>
@@ -29,7 +28,7 @@
  
 
     <div class="seed wrapper">
-        <div class="heading">
+        <div class="heading" style="margin-block: 1 rem">
             <h2 id="seed">Seeds</h2>
           {{-- <a href="seed"> --}}
               <button onclick="window.location.href='/seeds/all'" style="cursor: pointer" >View all</button>
