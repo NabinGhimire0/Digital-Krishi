@@ -32,7 +32,7 @@
         <div class="heading" style="margin-block: 1 rem">
             <h2 id="seed">Seeds</h2>
             {{-- <a href="seed"> --}}
-                <button onclick="window.location.href='/seeds/all'" style="cursor: pointer">View all</button>
+                <button onclick="window.location.href='/seed'" style="cursor: pointer">View all</button>
                 {{-- </a> --}}
         </div>
         <div class="seed__grid">
