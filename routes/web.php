@@ -93,10 +93,6 @@ Route::get("/pesticides/all", function () {
 });
 Route::get("/fertilizers/all", function () {
     $fertilizers = Fertilizer::all();
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a31f12e0023bb9e2b08bdace58da4c0305e10c0
     return view('frontend.pages.allFertilizers', compact('fertilizers'));
 });
 
