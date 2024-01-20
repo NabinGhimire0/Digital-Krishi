@@ -12,12 +12,21 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="/services">Services</a>
                     </li>
                     <li>
                         <a href="/seed">Seeds</a>
                     </li>
-                    <li> <a href="#">Products</a></li>
+                    <li>
+                        <a href="/seed">Diseases</a>
+                    </li>
+                    <li>
+                        <a href="/about-us">About</a>
+                    </li>
+
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
                 </ul>
 
             </div>
@@ -25,16 +34,19 @@
 
                 <a href="/">Home</a>
 
-                <a href="#services">Services</a>
+                <a href="/services">Services</a>
 
                 <a href="/seed">Seeds</a>
 
-                <a href="#">Products</a>
+                <a href="/disease-solutions">Diseases</a>
+
+                <a href="/about-us">About</a>
+
+                <a href="/contact">Contact</a>
 
                 <div style="display:grid">
                     <center>
-                        <a href="login">
-
+                        <a href="{{ route('login') }}">
                             <button style="width:80%;display:flex;justify-content: center ">login</button>
                         </a>
                     </center>
@@ -42,8 +54,8 @@
 
             </div>
             <div class="nav__button ">
-               <a href="login">
-                   <button>login</button>
+                <a href="login">
+                    <button>login</button>
                 </a>
             </div>
             <div class="cross hidden" id="ham-menu">
