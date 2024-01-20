@@ -56,7 +56,7 @@ h6 {
     display: none;
 }
 
-.gif-area .bg-blur {}
+
 
 .gif-area {
     min-height: 80vh;
@@ -118,6 +118,9 @@ h6 {
     color: white;
     margin-block: 0.26rem;
 
+}
+.wrapper .grid_layout .nav__links>a:hover{
+  color: gainsboro;
 }
 
 .wrapper .grid_layout .nav__links-mobl div button {
@@ -308,12 +311,12 @@ footer {
   .footer-links li {
     margin: 0 10px;
   }
-
+  
   .footer-links a {
     color: white;
     text-decoration: none;
   }
-
+ 
   .footer-links a:hover {
     text-decoration: underline;
   }
@@ -404,6 +407,47 @@ table {
     gap: 1rem;
     /* 8/4 */
   }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.font-semibold {
+    font-weight: bold;
+}
+
+.w-8 {
+    width: 8%;
+}
+
+.w-10-6 {
+    width: 10.6%;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
 
     .hero .hero__content {
         grid-column: 1/6;

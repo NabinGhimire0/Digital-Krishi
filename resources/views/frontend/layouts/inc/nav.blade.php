@@ -1,9 +1,12 @@
 <nav>
     <div class="wrapper">
         <div class="grid_layout">
-            <div>
-                <h1 style="color:white">Digital<span style="color:orange ">Krishi</span></h1>
-            </div>
+            <a href="/" style="text-decoration: none">
+
+                <div>
+                    <h1 style="color:white">Digital<span style="color:orange ">Krishi</span></h1>
+                </div>
+            </a>
             <div class="nav__links">
 
                 <ul>
@@ -20,23 +23,28 @@
             </div>
             <div class="nav__links-mobl hidden " id="menu-responsive">
 
-                <a href="">Home</a>
+                <a href="/">Home</a>
 
-                <a href="">Servicese</a>
+                <a href="#services">Servicese</a>
 
-                <a href="">Seeds</a>
+                <a href="/seeds">Seeds</a>
 
-                <a href="">Products</a>
+                <a href="#">Products</a>
 
                 <div style="display:grid">
                     <center>
-                        <button style="width:80%;display:flex;justify-content: center ">login</button>
+                        <a href="login">
+
+                            <button style="width:80%;display:flex;justify-content: center ">login</button>
+                        </a>
                     </center>
                 </div>
 
             </div>
             <div class="nav__button ">
-                <button>login</button>
+               <a href="login">
+                   <button>login</button>
+                </a>
             </div>
             <div class="cross hidden" id="ham-menu">
                 <div id="top-bar" class="top "></div>

@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Notice;
 use App\Models\Pesticide;
 use App\Models\Province;
 use App\Models\Seed;
@@ -54,8 +55,15 @@ Route::get('/diseases', function () {
     return view('frontend.pages.disease');
 });
 Route::get('/notice', function () {
-    $notice = Notice::all();
-    return view('frontend.pages.notices');
+    $notices = Notice::all();
+    // var_dump($notice);
+    return view('frontend.pages.notices', compact('notices'));
+});
+
+Route::get('/notice/{id}', function ($id) {
+    $notice = Notice::where('id', $id)->first();
+    // var_dump($notice);
+    return view('frontend.pages.notice', compact('notice'));
 });
 
 Route::get("/seed/{id}", function ($id) {
