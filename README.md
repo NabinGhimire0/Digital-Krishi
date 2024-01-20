@@ -9,7 +9,8 @@
 ## please find digitalkrishi.sql file form the root directory of this project.`
 ## -import the sql file into mysql database 
 ## -now to run the project type command: php artisan serve. 
-# -the login crediential of admin is: email: **admin@gmail.com** and password:**12345678**
+# -the login crediential of admin is: 
+# email: **admin@gmail.com** and password:**123456789**
 
 ## Routes of this project.. 
 ##   admindashboard-> admin/dashboard (only admin and subadmin are authorized)

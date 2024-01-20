@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-        <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+    <a href="#" class="brand-link">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Digital Krishi</span>
     </a>
@@ -98,7 +98,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/subadmin') ? 'active' : '' }} || {{ request()->is('admin/subadmin/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-user"></i>
                         <p>
                             Users
                             <i class="right fas fa-angle-left"></i>
@@ -128,7 +128,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/disease') ? 'active' : '' }} || {{ request()->is('admin/disease/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-disease"></i>
                         <p>
                             Disease
                             <i class="right fas fa-angle-left"></i>
@@ -157,7 +157,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/cure') ? 'active' : '' }} || {{ request()->is('admin/cure/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-c"></i>
                         <p>
                             Cure
                             <i class="right fas fa-angle-left"></i>
@@ -186,7 +186,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }} || {{ request()->is('admin/seeds/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-s"></i>
                         <p>
                             Seeds
                             <i class="right fas fa-angle-left"></i>
@@ -216,7 +216,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/pesticide') ? 'active' : '' }} || {{ request()->is('admin/pesticide/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-p"></i>
                         <p>
                             Pesticide
                             <i class="right fas fa-angle-left"></i>
@@ -246,7 +246,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/fertilizer') ? 'active' : '' }} || {{ request()->is('admin/fertilizer/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-f"></i>
                         <p>
                             Fertilizer
                             <i class="right fas fa-angle-left"></i>
@@ -276,7 +276,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/agroexpert') ? 'active' : '' }} || {{ request()->is('admin/agroexpert/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-a"></i>
                         <p>
                             Agro Expert
                             <i class="right fas fa-angle-left"></i>
@@ -297,7 +297,7 @@
                                 class="nav-link {{ request()->is('admin/agroexpert') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
-                                     Experts
+                                    Experts
                                 </p>
                             </a>
                         </li>
@@ -306,7 +306,7 @@
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }} || {{ request()->is('admin/notice/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-check"></i>
                         <p>
                             Notices
                             <i class="right fas fa-angle-left"></i>
