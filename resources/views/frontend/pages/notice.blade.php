@@ -20,7 +20,7 @@
 </h3>
 <p>
 
-    {{$notice->description}}
+    {!! $notice->description !!}
 </p>
                       
 

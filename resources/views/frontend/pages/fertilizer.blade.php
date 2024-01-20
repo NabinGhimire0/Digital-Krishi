@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="wrapper">
-            {{ $fertilizer->description }}
+            {!! $fertilizer->description !!}
         </div>
 
     </div>

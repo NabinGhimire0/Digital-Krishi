@@ -8,10 +8,9 @@
         <div class="footer-section">
             <h2>Quick Links</h2>
             <ul class="footer-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/our-expert">Experts</a></li>
+                <li><a href="/contact-us">Contact</a></li>
             </ul>
         </div>
 

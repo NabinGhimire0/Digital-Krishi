@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{$notice->title}}</td>
 
-                        <td>{{$notice->description}}</td>
+                        <td>{!! $notice->description !!}</td>
                         <td>
                             <a href="notice/{{$notice->id}}">
                                 <button>view  </button>

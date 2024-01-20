@@ -13,7 +13,18 @@
 
     {{ $slot }}
     @include('frontend.layouts.inc.footer')
-    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- Your webpage content -->
+    <script>
+        document.getElementById('supportButton').addEventListener('click', function() {
+            var pdfUrl = '{{ asset('assets/support.pdf') }}';
+            window.location.href = pdfUrl;
+        });
+        document.getElementById('mbsupportButton').addEventListener('click', function() {
+            var pdfUrl = '{{ asset('assets/support.pdf') }}';
+            window.location.href = pdfUrl;
+        });
+    </script>
 </body>
 
 </html>
