@@ -49,8 +49,8 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
 Route::get('/', function () {
     $seeds = Seed::all();
     $pesticides = Pesticide::all();
-    $fertilizers =Fertilizer::all();
-    return view('frontend.pages.home', compact('seeds', 'pesticides','fertilizers'));
+    $fertilizers = Fertilizer::all();
+    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers'));
 });
 Route::get('/diseases', function () {
     return view('frontend.pages.disease');
@@ -88,12 +88,16 @@ Route::get("/fertilizers/all", function () {
     return view('frontend.pages.allFertilizers', compact('fertilizers'));
 });
 
+Route::get("/about-us", function () {
+    return view('frontend.pages.aboutUs');
+});
+
 Route::get("/fertilizer/{id}", function ($id) {
     $fertilizer = Fertilizer::where('id', $id)->first();
     return view('frontend.pages.fertilizer', compact('fertilizer'));
 });
 Route::get("/our-expert", function () {
-    return view('frontend.pages.aboutUs');
+    return view('frontend.pages.ourExpert');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
