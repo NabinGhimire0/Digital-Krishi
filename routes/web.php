@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\ProfileController;
+use App\Models\AgroExpert;
 use App\Models\Cure;
 use App\Models\Disease;
 use App\Models\Fertilizer;
@@ -108,7 +109,8 @@ Route::get("/fertilizer/{id}", function ($id) {
     return view('frontend.pages.fertilizer', compact('fertilizer'));
 });
 Route::get("/our-expert", function () {
-    return view('frontend.pages.ourExpert');
+    $experts = AgroExpert::all();
+    return view('frontend.pages.ourExpert',compact('experts'));
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
