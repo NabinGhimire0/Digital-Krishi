@@ -34,7 +34,6 @@
                     @foreach ($notices as $notice)
 
                     <tr>
-
                         <td>{{$notice->title}}</td>
 
                         <td>{{$notice->description}}</td>

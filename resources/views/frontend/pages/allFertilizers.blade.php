@@ -22,7 +22,7 @@
                         <a href="fertilizer/{{ $category->id }}">
                             <div>
                                 <div style="display: flex;align-items: center;justify-content: center">
-                                    <img src="{{ 'storage/' . $category->image }}" alt="">
+                                    <img src="{{ 'storage/'.$category->image }}" alt="">
                                 </div>
                                 <center>
                     

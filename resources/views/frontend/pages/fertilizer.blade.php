@@ -14,7 +14,6 @@
             <div class="seed__detail">
             <div class="seed__detail-card">
                 <center>
-
                     <h1>{{ $fertilizer->name }}</h1>
                     <p>{{ $fertilizer->shortdesc }}</p>
                 </center>

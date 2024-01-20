@@ -18,7 +18,7 @@
                         <a href="/seed">Seeds</a>
                     </li>
                     <li>
-                        <a href="/seed">Diseases</a>
+                        <a href="/diseases">Diseases</a>
                     </li>
                     <li>
                         <a href="/about-us">About</a>

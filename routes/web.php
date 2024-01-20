@@ -10,10 +10,13 @@ use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Cure;
+use App\Models\Disease;
 use App\Models\Fertilizer;
 use App\Models\Notice;
 use App\Models\Pesticide;
 use App\Models\Seed;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,15 +52,20 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
 Route::get('/', function () {
     $seeds = Seed::all();
     $pesticides = Pesticide::all();
-    $fertilizers =Fertilizer::all();
-    return view('frontend.pages.home', compact('seeds', 'pesticides','fertilizers'));
+    $fertilizers = Fertilizer::all();
+    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers'));
 });
 Route::get('/diseases', function () {
-    return view('frontend.pages.disease');
+    $diseases = Disease::all();
+    return view('frontend.pages.disease', compact('diseases'));
+});
+Route::get('/diseases/{id}', function ($id) {
+    $diseases = Disease::find($id);
+    $cure = Cure::where('disease_id',$id)->first();
+    return view('frontend.pages.diseaseDetail', compact('diseases','cure'));
 });
 Route::get('/notice', function () {
     $notices = Notice::all();
-    // var_dump($notice);
     return view('frontend.pages.notices', compact('notices'));
 });
 
@@ -86,7 +94,6 @@ Route::get("/pesticides/all", function () {
 });
 Route::get("/fertilizers/all", function () {
     $fertilizers = Fertilizer::all();
-    // var_dump($fertilizers);
     return view('frontend.pages.allFertilizers', compact('fertilizers'));
 });
 
