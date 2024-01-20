@@ -8,29 +8,28 @@
         @include('frontend/layouts/inc/nav')
     </div>
     <div class="imgarea" >
-        <img src=" {{ asset('storage/'.$seed->image) }}" alt="">
+        <img src=" {{ asset('storage/'.$fertilizer->image) }}" alt="">
     </div>
     <div style="min-height:25vh;">
             <div class="seed__detail">
             <div class="seed__detail-card">
                 <center>
 
-                    <h1>{{ $seed->name }}</h1>
-                    <p>{{ $seed->shortdesc }}</p>
+                    <h1>{{ $fertilizer->name }}</h1>
+                    <p>{{ $fertilizer->shortdesc }}</p>
                 </center>
             </div>
             <div class="seed_detail-info">
-                <p><span style="color:green;margin-inline-end: 2.85rem">Climate </span>: {{ $seed->climate }}<br>
-                    <span style="color:green;margin-inline-end: 2.7rem"> Altitude </span>: {{ $seed->altitude }}<br>
+                <p>
                     <span style="color:green;margin-inline-end: 1rem">
                         market price
                     </span>
-                    : {{ $seed->market_price }}<br>
+                    : {{ $fertilizer->price }}<br>
                 </p>
             </div>
         </div>
         <div class="wrapper">
-            {!! $seed->description  !!}
+            {{ $fertilizer->description }}
         </div>
 
     </div>

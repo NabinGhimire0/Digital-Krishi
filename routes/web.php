@@ -9,10 +9,6 @@ use App\Http\Controllers\Admin\PesticideController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
-use App\Http\Controllers\ProfileController;
-use App\Models\Notice;
-use App\Models\Pesticide;
-use App\Models\Province;
 use App\Models\Seed;
 use Illuminate\Support\Facades\Route;
 
@@ -49,14 +45,26 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
 Route::get('/', function () {
     $seeds = Seed::all();
     $pesticides = Pesticide::all();
-    return view('frontend.pages.home', compact('seeds', 'pesticides'));
+    $fertilizers = Fertilizer::all();
+    return view('frontend.pages.home', compact('seeds', 'pesticides','fertilizers'));
 });
 Route::get('/diseases', function () {
     return view('frontend.pages.disease');
 });
 Route::get('/notice', function () {
-    $notice = Notice::all();
-    return view('frontend.pages.notices');
+    $notices = Notice::all();
+    // var_dump($notice);
+    return view('frontend.pages.notices', compact('notices'));
+});
+
+Route::get('/notice/{id}', function ($id) {
+    $notice = Notice::where('id', $id)->first();
+    // var_dump($notice);
+    return view('frontend.pages.notice', compact('notice'));
+});
+Route::get("/seed", function () {
+    $seeds = Seed::all();
+    return view('frontend.pages.allSeeds', compact('seeds'));
 });
 
 Route::get("/seed/{id}", function ($id) {
@@ -67,8 +75,21 @@ Route::get("/pesticides-/{id}", function ($id) {
     $pesticides = Pesticide::where('id', $id)->first();
     return view('frontend.pages.pesticides', compact('pesticides'));
 });
+Route::get("/pesticides/all", function () {
+    $pesticides = Pesticide::all();
+    // var_dump($pesticides);
+    return view('frontend.pages.allPesticides', compact('pesticides'));
+});
+Route::get("/fertilizers/all", function () {
+    $fertilizers = Fertilizer::all();
+    // var_dump($fertilizers);
+    return view('frontend.pages.allFertilizers', compact('fertilizers'));
+});
 
-
+Route::get("/fertilizer/{id}", function ($id) {
+    $fertilizer = Fertilizer::where('id', $id)->first();
+    return view('frontend.pages.fertilizer', compact('fertilizer'));
+});
 Route::get("/about-us", function () {
     return view('frontend.pages.aboutUs');
 });
