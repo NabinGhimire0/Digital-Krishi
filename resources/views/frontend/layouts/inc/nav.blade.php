@@ -25,9 +25,9 @@
 
                 <a href="/">Home</a>
 
-                <a href="#services">Servicese</a>
+                <a href="#services">Services</a>
 
-                <a href="/seeds">Seeds</a>
+                <a href="/seed">Seeds</a>
 
                 <a href="#">Products</a>
 

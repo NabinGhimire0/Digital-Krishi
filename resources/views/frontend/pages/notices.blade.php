@@ -12,10 +12,10 @@
         <div style="text-align: center;margin-block-start: 2rem">
             <h1>Notice</h1>
         </div>
-        <div class="notices" style="margin-block: 2rem">
+        <div class="notices" style="margin-block: 2rem;">
             <table>
                 <thead>
-                    <tr>
+                    <tr style="color:black">
                         <th class="w-10-6">
                             <p class="font-semibold">Notice Name</p>
                         </th>

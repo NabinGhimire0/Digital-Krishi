@@ -11,7 +11,7 @@
         <img src=" {{ asset('storage/'.$seed->image) }}" alt="">
     </div>
     <div style="min-height:25vh;">
-        <div class="seed__detail">
+            <div class="seed__detail">
             <div class="seed__detail-card">
                 <center>
 
