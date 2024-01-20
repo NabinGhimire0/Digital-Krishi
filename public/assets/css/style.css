@@ -473,7 +473,7 @@ th, td {
 
 }
 
-.wrapper .heading a button {
+.wrapper .heading button {
     background-color: var(--button-color-secondary);
     outline: none;
     border: thick;

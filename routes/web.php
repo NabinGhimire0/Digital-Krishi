@@ -86,7 +86,16 @@ Route::get("/pesticides/all", function () {
     // var_dump($pesticides);
     return view('frontend.pages.allPesticides', compact('pesticides'));
 });
+Route::get("/fertilizers/all", function () {
+    $fertilizers = Fertilizer::all();
+    // var_dump($fertilizers);
+    return view('frontend.pages.allFertilizers', compact('fertilizers'));
+});
 
+Route::get("/fertilizer/{id}", function ($id) {
+    $fertilizer = Fertilizer::where('id', $id)->first();
+    return view('frontend.pages.fertilizer', compact('fertilizer'));
+});
 Route::get("/about-us", function () {
     return view('frontend.pages.aboutUs');
 });
