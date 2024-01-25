@@ -115,6 +115,12 @@ Route::get("/our-expert", function () {
 Route::get("/contact-us", function () {
     return view('frontend.pages.contactUs');
 });
+Route::get('/dashboard', function () {
+    return view('frontend.pages.dashboard.dashboard');
+});
+Route::get("/community", function () {
+    return view('frontend.pages.community');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

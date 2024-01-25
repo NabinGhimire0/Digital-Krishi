@@ -50,8 +50,8 @@
 
                 <div style="display:grid">
                     <center>
-                        <a href="{{ route('login') }}" style="text-decoration: none">
-                            <button style="width:80%;display:flex;justify-content: center ">login</button>
+                        <a  href="/login">
+                            <button>login</button>
                         </a>
                     </center>
                 </div>
