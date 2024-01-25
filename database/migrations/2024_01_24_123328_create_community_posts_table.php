@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cures', function (Blueprint $table) {
+        Schema::create('community_posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('disease_id');
-            $table->string('medicine');
-            $table->longText('procedure');
+            $table->string('title');
+            $table->string('content'); //store video or image in json format
+            $table->tinyInteger('status')->default(0);
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cures');
+        Schema::dropIfExists('community_posts');
     }
 };

@@ -7,9 +7,12 @@ use App\Http\Controllers\Admin\DiseaseController;
 use App\Http\Controllers\Admin\FertilizerController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\PesticideController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
+use App\Http\Controllers\Frontend\CommunityPostController;
+use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\ProfileController;
 use App\Models\AgroExpert;
 use App\Models\Cure;
@@ -48,6 +51,8 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('/pesticide', PesticideController::class);
         Route::resource('/fertilizer', FertilizerController::class);
         Route::resource('/agroexpert', AgroExpertController::class);
+        Route::resource('/product', ProductController::class);
+        Route::resource('marketplace', MarketPlaceController::class);
     });
 });
 
@@ -57,7 +62,7 @@ Route::get('/', function () {
     $seeds = Seed::all();
     $pesticides = Pesticide::all();
     $fertilizers = Fertilizer::all();
-    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers','notices'));
+    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers', 'notices'));
 });
 Route::get('/diseases', function () {
     $diseases = Disease::all();
@@ -110,11 +115,12 @@ Route::get("/fertilizer/{id}", function ($id) {
 });
 Route::get("/our-expert", function () {
     $experts = AgroExpert::all();
-    return view('frontend.pages.ourExpert',compact('experts'));
+    return view('frontend.pages.ourExpert', compact('experts'));
 });
 Route::get("/contact-us", function () {
     return view('frontend.pages.contactUs');
 });
+Route::resource('posts', CommunityPostController::class);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

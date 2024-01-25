@@ -15,7 +15,10 @@
                 <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                {{-- if logged in  --}}
+                @auth
+                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                @endauth
             </div>
         </div>
 
@@ -156,35 +159,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="#"
-                        class="nav-link {{ request()->is('admin/cure') ? 'active' : '' }} || {{ request()->is('admin/cure/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-c"></i>
-                        <p>
-                            Cure
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/cure/create"
-                                class="nav-link {{ request()->is('admin/cure/create') ? 'active' : '' }}">
-                                <i class="fa-solid fa-plus"></i>
-                                <p>
-                                    Create
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/cure" class="nav-link {{ request()->is('admin/cure') ? 'active' : '' }}">
-                                <i class="fa-solid fa-table"></i>
-                                <p>
-                                    Cures
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#"
                         class="nav-link {{ request()->is('admin/seeds') ? 'active' : '' }} || {{ request()->is('admin/seeds/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-s"></i>
                         <p>
@@ -298,6 +272,35 @@
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Experts
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link {{ request()->is('admin/product') ? 'active' : '' }} || {{ request()->is('admin/product/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-c"></i>
+                        <p>
+                            Product
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/product/create"
+                                class="nav-link {{ request()->is('admin/product/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/product" class="nav-link {{ request()->is('admin/product') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Product List
                                 </p>
                             </a>
                         </li>

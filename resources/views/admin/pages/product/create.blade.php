@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Cure/create') }}
+            {{ __('product/create') }}
         </h2>
     </x-slot>
     <section class="content">
@@ -17,34 +17,20 @@
                                     <h3 class="card-title">Create</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/admin/cure">Back</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/product">Back</a>
                                 </div>
                             </div>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/admin/cure" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/product" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label>Disease</label>
-                                    <select class="form-control select2" name="disease_id" style="width: 100%;">
-                                        <option selected="selected">Select Disease</option>
-                                        @foreach ($disease as $disease)
-                                            <option value="{{ $disease->id }}">{{ $disease->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Medicine</label>
-                                    <input type="text" class="form-control" name="medicine" {{ old('medicine') }}
-                                        id="medicine" placeholder="Enter Medicine">
-                                    <x-input-error :messages="$errors->get('medicine')" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="">procedure:</label>
-                                    <textarea name="procedure" id="procedure" class="form-control" cols="30" rows="10"></textarea>
-                                    <x-input-error :messages="$errors->get('procedure')" />
+                                    <label for="">Name:</label>
+                                    <input type="text" class="form-control" name="name" {{ old('name') }}
+                                        id="name" placeholder="Enter Product Name">
+                                    <x-input-error :messages="$errors->get('name')" />
                                 </div>
                             </div>
                             <!-- /.card-body -->
