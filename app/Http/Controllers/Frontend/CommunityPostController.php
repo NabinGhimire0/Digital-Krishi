@@ -16,7 +16,7 @@ class CommunityPostController extends Controller
         $perPage = 10;
         $page = request('page', 1);
         $posts = CommunityPost::latest()->paginate($perPage, ['*'], 'page', $page);
-        return view('frontend.userdashboard.posts.index', compact('posts'));
+        return view('frontend.pages.community', compact('posts'));
     }
 
     /**

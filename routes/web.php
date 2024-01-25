@@ -120,16 +120,12 @@ Route::get("/our-expert", function () {
 Route::get("/contact-us", function () {
     return view('frontend.pages.contactUs');
 });
-<<<<<<< HEAD
 Route::resource('posts', CommunityPostController::class);
-=======
-Route::get('/dashboard', function () {
-    return view('frontend.pages.dashboard.dashboard');
-});
+
 Route::get("/community", function () {
+    
     return view('frontend.pages.community');
 });
->>>>>>> b0b94608fa5e7c76090025a0457d1b9c43ff6924
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -26,8 +26,6 @@
                             </td>
                         </tr>
                     </table>
-
-
                 </div>
                 <div class="details">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore earum ducimus obcaecati est autem
