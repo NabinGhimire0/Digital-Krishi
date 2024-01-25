@@ -557,7 +557,31 @@ grid-column: 9/13;
  background-color:#6aa96c ;
  border-radius: 0.5rem; 
 }
+/* product page */
+.product-grid {
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
 
+
+.next-btn,
+.prev-btn {
+  cursor: pointer;
+}
+
+.right  {
+  grid-column: 1/8;
+  border: 1px solid dodgerblue;
+  /* height: 30vh; */
+  overflow: hidden;
+}
+.img-section  img {
+  width: 50%;
+  height: 60vh;
+
+  display: none; 
+}
 @media screen and (max-width:1080px) {
   .wrapper .grid_layout .nav__links ul li a {
     margin-inline: 0.56rem;

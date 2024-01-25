@@ -133,7 +133,9 @@ Route::get("/marketplace", function () {
 
     return view('frontend.pages.marketplace');
 });
-
+Route::get("/product", function () {
+   return view('frontend.pages.product'); 
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
