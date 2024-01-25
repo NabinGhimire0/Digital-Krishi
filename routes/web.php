@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
+use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\CommunityPostController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\ProfileController;
@@ -55,6 +56,7 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('marketplace', MarketPlaceController::class);
     });
 });
+Route::post('/comment',[CommentController::class,'store']);
 
 //user routes
 Route::get('/', function () {
@@ -121,15 +123,8 @@ Route::get("/contact-us", function () {
     return view('frontend.pages.contactUs');
 });
 Route::resource('posts', CommunityPostController::class);
-<<<<<<< HEAD
-
-=======
-Route::get('/dashboard', function () {
-    return view('frontend.pages.dashboard.dashboard');
-});
->>>>>>> e12759c2e5b3d5811ccfa5b07d4f8dca19fcd6aa
 Route::get("/community", function () {
-    
+
     return view('frontend.pages.community');
 });
 Route::middleware('auth')->group(function () {
