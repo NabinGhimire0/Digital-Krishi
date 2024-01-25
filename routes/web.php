@@ -121,7 +121,13 @@ Route::get("/contact-us", function () {
     return view('frontend.pages.contactUs');
 });
 Route::resource('posts', CommunityPostController::class);
+<<<<<<< HEAD
 
+=======
+Route::get('/dashboard', function () {
+    return view('frontend.pages.dashboard.dashboard');
+});
+>>>>>>> e12759c2e5b3d5811ccfa5b07d4f8dca19fcd6aa
 Route::get("/community", function () {
     
     return view('frontend.pages.community');
