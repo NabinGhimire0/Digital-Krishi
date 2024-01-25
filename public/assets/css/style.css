@@ -352,25 +352,25 @@ footer {
   margin-block: 2rem;
 }
 
-/* table {
+.seed_detail-info table {
   width: 100%;
   border-collapse: collapse;
 }
 
 
 
-th {
+.seed_detail-info table th {
   background: #333;
   color: white;
   font-weight: bold;
 }
 
-td,
+.seed_detail-info table td,
 th {
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
-} */
+}
 
 .imgarea {
   display: flex;
@@ -539,18 +539,18 @@ grid-column: 9/13;
     gap: 1rem;
   }
 
-  /* table {
+  .seed_detail-info  table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
   }
 
-  th,
+  .seed_detail-info table th,
   td {
   
     text-align: left;
     padding: 8px;
-  } */
+  }
 
   .font-semibold {
     font-weight: bold;
