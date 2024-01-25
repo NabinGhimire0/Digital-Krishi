@@ -506,11 +506,71 @@ grid-column: 9/13;
   height:31vh;
 }
 
+/* community post */
+.marktetplace{
+  padding: 2rem;
+  width: 80%;
+  margin-inline: auto;
+
+}
+.marktetplace .marketplace__grid{
+  display: grid;
+  gap: 1rem;
+  margin: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 1fr) minmax(10rem, 1fr) minmax(10rem, 1fr);
 
 
+}
 
+.marktetplace .marketplace__grid >*{
+  min-width: 10rem;
+  background: #d4d8d1;
+  /* margin: 1rem; */
+  border-radius: 2vw;
+}
 
-@media screen and (max-width:1000px) {
+.truncate-text {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  color: blue; /* Optional: Add styling for clickable text */
+}
+
+.full-text {
+  white-space: normal;
+}
+.search form input{
+  border: 1px solid gray;
+  outline: none;
+  padding: 0.4rem 3rem ;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+.search form button{
+  outline: none;
+  border: thick;
+  color: white;
+ padding: 0.2rem 2rem;
+ background-color:#6aa96c ;
+ border-radius: 0.5rem; 
+}
+
+@media screen and (max-width:1080px) {
+  .wrapper .grid_layout .nav__links ul li a {
+    margin-inline: 0.56rem;
+  
+  }
+  .search form input{
+    padding: 0.4rem 2rem ;
+    border-radius: 1rem;
+  }
+  .marktetplace .marketplace__grid{
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+  }
   .seed-table {
     border-collapse: collapse;
     width: 100%;
@@ -593,7 +653,6 @@ grid-column: 9/13;
   .left .post_image{
     /* background: var(--clr-bg-this) ; */
     display: block;
-
   }
 
 
@@ -818,4 +877,5 @@ grid-column: 9/13;
 .seed-table th {
     background-color: #f2f2f2;
 }
+
 }
