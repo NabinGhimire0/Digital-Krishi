@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
+use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\CommunityPostController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\ProfileController;
@@ -55,6 +56,7 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('marketplace', MarketPlaceController::class);
     });
 });
+Route::post('/comment',[CommentController::class,'store']);
 
 //user routes
 Route::get('/', function () {
@@ -126,11 +128,10 @@ Route::get('/dashboard', function () {
     return view('frontend.pages.dashboard.dashboard');
 });
 Route::get("/community", function () {
-    
+
     return view('frontend.pages.community');
 });
 Route::get("/marketplace", function () {
-
     return view('frontend.pages.marketplace');
 });
 Route::get("/product", function () {

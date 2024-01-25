@@ -18,6 +18,8 @@
     @include('frontend.layouts.inc.footer')
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <!-- Your webpage content -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    @yield('scripts')
     <script>
         document.getElementById('supportButton').addEventListener('click', function() {
             var pdfUrl = '{{ asset('assets/support.pdf') }}';
