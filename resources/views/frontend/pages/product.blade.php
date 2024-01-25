@@ -19,18 +19,50 @@
                     <img src="{{asset('assets/images/Capture.PNG')}}" alt="">
                 </center>
             </div>
-            <div> 
+            <div>
                 <center>
 
                     <button class="prev-btn">Previous</button>
-                    <button class="next-btn">Next</button></div>
-                </center>
+                    <button class="next-btn">Next</button>
+            </div>
+            </center>
         </div>
-        <div></div>
-      </div>
+        <div class="desc">
+            <div>
+                
+                <h2>Corn</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit tempora praesentium
+                    eligendi, placeat exercitationem corporis non, libero cum perferendis quidem quam, eos maiores delectus
+                    fuga? Id voluptatum nesciunt eligendi?</p>
+                </P>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit tempora praesentium
+                    eligendi, placeat exercitationem corporis non, libero cum perferendis quidem quam, eos maiores delectus
+                    fuga? Id voluptatum nesciunt eligendi?</p>
+                </P>
+                </div>
+                    <div  class="quantitiy">
+                        <form action="">
 
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <script>
+                            <center>
+                                <button id="add" type="button">+</button>
+                                <input type="number" id="qnty" value="0">
+                                <button id="sub" type="button">-</button>
+                            </center>
+                        </div>
+                        <div class="buttons">
+                            <center>
+                                
+                                <button style="background-color:rgb(226, 195, 137)">Place Order</button>
+                                <button style="background-color:rgb(120, 200, 120)">Call Seller</button>
+                            </center>
+                        </form>
+                    </div>
+        </div>
+       
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
         $(document).ready(function () {
           let currentImageIndex = 0;
           const $images = $('.img-section img');
@@ -53,5 +85,23 @@
             $images.hide().eq(currentImageIndex).show();
           }
         });
-      </script>
+
+
+        
+        const add =document.getElementById('add');
+        const sub =document.getElementById('sub');
+        const qnty =document.getElementById('qnty');
+        add.addEventListener('click',()=>{
+            qnty.value++
+        })
+        sub.addEventListener('click',()=>{
+            if(qnty.value>0){
+                
+                qnty.value--
+            }else{
+                qnty.value=0
+            }
+            
+        })
+    </script>
 </x-guest-layout>
