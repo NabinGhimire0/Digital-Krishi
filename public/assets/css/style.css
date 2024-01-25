@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/lohitdevanagari.css); 
+
 
 :root {
   --fs-base: 16px;
@@ -84,11 +84,10 @@ h6 {
   display: grid;
   /* position: relative; */
   grid-template-columns: repeat(12, 1fr);
-  /* z-index: inherit; */
-  /* position: absolute; */
+
   padding: 1rem;
   opacity: 1;
-  /* z-index: 99; */
+
   
   
 }
@@ -353,7 +352,7 @@ footer {
   margin-block: 2rem;
 }
 
-table {
+/* table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -371,7 +370,7 @@ th {
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
-}
+} */
 
 .imgarea {
   display: flex;
@@ -433,6 +432,84 @@ th {
 }
 
 
+/* 
+community post
+
+*/
+.community{
+  --clr-bg-this:#D9D9D9;
+  height: 80%;
+margin-top: 1rem;
+
+}
+.community .left{
+  padding: 2rem;
+  /* background-color: #fdfdfd; */
+}
+
+.left .post_image{
+  /* background: var(--clr-bg-this) ; */
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  gap: 1rem;
+}
+.left .post_image .post_left{
+  grid-column: 1/9;
+}
+.left .post_image>div{
+  background-color: var(--clr-bg-this);
+}
+.left .post_image .community__right{
+padding: 0.5rem;
+overflow-y: auto;
+
+}
+.left .post_image .community__right p{
+  font-size: 18px;
+  font-weight: 600;
+}
+.left .post_image .community__right .comment{
+  padding: 2rem;
+}
+.comment__buttons{
+  float: right;
+}
+.font-red{
+  color: red;
+}
+.all_commentss{
+ display: flex;
+ width: 100%;
+ gap: 0.8rem;
+ margin-block: 1rem;
+}
+.left .img-profile{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.left .details{
+width: 95%;
+margin-block: 0.8rem;
+margin-inline-start: 0.5rem;
+}
+
+.community .community__right {
+background: var(--clr-bg-this);
+padding: 1rem;
+height: inherit;
+grid-column: 9/13;
+}
+
+.scroll{
+  overflow-y: auto;
+  height:31vh;
+}
+
+
+
+
+
 @media screen and (max-width:1000px) {
   .seed-table {
     border-collapse: collapse;
@@ -442,6 +519,7 @@ th {
 .seed-table td, .seed-table th {
     /* border: 1px solid #dddddd; */
     text-align: left;
+    background-color: var(--clr-bg-this);
     padding: 2px;
 }
 
@@ -461,7 +539,7 @@ th {
     gap: 1rem;
   }
 
-  table {
+  /* table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -472,7 +550,7 @@ th {
   
     text-align: left;
     padding: 8px;
-  }
+  } */
 
   .font-semibold {
     font-weight: bold;
@@ -509,6 +587,18 @@ th {
   .wrapper .grid_layout .nav__links {
     grid-template-columns: 3/10;
   }
+
+
+ 
+  .left .post_image{
+    /* background: var(--clr-bg-this) ; */
+    display: block;
+
+  }
+
+
+
+
 }
 
 .wrapper .heading {
