@@ -19,8 +19,22 @@
                     <div class="seed__grid">
                         @foreach ($pesticides as $category)
                       
-                            <x-seed-card categoryName="{{ $category->name }}" src="{{ asset('storage/' . $category->image) }}"
-                                url="/pesticides-/{{ $category->id }}" />
+                            {{-- <x-seed-card categoryName="{{ $category->name }}" src="{{ asset('storage/' . $category->image) }}"
+                                url="/pesticides-/{{ $category->id }}" /> --}}
+                                <a href="seed/{{ $category->id }}" >
+                                    <div>
+                                        <div style="display: flex;align-items: center;justify-content: center;overflow:hidden">
+                                            <center>
+    
+                                                <img src="{{ asset('storage/' . $category->image) }}" alt="" >
+                                            </center>
+                                        </div>
+                                        <center>
+                
+                                            <p>{{ $category->name }}</p>
+                                        </center>
+                                    </div>
+                                </a>
                     @endforeach
                         
                     </div>

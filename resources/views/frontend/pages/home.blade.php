@@ -44,7 +44,9 @@
                     </div>
                     <center>
 
-                        <p>{{ $seed->name }}</p>
+                        <p style="white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">{{ $seed->name }}</p>
                     </center>
                 </div>
             </a>
@@ -93,7 +95,9 @@
                     </div>
                     <center>
 
-                        <p>{{ $category->name }}</p>
+                        <p style="white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">{{ $category->name }}</p>
                     </center>
                 </div>
             </a>

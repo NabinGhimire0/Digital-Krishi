@@ -14,8 +14,8 @@
             <div class="img-section">
                 <center>
 
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="" >
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="" >
                 </center>
             </div>
             <div>
