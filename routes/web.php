@@ -54,10 +54,11 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('/fertilizer', FertilizerController::class);
         Route::resource('/agroexpert', AgroExpertController::class);
         Route::resource('/product', ProductController::class);
-        Route::resource('marketplace', MarketPlaceController::class);
     });
 });
 Route::post('/comment', [CommentController::class, 'store']);
+Route::resource('marketplace', MarketPlaceController::class);
+
 
 //user routes
 Route::get('/', function () {

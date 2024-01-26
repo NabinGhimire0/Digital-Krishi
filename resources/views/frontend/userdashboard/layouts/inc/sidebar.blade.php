@@ -41,29 +41,29 @@
                 data-accordion="false">
                 <li class="nav-item">
                     <a href="#"
-                        class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }} || {{ request()->is('admin/notice/create') ? 'active' : '' }}">
+                        class="nav-link {{ request()->is('marketplace') ? 'active' : '' }} || {{ request()->is('marketplace/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-check"></i>
                         <p>
-                            Notices
+                            Market Place
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/notice/create"
-                                class="nav-link {{ request()->is('admin/notice/create') ? 'active' : '' }}">
+                            <a href="/marketplace/create"
+                                class="nav-link {{ request()->is('marketplace/create') ? 'active' : '' }}">
                                 <i class="fa-solid fa-plus"></i>
                                 <p>
-                                    Create
+                                    Add to market place
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/notice"
-                                class="nav-link {{ request()->is('admin/notice') ? 'active' : '' }}">
+                            <a href="/marketplace"
+                                class="nav-link {{ request()->is('marketplace') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
-                                    Notice List
+                                    View Products
                                 </p>
                             </a>
                         </li>
