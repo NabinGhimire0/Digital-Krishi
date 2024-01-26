@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\CommunityPostController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\GoogleTranslateController;
 use App\Http\Controllers\ProfileController;
 use App\Models\AgroExpert;
 use App\Models\CommunityPost;
@@ -109,5 +110,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+//
+Route::get('google/translate/change',[GoogleTranslateController::class,'change'])->name('google.translate.change');
 
 require __DIR__ . '/auth.php';

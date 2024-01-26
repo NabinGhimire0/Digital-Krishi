@@ -31,6 +31,14 @@
                     <li>
                         <a id="supportButton">Support</a>
                     </li>
+                    <li>
+                        <select style="background: transparent;" class="changeLanguage">
+                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English
+                            </option>
+                            <option value="ne" {{ session()->get('locale') == 'ne' ? 'selected' : '' }}>नेपाली
+                            </option>
+                        </select>
+                    </li>
                 </ul>
             </div>
             <div class="nav__links-mobl hidden " id="menu-responsive">
@@ -50,7 +58,7 @@
 
                 <div style="display:grid">
                     <center>
-                        <a  href="/login">
+                        <a href="/login">
                             <button>login</button>
                         </a>
                     </center>

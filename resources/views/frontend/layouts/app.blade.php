@@ -29,6 +29,11 @@
             var pdfUrl = '{{ asset('assets/support.pdf') }}';
             window.location.href = pdfUrl;
         });
+        
+        $('.changeLanguage').change(function(event) {
+            var url = "{{ route('google.translate.change') }}";
+            window.location.href = url + "?lang=" + $(this).val()
+        })
     </script>
 </body>
 
