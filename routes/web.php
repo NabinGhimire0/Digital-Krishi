@@ -112,4 +112,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/weather', [WeatherController::class, 'weather']);
+Route::get('/weather/{city}', [WeatherController::class, 'weatherCity']);
+
+Route::get('/google/translate/change', [GoogleTranslateController::class, 'change'])->name('google.translate.change');
+
 require __DIR__ . '/auth.php';
