@@ -123,12 +123,7 @@ Route::get("/contact-us", function () {
     return view('frontend.pages.contactUs');
 });
 Route::resource('posts', CommunityPostController::class);
-
-Route::get('/dashboard', function () {
-    return view('frontend.pages.dashboard.dashboard');
-});
 Route::get("/community", function () {
-
     return view('frontend.pages.community');
 });
 Route::get("/marketplace", function () {
