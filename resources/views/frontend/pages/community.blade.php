@@ -128,7 +128,7 @@
                             },
                             success: function(data) {
                                 // Load and replace only the comment section
-                                window.location.reload();
+                                // window.location.reload();
                             },
                             error: function(data) {
                                 // Handle errors, e.g., show an error message

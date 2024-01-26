@@ -41,6 +41,36 @@
                 data-accordion="false">
                 <li class="nav-item">
                     <a href="#"
+                        class="nav-link {{ request()->is('posts') ? 'active' : '' }} || {{ request()->is('posts/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-check"></i>
+                        <p>
+                            Posts
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/posts/create"
+                                class="nav-link {{ request()->is('posts/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create Posts
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/posts"
+                                class="nav-link {{ request()->is('posts') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    View Posts
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>s
+                <li class="nav-item">
+                    <a href="#"
                         class="nav-link {{ request()->is('marketplace') ? 'active' : '' }} || {{ request()->is('marketplace/create') ? 'active' : '' }}">
                         <i class="fa-solid fa-check"></i>
                         <p>

@@ -81,7 +81,7 @@ class CommunityPostController extends Controller
     {
         $post = CommunityPost::find($id);
         if ($post->user_id == auth()->user()->id) {
-            return view('frontend.community.edit', compact('post'));
+            return view('frontend.userdashboard.posts.edit', compact('post'));
         } else {
             return redirect()->back()->with('error', 'Unauthorized access');
         }
@@ -94,12 +94,29 @@ class CommunityPostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'content' => 'required',
         ]);
         $post = CommunityPost::find($id);
         if ($post->user_id == auth()->user()->id) {
             $post->title = $request->title;
-            $post->content = $request->content;
+            $content = [];
+
+            if ($request->has('content')) {
+                $content = json_decode($request->content, true);
+            }
+
+            foreach ($request->file('media') as $mediaFile) {
+                $mediaType = $mediaFile->getClientOriginalExtension() == 'mp4' ? 'video' : 'image';
+                $mediaPath = $mediaFile->store('community', 'public');
+
+                $mediaData = [
+                    'type' => $mediaType,
+                    'path' => $mediaPath,
+                ];
+
+                $content[] = $mediaData;
+            }
+
+            $post->content = json_encode($content);
             $post->update();
             return redirect()->back()->with('success', 'Post updated successfully');
         } else {

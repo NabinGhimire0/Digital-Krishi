@@ -23,22 +23,40 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/posts" method="POST" enctype="multipart/form-data">
+                        <form action="/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="title" {{ old('title') }}
-                                        id="title" placeholder="Express your thought here..">
+                                        id="title" value="{{ $post->title }}"
+                                        placeholder="Express your thought here..">
                                     <x-input-error :messages="$errors->get('title')" />
                                 </div>
                                 <div class="form-group">
                                     <label for="">upload video or photo</label>
                                     <input type="file" class="form-control" name="media[]" id="media"
                                         id="media" accept="image/*,video/*" onchange="displaySelectedImages()"
-                                        multiple required>
+                                        multiple>
                                     <x-input-error :messages="$errors->get('media')" />
                                 </div>
                                 <div class="row" id="imageRow">
+                                    @php
+                                        $images = json_decode($post->content, true);
+                                    @endphp
+                                    @foreach ($images as $item)
+                                        <div class="col-md-3">
+                                            @if ($item['type'] === 'image')
+                                                <img src="{{ asset('storage/' . $item['path']) }}" alt="Image" class="img-fluid">
+                                            @else
+                                                <video width="100%" controls class="img-fluid">
+                                                    <source src="{{ asset('storage/' . $item['path']) }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            @endif
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <!-- /.card-body -->

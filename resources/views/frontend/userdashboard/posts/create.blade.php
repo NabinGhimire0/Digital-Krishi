@@ -35,7 +35,7 @@
                                     <label for="">upload video or photo</label>
                                     <input type="file" class="form-control" name="media[]" id="media"
                                         id="media" accept="image/*,video/*" onchange="displaySelectedImages()"
-                                        multiple required>
+                                        multiple>
                                     <x-input-error :messages="$errors->get('media')" />
                                 </div>
                                 <div class="row" id="imageRow">

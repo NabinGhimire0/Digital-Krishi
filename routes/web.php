@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\CommunityPostController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\ProfileController;
 use App\Models\AgroExpert;
+use App\Models\CommunityPost;
 use App\Models\Cure;
 use App\Models\Disease;
 use App\Models\Fertilizer;
@@ -23,6 +24,7 @@ use App\Models\MarketPlace;
 use App\Models\Notice;
 use App\Models\Pesticide;
 use App\Models\Seed;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +61,10 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
 Route::post('/comment', [CommentController::class, 'store']);
 Route::resource('marketplace', MarketPlaceController::class);
 
+Route::get('/dashboard', function () {
+    $post = CommunityPost::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+    return view('frontend.userdashboard.dashboard', compact('post'));
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 //user routes
 Route::get('/', function () {
@@ -128,14 +134,16 @@ Route::resource('posts', CommunityPostController::class);
 Route::get("/community", function () {
     return view('frontend.pages.community');
 });
-Route::get('/market',function(){
-    $products = MarketPlace::where('status',0)->where('quantity','>',0)->get();
-    return view('frontend.pages.marketplace',compact('products'));
+Route::get('/market', function () {
+    $products = MarketPlace::where('status', 0)->where('quantity', '>', 0)->get();
+    return view('frontend.pages.marketplace', compact('products'));
 });
-Route::get('/products/{id}',function($id){
+Route::get('/products/{id}', function ($id) {
     $product = MarketPlace::find($id);
-    return view('frontend.pages.product',compact('product'));
+    return view('frontend.pages.product', compact('product'));
 });
+//
+Route::post('/place-order', [MarketPlaceController::class, 'placeOrder']);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

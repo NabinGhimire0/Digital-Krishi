@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\MarketPlace;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -119,5 +120,27 @@ class MarketPlaceController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    // place order
+    public function placeOrder(Request $request)
+    {
+        $request -> validate([
+            //
+        ]);
+        $data = new Order();
+        $data->user_id = $request->user_id;
+        $data->market_place_id = $request->market_place_id;
+        $data->quantity = $request->quantity;
+        $data->price = $request->price;
+        //generate unique tracking number
+        $tracking_number = mt_rand(100000000, 999999999);
+        $data->tracking_number = $tracking_number;
+        $data->payment_method = $request->payment_method;
+        $data->is_paid = 0;
+        $data->status = 0;
+        $data->save();
+        return redirect()->back()->with('success', 'Order placed successfully');
     }
 }
