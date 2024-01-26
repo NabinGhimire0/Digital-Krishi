@@ -13,10 +13,8 @@
             <div class="img-section">
                 <center>
 
-                    <img src="{{asset('assets/images/corn-seed.png')}}" alt="">
-                    <img src="{{asset('assets/images/Glypho.png')}}" alt="">
-                    <img src="{{asset('assets/images/eco-power.png')}}" alt="">
-                    <img src="{{asset('assets/images/Capture.PNG')}}" alt="">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="">
                 </center>
             </div>
             <div>
@@ -30,15 +28,18 @@
         <div class="desc">
             <div>
                 
-                <h2>Corn</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit tempora praesentium
-                    eligendi, placeat exercitationem corporis non, libero cum perferendis quidem quam, eos maiores delectus
-                    fuga? Id voluptatum nesciunt eligendi?</p>
-                </P>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit tempora praesentium
-                    eligendi, placeat exercitationem corporis non, libero cum perferendis quidem quam, eos maiores delectus
-                    fuga? Id voluptatum nesciunt eligendi?</p>
-                </P>
+                <h2>{{$product->product->name}}</h2>
+                <hr>
+                <h5>Price : <span>Rs. {{$product->price}}</h5>
+                <h5>Total Quantity : <span>{{$product->quantity}}</span></h5>
+                <h5>Owner: <span>{{$product->user->name}}</span></h5>
+                <h5>address: <span>{{$product->user->province->name}}, {{$product->user->city->name}}</span></h5>
+                <h5>Contact: <span>{{$product->contact}}</span></h5>
+                <hr>
+
+                <p>{{ $product->short_description }}</p>
+                
+                <p>{!! $product->description !!}</p>
                 </div>
                     <div  class="quantitiy">
                         <form action="">
@@ -51,7 +52,6 @@
                         </div>
                         <div class="buttons">
                             <center>
-                                
                                 <button style="background-color:rgb(226, 195, 137)">Place Order</button>
                                 <button style="background-color:rgb(120, 200, 120)">Call Seller</button>
                             </center>

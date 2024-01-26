@@ -19,6 +19,7 @@ use App\Models\AgroExpert;
 use App\Models\Cure;
 use App\Models\Disease;
 use App\Models\Fertilizer;
+use App\Models\MarketPlace;
 use App\Models\Notice;
 use App\Models\Pesticide;
 use App\Models\Seed;
@@ -56,7 +57,7 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('marketplace', MarketPlaceController::class);
     });
 });
-Route::post('/comment',[CommentController::class,'store']);
+Route::post('/comment', [CommentController::class, 'store']);
 
 //user routes
 Route::get('/', function () {
@@ -126,11 +127,13 @@ Route::resource('posts', CommunityPostController::class);
 Route::get("/community", function () {
     return view('frontend.pages.community');
 });
-Route::get("/marketplace", function () {
-    return view('frontend.pages.marketplace');
+Route::get('/market',function(){
+    $products = MarketPlace::where('status',0)->where('quantity','>',0)->get();
+    return view('frontend.pages.marketplace',compact('products'));
 });
-Route::get("/product", function () {
-   return view('frontend.pages.product'); 
+Route::get('/products/{id}',function($id){
+    $product = MarketPlace::find($id);
+    return view('frontend.pages.product',compact('product'));
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
