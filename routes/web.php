@@ -29,6 +29,7 @@ use App\Models\Seed;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WeatherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,5 +110,19 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//external API calls
+
+Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);
+Route::get('/weather', function () {
+    return view('frontend.pages.weather');
+});
+
+
+// routes/web.php
+
+
+
+
 
 require __DIR__ . '/auth.php';
