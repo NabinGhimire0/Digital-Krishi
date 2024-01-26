@@ -16,7 +16,7 @@
                                     <h3 class="card-title">My Products</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/admin/data/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/marketplace/create">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +43,8 @@
                                                 <td>{{ $data->quantity }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ '/admin/marketplace/' . $data->id . '/edit' }}">Edit</a>
-                                                    {{-- <form action="{{ '/admin/marketplace/' . $data->id }}"
+                                                        href="{{ 'marketplace/' . $data->id . '/edit' }}">Edit</a>
+                                                    {{-- <form action="{{ '/marketplace/' . $data->id }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')

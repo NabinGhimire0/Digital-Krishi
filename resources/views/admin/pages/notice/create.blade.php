@@ -17,7 +17,7 @@
                                     <h3 class="card-title">Create</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/admin/city">Back</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/notice">Back</a>
                                 </div>
                             </div>
                         </div>

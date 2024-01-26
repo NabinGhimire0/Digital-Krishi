@@ -38,8 +38,8 @@
                                                 <td>{{ $notice->status ? 'Active' : 'Inactive' }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'admin/notice/' . $notice->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'admin/notice/' . $notice->id }}" method="post">
+                                                        href="{{ '/admin/notice/' . $notice->id . '/edit' }}">Edit</a>
+                                                    <form action="{{ '/admin/notice/' . $notice->id }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"

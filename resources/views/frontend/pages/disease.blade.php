@@ -21,7 +21,7 @@
                             <a href="diseases/{{ $disease->id }}">
                                 <div>
                                     <div style="display: flex;align-items: center;justify-content: center">
-                                        <img src="{{ 'storage/' . $disease->image }}" alt="">
+                                        <img src="{{ 'storage/' . $disease->images }}" alt="">
                                     </div>
                                     <center>
 

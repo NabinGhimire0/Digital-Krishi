@@ -27,13 +27,13 @@
                                     <h3 class="card-title">Edit</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="/admin/subadmin">Back</a>
+                                    <a class="btn btn-block btn-primary" href="/marketplace">Back</a>
                                 </div>
                             </div>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/admin/marketplace/{{ $data->id }}" method="POST"
+                        <form action="/marketplace/{{ $data->id }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')

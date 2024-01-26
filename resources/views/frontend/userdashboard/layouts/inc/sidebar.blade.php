@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="/dashboard" class="brand-link">
         <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Digital Krishi</span>
@@ -40,35 +40,29 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    <a href="#"
-                        class="nav-link {{ request()->is('posts') ? 'active' : '' }} || {{ request()->is('posts/create') ? 'active' : '' }}">
-                        <i class="fa-solid fa-check"></i>
+                    <a href="/dashboard" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
+                        <i class="fa-solid fa-gauge"></i>
                         <p>
-                            Posts
-                            <i class="right fas fa-angle-left"></i>
+                            Dashboard
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/posts/create"
-                                class="nav-link {{ request()->is('posts/create') ? 'active' : '' }}">
-                                <i class="fa-solid fa-plus"></i>
-                                <p>
-                                    Create Posts
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/posts"
-                                class="nav-link {{ request()->is('posts') ? 'active' : '' }}">
-                                <i class="fa-solid fa-table"></i>
-                                <p>
-                                    View Posts
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>s
+                </li>
+                <li class="nav-item">
+                    <a href="/posts/create" class="nav-link {{ request()->is('posts/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-plus"></i>
+                        <p>
+                            Create Posts
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/orders" class="nav-link {{ request()->is('orders') ? 'active' : '' }}">
+                        <i class="fa-brands fa-first-order"></i>
+                        <p>
+                            Orders
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="#"
                         class="nav-link {{ request()->is('marketplace') ? 'active' : '' }} || {{ request()->is('marketplace/create') ? 'active' : '' }}">
@@ -89,8 +83,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/marketplace"
-                                class="nav-link {{ request()->is('marketplace') ? 'active' : '' }}">
+                            <a href="/marketplace" class="nav-link {{ request()->is('marketplace') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     View Products

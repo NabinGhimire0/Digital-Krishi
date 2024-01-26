@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Disease;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DiseaseController extends Controller
 {
@@ -33,10 +34,15 @@ class DiseaseController extends Controller
         $request->validate([
             'name' => 'required',
             'symptoms' => 'required',
+            'solution' => 'required',
         ]);
         $disease = new Disease();
         $disease->name = $request->name;
+        if($request->hasFile('images')){
+            $disease->images = $request->file('images')->store('disease', 'public');
+        }
         $disease->symptoms = $request->symptoms;
+        $disease->solution = $request->solution;
         $disease->save();
         return redirect('admin/disease')->with('success', 'Disease created successfully!');
     }
@@ -69,7 +75,15 @@ class DiseaseController extends Controller
         ]);
         $disease = Disease::find($id);
         $disease->name = $request->name;
+        $oldImage = $disease->images;
+        if($request->hasFile('images')){
+            $disease->images = $request->file('images')->store('disease', 'public');
+            if($oldImage){
+                Storage::delete($oldImage);
+            }
+        }
         $disease->symptoms = $request->symptoms;
+        $disease->solution = $request->solution;
         $disease->update();
         return redirect('admin/disease')->with('success', 'Disease updated successfully!');
     }

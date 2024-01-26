@@ -61,7 +61,7 @@ class MarketPlaceController extends Controller
         }
 
         $product->save();
-        return redirect()->back()->with('success', 'Product added successfully');
+        return redirect('/marketplace')->with('success', 'Product added successfully');
 
     }
 
@@ -110,7 +110,7 @@ class MarketPlaceController extends Controller
             $product->image = $imagePath;
         }
         $product->save();
-        return redirect()->back()->with('success', 'Product updated successfully');
+        return redirect('/marketplace')->with('success', 'Product updated successfully');
 
     }
 
@@ -131,6 +131,8 @@ class MarketPlaceController extends Controller
         ]);
         $data = new Order();
         $data->user_id = $request->user_id;
+        $data->product_id = $request->product_id;
+        $data->farmer_id = $request->farmer_id;
         $data->market_place_id = $request->market_place_id;
         $data->quantity = $request->quantity;
         $data->price = $request->price;

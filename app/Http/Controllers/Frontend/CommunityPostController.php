@@ -63,7 +63,7 @@ class CommunityPostController extends Controller
 
         $post->save();
 
-        return redirect()->back()->with('success', 'Post created successfully');
+        return redirect('/dashboard')->with('success', 'Post created successfully');
     }
 
     /**
@@ -83,7 +83,7 @@ class CommunityPostController extends Controller
         if ($post->user_id == auth()->user()->id) {
             return view('frontend.userdashboard.posts.edit', compact('post'));
         } else {
-            return redirect()->back()->with('error', 'Unauthorized access');
+            return redirect('/dashboard')->with('error', 'Unauthorized access');
         }
     }
 
@@ -120,7 +120,7 @@ class CommunityPostController extends Controller
             $post->update();
             return redirect()->back()->with('success', 'Post updated successfully');
         } else {
-            return redirect()->back()->with('error', 'Unauthorized access');
+            return redirect('/dashboard')->with('error', 'Unauthorized access');
         }
     }
 

@@ -46,6 +46,8 @@
                 <form method="POST" id="orderForm">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" id="">
+                    <input type="hidden" name="product_id" value="{{ $product->product_id }}" id="">
+                    <input type="hidden" name="farmer_id" value="{{ $product->user->id}}" id="">
                     <input type="hidden" name="market_place_id" value="{{ $product->id }}" id="">
                     <input type="hidden" name="price" value="{{ $product->price }}" id="">
                     <center>
@@ -115,6 +117,8 @@
                     e.preventDefault();
 
                     var userId = $('input[name="user_id"]').val();
+                    var farmer_id = $('input[name="farmer_id"]').val();
+                    var product_id = $('input[name="product_id"]').val();
                     var marketPlaceId = $('input[name="market_place_id"]').val();
                     var qnty = $('input[name="qnty"]').val();
                     var price = $('input[name="price"]').val() * qnty;
@@ -126,6 +130,8 @@
                         data: {
                             '_token': $('input[name="_token"]').val(), // Corrected the token name
                             'user_id': userId,
+                            'farmer_id': farmer_id,
+                            'product_id': product_id,
                             'market_place_id': marketPlaceId,
                             'quantity': qnty,
                             'price': price,

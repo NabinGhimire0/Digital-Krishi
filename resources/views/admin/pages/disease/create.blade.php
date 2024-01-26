@@ -33,9 +33,20 @@
                                     <x-input-error :messages="$errors->get('name')" />
                                 </div>
                                 <div class="form-group">
+                                    <label for="name">Image:</label>
+                                    <input type="file" class="form-control" name="images" {{ old('images') }}
+                                        id="images">
+                                    <x-input-error :messages="$errors->get('images')" />
+                                </div>
+                                <div class="form-group">
                                     <label for="">Symptoms:</label>
-                                    <textarea id="summernote" name="symptoms" id="symptoms" class="form-control" cols="30" rows="10"></textarea>
+                                    <textarea name="symptoms" id="symptoms" class="form-control" cols="30" rows="10"></textarea>
                                     <x-input-error :messages="$errors->get('symptoms')" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Solution:</label>
+                                    <textarea id="summernote" name="solution" id="solution" class="form-control" cols="30" rows="10"></textarea>
+                                    <x-input-error :messages="$errors->get('solution')" />
                                 </div>
                             </div>
                             <!-- /.card-body -->

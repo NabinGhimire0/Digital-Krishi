@@ -13,7 +13,9 @@ use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\CommunityPostController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
+use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Models\AgroExpert;
 use App\Models\CommunityPost;
@@ -66,82 +68,40 @@ Route::get('/dashboard', function () {
     return view('frontend.userdashboard.dashboard', compact('post'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//user routes
-Route::get('/', function () {
-    $notices = Notice::orderBy('created_at', 'asc')->take(4)->get();
-    $seeds = Seed::all();
-    $pesticides = Pesticide::all();
-    $fertilizers = Fertilizer::all();
-    return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers', 'notices'));
-});
-Route::get('/diseases', function () {
-    $diseases = Disease::all();
-    return view('frontend.pages.disease', compact('diseases'));
-});
-Route::get('/diseases/{id}', function ($id) {
-    $diseases = Disease::find($id);
-    $cure = Cure::where('disease_id', $id)->first();
-    return view('frontend.pages.diseaseDetail', compact('diseases', 'cure'));
-});
-Route::get('/notice', function () {
-    $notices = Notice::all();
-    return view('frontend.pages.notices', compact('notices'));
-});
+//home
+Route::get('/',[FrontendController::class, 'home']);
+Route::get('/home', [FrontendController::class, 'home']);
 
-Route::get('/notice/{id}', function ($id) {
-    $notice = Notice::where('id', $id)->first();
-    return view('frontend.pages.notice', compact('notice'));
-});
-Route::get("/seed", function () {
-    $seeds = Seed::all();
-    return view('frontend.pages.allSeeds', compact('seeds'));
-});
+//expert
+Route::get('/our-expert', [FrontendController::class, 'expert']);
+//seed
+Route::get('/seed', [FrontendController::class, 'seeds']);
+Route::get('/seed/{id}', [FrontendController::class, 'seedDetail']);
+//disease
+Route::get('/diseases', [FrontendController::class, 'diseases']);
+Route::get('/diseases/{id}', [FrontendController::class, 'diseaseDetail']);
 
-Route::get("/seed/{id}", function ($id) {
-    $seed = Seed::where('id', $id)->first();
-    return view('frontend.pages.seed', compact('seed'));
-});
-Route::get("/pesticides-/{id}", function ($id) {
-    $pesticides = Pesticide::where('id', $id)->first();
-    return view('frontend.pages.pesticides', compact('pesticides'));
-});
-Route::get("/pesticides/all", function () {
-    $pesticides = Pesticide::all();
+//notice
+Route::get('/notice', [FrontendController::class, 'notice']);
+Route::get('/notice/{id}', [FrontendController::class, 'noticeDetail']);
 
-    return view('frontend.pages.allPesticides', compact('pesticides'));
-});
-Route::get("/fertilizers/all", function () {
-    $fertilizers = Fertilizer::all();
-    return view('frontend.pages.allFertilizers', compact('fertilizers'));
-});
+//pesticides
+Route::get('/pesticides', [FrontendController::class, 'pesticides']);
+Route::get('/pesticides-/{id}', [FrontendController::class, 'pesticideDetail']);
 
-Route::get("/about-us", function () {
-    return view('frontend.pages.aboutUs');
-});
+//fertilizer
+Route::get('/fertilizer', [FrontendController::class, 'fertilizer']);
+Route::get("/fertilizer/{id}", [FrontendController::class, 'fertilizerDetail']);
 
-Route::get("/fertilizer/{id}", function ($id) {
-    $fertilizer = Fertilizer::where('id', $id)->first();
-    return view('frontend.pages.fertilizer', compact('fertilizer'));
-});
-Route::get("/our-expert", function () {
-    $experts = AgroExpert::all();
-    return view('frontend.pages.ourExpert', compact('experts'));
-});
-Route::get("/contact-us", function () {
-    return view('frontend.pages.contactUs');
-});
+//marketplace
+Route::get('/market', [FrontendController::class, 'marketplace']);
+Route::get('/products/{id}', [FrontendController::class, 'product']);
+
+Route::get('/about-us',[FrontendController::class, 'about']);
+Route::get('/contact-us',[FrontendController::class, 'contact']);
+
 Route::resource('posts', CommunityPostController::class);
-Route::get("/community", function () {
-    return view('frontend.pages.community');
-});
-Route::get('/market', function () {
-    $products = MarketPlace::where('status', 0)->where('quantity', '>', 0)->get();
-    return view('frontend.pages.marketplace', compact('products'));
-});
-Route::get('/products/{id}', function ($id) {
-    $product = MarketPlace::find($id);
-    return view('frontend.pages.product', compact('product'));
-});
+Route::resource('orders', OrderController::class);
 //
 Route::post('/place-order', [MarketPlaceController::class, 'placeOrder']);
 Route::middleware('auth')->group(function () {

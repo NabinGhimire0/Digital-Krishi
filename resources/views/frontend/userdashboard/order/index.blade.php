@@ -15,9 +15,6 @@
                                 <div class="col-md-10">
                                     <h3 class="card-title">Orders</h3>
                                 </div>
-                                <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="admin/order/create">Add</a>
-                                </div>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -48,18 +45,12 @@
                                                 <td>{{ $order->quantity }}</td>
                                                 <td>{{ $order->price }}</td>
                                                 <td>{{ $order->created_at }}</td>
-                                                <td>{{ $order->payment_status == 1 ? 'Paid' : 'Unpaid' }}</td>
+                                                <td>{{ $order->is_paid == 1 ? 'Paid' : 'Unpaid' }}</td>
                                                 <td>{{ $order->status == 1 ? 'Shipped' : 'Pending' }}</td>
 
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
-                                                        href="{{ 'admin/order/' . $order->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ 'admin/order/' . $order->id }}" method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"
-                                                            class="btn btn-block btn-danger">Delete</button>
-                                                    </form>
+                                                        href="{{ 'orders/' . $order->id . '/edit' }}">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach

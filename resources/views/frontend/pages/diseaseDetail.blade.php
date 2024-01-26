@@ -29,13 +29,12 @@
                 <tbody>
                     <tr>
                         <td style="width: 25%">
-                            {!! $diseases->symptoms !!}
+                            {{  $diseases->symptoms  }}
                         </td>
 
                         <td>
-                            <h2>Medicine: {{ $cure->medicine }}</h2>
                             <div>
-                                {!! $cure->procedure !!}
+                                {!! $diseases->solution !!}
                             </div>
                         </td>
                     </tr>

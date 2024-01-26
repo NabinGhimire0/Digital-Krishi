@@ -17,7 +17,7 @@
                                     <h3 class="card-title">Edit</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="admin/pesticide">Back</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/pesticide">Back</a>
                                 </div>
                             </div>
                         </div>

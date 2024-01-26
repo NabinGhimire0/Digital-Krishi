@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -12,7 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('frontend.userdashboard.order.index');
+        $order = Order::where('user_id',Auth::user()->id)->get();
+        return view('frontend.userdashboard.order.index',compact('order'));
     }
 
     /**
@@ -40,11 +43,13 @@ class OrderController extends Controller
     }
 
     /**
+     *
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $order = Order::find($id);
+        return view('frontend.userdashboard.order.edit',compact('order'));
     }
 
     /**
@@ -52,7 +57,11 @@ class OrderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $order = Order::find($id);
+        $order->status = $request->status ? 1 : 0;
+        $order->is_paid = $request->is_paid ? 1 : 0;
+        $order->update();
+        return redirect('/orders')->with('success', 'Order updated successfully');
     }
 
     /**
