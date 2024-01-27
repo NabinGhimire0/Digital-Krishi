@@ -32,12 +32,7 @@
                         <a id="supportButton">Support</a>
                     </li>
                     <li>
-                        <select style="background: transparent;" class="changeLanguage">
-                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English
-                            </option>
-                            <option value="ne" {{ session()->get('locale') == 'ne' ? 'selected' : '' }}>नेपाली
-                            </option>
-                        </select>
+                        
                     </li>
                 </ul>
             </div>
@@ -63,13 +58,31 @@
                         </a>
                     </center>
                 </div>
+                <div style="display:grid;margin-block: 0.6rem">
+                    <center>
+                        <select style="background: transparent;text-align: center;color:white;padding: 0.2rem" class="changeLanguage">
+                    
+                            <option style="background: rgb(107, 106, 106)" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English
+                            </option>
+                            <option value="ne" style="background: rgb(107, 106, 106)" {{ session()->get('locale') == 'ne' ? 'selected' : '' }}>नेपाली
+                            </option>
+                        </select>
+                    </center>
+                </div>
 
             </div>
-            {{-- <div class="nav__button ">
-                <a href="login">
+            <div class="nav__button custom-dropdown">
+                {{-- <a href="login">
                     <button>login</button>
-                </a>
-            </div> --}}
+                </a> --}}
+                <select style="background: transparent;text-align: center;color:white;padding: 0.2rem" class="changeLanguage">
+                    
+                    <option style="background: rgb(107, 106, 106)" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English
+                    </option>
+                    <option value="ne" style="background: rgb(107, 106, 106)" {{ session()->get('locale') == 'ne' ? 'selected' : '' }}>नेपाली
+                    </option>
+                </select>
+            </div>
             <div class="cross hidden" id="ham-menu">
                 <div id="top-bar" class="top "></div>
                 <div id="middle-bar" class="middle "></div>

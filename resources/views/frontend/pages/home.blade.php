@@ -7,9 +7,9 @@
                 <div class="hero__content">
                     <h1>{{ GoogleTranslate::trans('Digital Krishi',\App::getLocale()) }}</h1>
                     <p>{{ GoogleTranslate::trans('Hajur ko parishram maa hamro saath',\App::getLocale()) }}</p>
-                    <a href="#seed">
-                        <button>
-                            Explore
+                    <a href="login">
+                        <button >
+                            Login
                         </button>
                     </a>
                 </div>

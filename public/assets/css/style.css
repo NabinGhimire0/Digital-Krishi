@@ -219,6 +219,24 @@ h6 {
   transform: scale(1.1);
 }
 
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-dropdown select {
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  background: transparent;
+  text-align: center;
+  color: white;
+  padding: 0.4rem;
+  border: none;
+  cursor: pointer;
+}
+
+
 
 .hero {
   display: grid;
