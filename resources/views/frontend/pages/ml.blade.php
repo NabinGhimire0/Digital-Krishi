@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Submit Image</h2>
+<x-guest-layout>
+    <div class="header" style="    background: rgba(106, 169, 108);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    padding: 20px;
+    text-align: center;
+    color: #fff;">
+        @include('frontend/layouts/inc/nav')
+    </div>
 
-    <form method="post" action="{{ url('/submit') }}" enctype="multipart/form-data">
-        @csrf
-        <label for="image">Choose an image:</label>
-        <input type="file" name="image" accept="image/*" required>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+    <div class="card-wrapper">
+        <div class="form-card">
+            <form method="post" action="{{ url('/submit') }}" enctype="multipart/form-data">
+                @csrf
+                <label for="image">
+                {{ GoogleTranslate::trans('Choose an image:',\App::getLocale()) }}
+                    
+                </label>
+                <input type="file" name="image" accept="image/*" required>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    @include('frontend/layouts/inc/footer')
+</x-guest-layout>
