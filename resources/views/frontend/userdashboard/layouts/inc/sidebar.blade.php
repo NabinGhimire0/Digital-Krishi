@@ -93,6 +93,64 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="#"
+                        class="nav-link {{ request()->is('equipment') ? 'active' : '' }} || {{ request()->is('equipment/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-tractor"></i>
+                        <p>
+                            Farming Equipment
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/equipment/create"
+                                class="nav-link {{ request()->is('equipment/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Add
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/equipment" class="nav-link {{ request()->is('equipment') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    View Equipment
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link {{ request()->is('pickup') ? 'active' : '' }} || {{ request()->is('pickup/create') ? 'active' : '' }}">
+                        <i class="fa-solid fa-truck-pickup"></i>
+                        <p>
+                            Pickup Request
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/pickup/create"
+                                class="nav-link {{ request()->is('pickup/create') ? 'active' : '' }}">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>
+                                    Create request
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pickup" class="nav-link {{ request()->is('pickup') ? 'active' : '' }}">
+                                <i class="fa-solid fa-table"></i>
+                                <p>
+                                    Request Status
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="btn btn-block btn-danger">logout</button>

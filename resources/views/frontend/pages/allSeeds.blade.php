@@ -10,7 +10,7 @@
 
     <div class="wrapper">
         <div style="text-align: center;margin-block-start: 2rem">
-            <h1>Seeds</h1>
+            <h1>{{ GoogleTranslate::trans('Seeds',\App::getLocale()) }}</h1>
         </div>
         <div class="notices" style="margin-block: 2rem">
   
@@ -24,8 +24,7 @@
                                         <img src="{{ 'storage/' . $seed->image }}" alt="">
                                     </div>
                                     <center>
-            
-                                        <p>{{ $seed->name }}</p>
+                                        <p>{{ GoogleTranslate::trans($seed->name,\App::getLocale()) }}</p>
                                     </center>
                                 </div>
                             </a>

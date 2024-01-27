@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="/admin/dashboard" class="brand-link">
         <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Digital Krishi</span>
@@ -305,7 +305,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/product" class="nav-link {{ request()->is('admin/product') ? 'active' : '' }}">
+                            <a href="/admin/product"
+                                class="nav-link {{ request()->is('admin/product') ? 'active' : '' }}">
                                 <i class="fa-solid fa-table"></i>
                                 <p>
                                     Product List
@@ -313,6 +314,15 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/pickup"
+                        class="nav-link {{ request()->is('admin/pickup') ? 'active' : '' }} || {{ request()->is('admin/pickup/{id}/edit') ? 'active' : '' }}">
+                        <i class="fa-solid fa-truck-pickup"></i>
+                        <p>
+                            Pickup Request
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="#"

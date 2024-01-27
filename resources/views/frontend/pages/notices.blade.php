@@ -18,20 +18,20 @@
                 <thead>
                     <tr style="color:black">
                         <th class="w-10-6">
-                            <p class="font-semibold">Notice Title</p>
+                            <p class="font-semibold">{{ GoogleTranslate::trans('Notices',\App::getLocale()) }}</p>
                         </th>
                         <th>
-                            <p class="font-semibold">Action</p>
+                            <p class="font-semibold">{{ GoogleTranslate::trans('Action',\App::getLocale()) }}</p>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($notices as $notice)
                         <tr>
-                            <td>{{ $notice->title }}</td>
+                            <td>{{ GoogleTranslate::trans($notice->title,\App::getLocale()) }}</td>
                             <td>
                                 <a href="notice/{{ $notice->id }}">
-                                    <button>view </button>
+                                    <button>{{ GoogleTranslate::trans('View',\App::getLocale()) }}</button>
                                 </a>
 
                             </td>

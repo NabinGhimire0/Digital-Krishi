@@ -10,7 +10,7 @@
     <div class="wrapper table">
         <div class="wrapper">
             <div style="text-align: center;margin-block-start: 2rem">
-                <h1>Diseases and Solution</h1>
+                <h1>{{ GoogleTranslate::trans('Diseases and Solution',\App::getLocale()) }}</h1>
             </div>
             <div class="notices" style="margin-block: 2rem">
 
@@ -25,7 +25,7 @@
                                     </div>
                                     <center>
 
-                                        <p>{{ $disease->name }}</p>
+                                        <p>{{ GoogleTranslate::trans($disease->name,\App::getLocale()) }}</p>
                                     </center>
                                 </div>
                             </a>

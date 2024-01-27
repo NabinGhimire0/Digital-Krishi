@@ -18,18 +18,18 @@
                         <table cellpading="0" border="0">
                             <tr>
                                 <td style="font-weight: 700;font-size:20px">
-                                    <p>{{ Auth::user()->name }}</p>
+                                    <p>{{ GoogleTranslate::trans($post->user->name,\App::getLocale()) }}</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="font-weight: 600;font-size:15px">Posted:{{ $post->created_at }}</p>
+                                    <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at,\App::getLocale()) }}</p>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="details">
-                        {{ $post->title }}
+                        {{ GoogleTranslate::trans($post->title,\App::getLocale()) }}
                     </div>
 
                     {{-- image and comment --}}
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="community__right">
-                            <p>Comment</p>
+                            <p>{{ GoogleTranslate::trans('Comment',\App::getLocale()) }}</p>
                             <div class="comment">
                                 <form id="commentForm" method="POST" style ="display: grid">
                                     @csrf
@@ -84,19 +84,19 @@
                                                 <table cellpading="0" border="0">
                                                     <tr>
                                                         <td style="font-weight: 700;font-size:20px">
-                                                            <p>{{ $item->name }}</p>
+                                                            <p>{{ GoogleTranslate::trans($item->name,\App::getLocale()) }}</p>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <p style="font-weight: 600;font-size:15px">Posted:
-                                                                {{ $item->created_at }}</p>
+                                                            <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}
+                                                                {{ GoogleTranslate::trans($item->created_at,\App::getLocale()) }}</p>
                                                         </td>
                                                     </tr>
                                                 </table>
                                                 <div>
                                                     <span>
-                                                        {{ $item->comment }}
+                                                        {{ GoogleTranslate::trans($item->comment,\App::getLocale()) }}
                                                     </span>
                                                 </div>
                                             </div>
