@@ -14,10 +14,10 @@
             <h1>Notice</h1>
         </div>
         <div class="notices" style="margin-block: 2rem;">
-            <table>
+            <table cellspacing="0" border="2" style="border: 1.5px solid #dad9d9cc;width: 100%;">
                 <thead>
                     <tr style="color:black">
-                        <th class="w-10-6">
+                        <th class="">
                             <p class="font-semibold">{{ GoogleTranslate::trans('Notices',\App::getLocale()) }}</p>
                         </th>
                         <th>
@@ -27,11 +27,12 @@
                 </thead>
                 <tbody>
                     @foreach ($notices as $notice)
-                        <tr>
+                        <tr >
                             <td>{{ GoogleTranslate::trans($notice->title,\App::getLocale()) }}</td>
-                            <td>
+                            <td style="padding: 0.6rem">
                                 <a href="notice/{{ $notice->id }}">
-                                    <button>{{ GoogleTranslate::trans('View',\App::getLocale()) }}</button>
+                                    <button style="padding: 5px;font-size: 1rem;background-color: #4caf50;
+                                    color: #fff;border:none;border-radius: 3px" >{{ GoogleTranslate::trans('View',\App::getLocale()) }}</button>
                                 </a>
 
                             </td>

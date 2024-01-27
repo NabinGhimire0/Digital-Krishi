@@ -233,11 +233,13 @@ h6 {
 }
 
 .hero .hero__content {
-  grid-column: 1/4;
+  grid-column: 2/8;
   color: white;
 
 }
-
+.hero .hero__content>h1{
+  font-size: 3rem;
+}
 .hero .hero__content>p {
 
   margin-block-end: 1rem;
@@ -875,9 +877,6 @@ grid-template-columns: repeat(4, 1fr);
     margin-block: 1rem;
     display: grid;
     gap: 1rem;
-    /* margin: 1rem; */
-    /* grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); */
-    /* grid-template-columns: minmax(15rem, 1fr) minmax(15rem, 1fr) minmax(15rem, 1fr) minmax(15rem, 1fr) ; */
   grid-template-columns: repeat(3, 1fr);
   
   }

@@ -65,11 +65,11 @@
                 </div>
 
             </div>
-            <div class="nav__button ">
+            {{-- <div class="nav__button ">
                 <a href="login">
                     <button>login</button>
                 </a>
-            </div>
+            </div> --}}
             <div class="cross hidden" id="ham-menu">
                 <div id="top-bar" class="top "></div>
                 <div id="middle-bar" class="middle "></div>
