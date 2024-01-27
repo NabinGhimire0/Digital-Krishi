@@ -13,17 +13,17 @@
             @foreach ($posts as $post)
                 <div class="left">
                     <div class="img-profile">
-                        <img src="{{ asset('assets/images/user-profile-circle-solid.1024x1024.png') }}" width="50px"
-                            height="50px" alt="">
+                        <img src="{{ asset('assets/images/user-profile-circle-solid.1024x1024.png') }}" width="35px"
+                            height="35px" alt="">
                         <table cellpading="0" border="0">
                             <tr>
-                                <td style="font-weight: 700;font-size:20px">
+                                <td style="font-weight: 700;font-size:18px">
                                     <p>{{ GoogleTranslate::trans($post->user->name, \App::getLocale()) }}</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="font-weight: 600;font-size:15px">
+                                    <p style="font-weight: 600;font-size:14px">
                                         {{ GoogleTranslate::trans('Posted:', \App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at->diffForHumans(), \App::getLocale()) }}
                                     </p>
                                 </td>
@@ -37,7 +37,7 @@
                     {{-- image and comment --}}
                     <div class="post_image">
                         <div class="post_left">
-                            <div class="fotorama" data-width="100%" data-nav="thumbs" data-ratio="700/467" data-max-width="100%">
+                            <div class="fotorama" data-width="100%" data-nav="thumbs" data-ratio="1250/467" data-max-width="100%">
                                 @php
                                     $contentArray = json_decode($post->content, true);
                                 @endphp
@@ -63,11 +63,17 @@
                             <div class="comment">
                                 <form id="commentForm" method="POST" style ="display: grid">
                                     @csrf
-                                    <input type="text" id="commentInput" name="comment" style="height: 10vh"><br><br>
+                                    {{-- <input type="text" id="commentInput" name="comment" style="height: 10vh"><br><br> --}}
+                                    <textarea id="commentInput" name="comment" style="height: 10vh"></textarea>
                                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                                     <div class="comment__buttons"
                                         style="display: flex; place-content: end; margin-block:0.5rem">
-                                        <button id="uploadButton">Upload</button>
+                                        <button id="uploadButton" style="  outline: none;
+                                        border: thick;
+                                        color: white;
+                                        padding: 0.2rem 2rem;
+                                        background-color: #6aa96c;
+                                        border-radius: 0.5rem;">Upload</button>
                                         <br><br>
                                     </div>
                                 </form>
