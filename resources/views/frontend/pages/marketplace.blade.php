@@ -21,15 +21,14 @@
             <div class="marketplace__grid">
                 @if ($products->count() > 0)
                 @foreach ($products as $item)
-                <div>
-                    <div style="">
+                <div class="marketplace__card">
+                    <div style="overflow: hidden">
                         <div
-                            style="height: 30vh; position: relative;">
+                            style="height: 30vh;overflow: hidden">
                             <a href="/products/{{ $item->id }}" style="">
                                 {{-- <center></center> --}}
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="" style="position: absolute;
-                                    top: 0;
-                                    left: 0;
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="" style="
+    
                                     width: 100%;
                                     height: 100%;
                                     object-fit: cover;">
