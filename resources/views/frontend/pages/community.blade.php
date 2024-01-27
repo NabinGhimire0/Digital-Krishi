@@ -18,44 +18,48 @@
                         <table cellpading="0" border="0">
                             <tr>
                                 <td style="font-weight: 700;font-size:20px">
-                                    <p>{{ GoogleTranslate::trans($post->user->name,\App::getLocale()) }}</p>
+                                    <p>{{ GoogleTranslate::trans($post->user->name, \App::getLocale()) }}</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at->diffForHumans(),\App::getLocale()) }}</p>
+                                    <p style="font-weight: 600;font-size:15px">
+                                        {{ GoogleTranslate::trans('Posted:', \App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at->diffForHumans(), \App::getLocale()) }}
+                                    </p>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="details">
-                        {{ GoogleTranslate::trans($post->title,\App::getLocale()) }}
+                        {{ GoogleTranslate::trans($post->title, \App::getLocale()) }}
                     </div>
 
                     {{-- image and comment --}}
                     <div class="post_image">
                         <div class="post_left">
-                            @php
-                                $contentArray = json_decode($post->content, true);
-                            @endphp
-                            @foreach ($contentArray as $item)
-                                @if ($item['type'] === 'image')
-                                    <img src="{{ asset('storage/' . $item['path']) }}" style="width: 100%"
-                                        alt="Image">
-                                @else
-                                    <video width="100%" controls>
-                                        <source src="{{ asset('storage/' . $item['path']) }}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                @endif
-                            @endforeach
+                            <div class="fotorama" data-width="100%" data-nav="thumbs" data-ratio="700/467" data-max-width="100%">
+                                @php
+                                    $contentArray = json_decode($post->content, true);
+                                @endphp
+                                @foreach ($contentArray as $item)
+                                    @if ($item['type'] === 'image')
+                                        <img src="{{ asset('storage/' . $item['path']) }}" style="width: 100%"
+                                            alt="Image">
+                                    @else
+                                        <video width="100%" controls>
+                                            <source src="{{ asset('storage/' . $item['path']) }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    @endif
+                                @endforeach
+                            </div>
                             <div>
                                 <i class='bx bxs-heart heart' data-index="1"></i> <span>60</span>
                             </div>
                         </div>
 
                         <div class="community__right">
-                            <p>{{ GoogleTranslate::trans('Comment',\App::getLocale()) }}</p>
+                            <p>{{ GoogleTranslate::trans('Comment', \App::getLocale()) }}</p>
                             <div class="comment">
                                 <form id="commentForm" method="POST" style ="display: grid">
                                     @csrf
@@ -84,19 +88,22 @@
                                                 <table cellpading="0" border="0">
                                                     <tr>
                                                         <td style="font-weight: 700;font-size:20px">
-                                                            <p>{{ GoogleTranslate::trans($item->name,\App::getLocale()) }}</p>
+                                                            <p>{{ GoogleTranslate::trans($item->name, \App::getLocale()) }}
+                                                            </p>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}
-                                                                {{ GoogleTranslate::trans($item->created_at->diffForHumans(),\App::getLocale()) }}</p>
+                                                            <p style="font-weight: 600;font-size:15px">
+                                                                {{ GoogleTranslate::trans('Posted:', \App::getLocale()) }}
+                                                                {{ GoogleTranslate::trans($item->created_at->diffForHumans(), \App::getLocale()) }}
+                                                            </p>
                                                         </td>
                                                     </tr>
                                                 </table>
                                                 <div>
                                                     <span>
-                                                        {{ GoogleTranslate::trans($item->comment,\App::getLocale()) }}
+                                                        {{ GoogleTranslate::trans($item->comment, \App::getLocale()) }}
                                                     </span>
                                                 </div>
                                             </div>

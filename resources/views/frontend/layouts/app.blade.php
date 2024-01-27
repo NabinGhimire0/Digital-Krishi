@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/post.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fotorama.css') }}">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <!-- Toastr -->
@@ -25,6 +27,7 @@
     <!-- Toastr -->
     <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/fotorama.js') }}"></script>
     <!-- Your webpage content -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     @yield('scripts')
