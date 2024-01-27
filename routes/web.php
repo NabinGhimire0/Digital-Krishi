@@ -47,37 +47,56 @@ use App\Http\Controllers\WeatherController;
 |
 */
 // admin routes
-Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
-    Route::prefix('admin')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
+        Route::prefix('admin')->group(function () {
+            Route::get('/dashboard', function () {
+                return view('admin.dashboard');
+            })->name('dashboard');
 
-        Route::resource('/province', ProvinceController::class);
-        Route::resource('/city', CityController::class);
-        Route::resource('/subadmin', RegisterSubAdmins::class);
-        Route::resource('/notice', NoticeController::class);
-        Route::resource('/disease', DiseaseController::class);
-        Route::resource('/cure', CureController::class);
-        Route::resource('/seeds', SeedController::class);
-        Route::resource('/pesticide', PesticideController::class);
-        Route::resource('/fertilizer', FertilizerController::class);
-        Route::resource('/agroexpert', AgroExpertController::class);
-        Route::resource('/product', ProductController::class);
-        Route::get('/pickup', [AdminController::class, 'pickup']);
-        Route::get('/pickup/{id}/edit', [AdminController::class, 'pickupDetail']);
+            Route::resource('/province', ProvinceController::class);
+            Route::resource('/city', CityController::class);
+            Route::resource('/subadmin', RegisterSubAdmins::class);
+            Route::resource('/notice', NoticeController::class);
+            Route::resource('/disease', DiseaseController::class);
+            Route::resource('/cure', CureController::class);
+            Route::resource('/seeds', SeedController::class);
+            Route::resource('/pesticide', PesticideController::class);
+            Route::resource('/fertilizer', FertilizerController::class);
+            Route::resource('/agroexpert', AgroExpertController::class);
+            Route::resource('/product', ProductController::class);
+            Route::get('/pickup', [AdminController::class, 'pickup']);
+            Route::get('/pickup/{id}/edit', [AdminController::class, 'pickupDetail']);
+        });
+    });
+    Route::group(['middleware' => 'rolebasedauth:admin,subadmin,farmer'], function () {
+        //marketplace
+        Route::get('/market', [FrontendController::class, 'marketplace']);
+        Route::get('/products/{id}', [FrontendController::class, 'product']);
+
+        Route::resource('posts', CommunityPostController::class);
+        Route::resource('orders', OrderController::class);
+        // place order
+        Route::post('/place-order', [MarketPlaceController::class, 'placeOrder']);
+
+        Route::resource('/equipment', FarmingEquipmentController::class);
+        Route::resource('/pickup', PickupController::class);
+
+        Route::post('/comment', [CommentController::class, 'store']);
+        Route::resource('marketplace', MarketPlaceController::class);
+        //
+        Route::get('/dashboard', function () {
+            $post = CommunityPost::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+            return view('frontend.userdashboard.dashboard', compact('post'));
+        })->middleware(['auth', 'verified'])->name('userdashboard');
+
+        Route::get('/weather', [WeatherController::class, 'weather']);
+        Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);
     });
 });
-Route::post('/comment', [CommentController::class, 'store']);
-Route::resource('marketplace', MarketPlaceController::class);
-
-Route::get('/dashboard', function () {
-    $post = CommunityPost::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-    return view('frontend.userdashboard.dashboard', compact('post'));
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 //home
-Route::get('/',[FrontendController::class, 'home']);
+Route::get('/', [FrontendController::class, 'home']);
 Route::get('/home', [FrontendController::class, 'home']);
 
 //expert
@@ -101,30 +120,8 @@ Route::get('/pesticides-/{id}', [FrontendController::class, 'pesticideDetail']);
 Route::get('/fertilizer', [FrontendController::class, 'fertilizer']);
 Route::get("/fertilizer/{id}", [FrontendController::class, 'fertilizerDetail']);
 
-//marketplace
-Route::get('/market', [FrontendController::class, 'marketplace']);
-Route::get('/products/{id}', [FrontendController::class, 'product']);
-
-Route::get('/about-us',[FrontendController::class, 'about']);
-Route::get('/contact-us',[FrontendController::class, 'contact']);
-
-Route::resource('posts', CommunityPostController::class);
-Route::resource('orders', OrderController::class);
-//
-
-Route::resource('/equipment',FarmingEquipmentController::class);
-Route::resource('/pickup',PickupController::class);
-
-//
-Route::post('/place-order', [MarketPlaceController::class, 'placeOrder']);
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::get('/weather', [WeatherController::class, 'weather']);
-Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);
+Route::get('/about-us', [FrontendController::class, 'about']);
+Route::get('/contact-us', [FrontendController::class, 'contact']);
 
 Route::get('/google/translate/change', [GoogleTranslateController::class, 'change'])->name('google.translate.change');
 Route::get('/submit', [ImageController::class, 'showForm']);

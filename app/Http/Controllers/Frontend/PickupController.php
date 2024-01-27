@@ -46,6 +46,7 @@ class PickupController extends Controller
         $pickup->price = $request->price;
         $pickup->farmer_contact = $request->farmer_contact;
         $pickup->pickup_address = $request->pickup_address;
+        $pickup->accepted_by = $request->accepted_by;
         $pickup->status = 0;
         $pickup->is_paid = 0;
         $pickup->save();
