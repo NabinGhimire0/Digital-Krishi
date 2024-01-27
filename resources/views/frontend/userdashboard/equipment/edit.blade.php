@@ -42,13 +42,13 @@
                                         <div class="form-group">
                                             <label for="name">Name:</label>
                                             <input type="text" class="form-control" value="{{ $equipment->name }}" name="name"
-                                                {{ old('name') }} id="name" placeholder="Enter Price">
+                                                {{ old('name') }} id="name" placeholder="Enter Equipment">
                                             <x-input-error :messages="$errors->get('name')" />
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="name">Price:</label>
+                                            <label for="name">Rate:</label>
                                             <input type="number" class="form-control" value="{{ $equipment->price }}" name="price"
                                                 {{ old('price') }} id="price" placeholder="Enter Price">
                                             <x-input-error :messages="$errors->get('price')" />

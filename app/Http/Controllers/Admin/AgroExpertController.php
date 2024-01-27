@@ -32,7 +32,8 @@ class AgroExpertController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required',
+            // image should be of type jpg,png,jpeg and max size of 1MB
+            'image' => 'required|image|mimes:jpg,png,jpeg|max:1024',
             'description' => 'required',
             'contact' => 'required',
             'email' => 'required',
@@ -47,7 +48,7 @@ class AgroExpertController extends Controller
         $expert->email = $request->email;
         $expert->status = $request->status ?1:0;
         $expert->save();
-        return redirect('/admin/agroexpert')->with('success', 'Agro Expert Added Successfully');
+        return redirect('/admin/agroexpert')->with('status', 'Agro Expert Added Successfully');
     }
 
     /**
@@ -88,7 +89,7 @@ class AgroExpertController extends Controller
         $expert->email = $request->email;
         $expert->status = $request->status ?1:0;
         $expert->update();
-        return redirect('/admin/agroexpert')->with('success', 'Agro Expert Updated Successfully');
+        return redirect('/admin/agroexpert')->with('status', 'Agro Expert Updated Successfully');
     }
 
     /**
@@ -98,6 +99,6 @@ class AgroExpertController extends Controller
     {
         $expert = AgroExpert::find($id);
         $expert->delete();
-        return redirect('/admin/agroexpert')->with('success', 'Agro Expert Deleted Successfully');
+        return redirect('/admin/agroexpert')->with('status', 'Agro Expert Deleted Successfully');
     }
 }

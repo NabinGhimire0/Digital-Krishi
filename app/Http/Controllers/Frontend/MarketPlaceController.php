@@ -61,7 +61,7 @@ class MarketPlaceController extends Controller
         }
 
         $product->save();
-        return redirect('/marketplace')->with('success', 'Product added successfully');
+        return redirect('/marketplace')->with('status', 'Product added successfully');
 
     }
 
@@ -99,6 +99,12 @@ class MarketPlaceController extends Controller
         $product->product_id = $request->product_id;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
+        // also subtract the quantity from the stock
+        $stock = MarketPlace::where('product_id', $product->product_id)->first();
+        if ($stock) {
+            $stock->quantity -= $request->quantity;
+            $stock->update();
+        }
         $product->short_description = $request->short_description;
         $product->description = $request->description;
         $product->contact = $request->contact;
@@ -110,7 +116,7 @@ class MarketPlaceController extends Controller
             $product->image = $imagePath;
         }
         $product->save();
-        return redirect('/marketplace')->with('success', 'Product updated successfully');
+        return redirect('/marketplace')->with('status', 'Product updated successfully');
 
     }
 
@@ -143,6 +149,6 @@ class MarketPlaceController extends Controller
         $data->is_paid = 0;
         $data->status = 0;
         $data->save();
-        return redirect()->back()->with('success', 'Order placed successfully');
+        return redirect()->back()->with('status', 'Order placed successfully');
     }
 }

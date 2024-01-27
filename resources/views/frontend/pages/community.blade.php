@@ -23,7 +23,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at,\App::getLocale()) }}</p>
+                                    <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at->diffForHumans(),\App::getLocale()) }}</p>
                                 </td>
                             </tr>
                         </table>
@@ -90,7 +90,7 @@
                                                     <tr>
                                                         <td>
                                                             <p style="font-weight: 600;font-size:15px">{{ GoogleTranslate::trans('Posted:',\App::getLocale()) }}
-                                                                {{ GoogleTranslate::trans($item->created_at,\App::getLocale()) }}</p>
+                                                                {{ GoogleTranslate::trans($item->created_at->diffForHumans(),\App::getLocale()) }}</p>
                                                         </td>
                                                     </tr>
                                                 </table>

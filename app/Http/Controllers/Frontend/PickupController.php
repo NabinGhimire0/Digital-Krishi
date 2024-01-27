@@ -50,7 +50,7 @@ class PickupController extends Controller
         $pickup->status = 0;
         $pickup->is_paid = 0;
         $pickup->save();
-        return redirect('/pickup')->with('success', 'Pickup Request Created Successfully');
+        return redirect('/pickup')->with('status', 'Pickup Request Created Successfully');
     }
 
     /**
@@ -94,7 +94,7 @@ class PickupController extends Controller
         $pickup->status = $request->status ? 1 : 0;
         $pickup->is_paid = $request->is_paid ? 1 : 0;
         $pickup->update();
-        return redirect()->back()->with('success', 'Pickup Request Updated Successfully');
+        return redirect()->back()->with('status', 'Pickup Request Updated Successfully');
 
     }
 
@@ -105,6 +105,6 @@ class PickupController extends Controller
     {
         $pickup = PickupRequest::find($id);
         $pickup->delete();
-        return redirect('/pickup')->with('success', 'Pickup Request Deleted Successfully');
+        return redirect('/pickup')->with('status', 'Pickup Request Deleted Successfully');
     }
 }

@@ -96,11 +96,6 @@
                                       value="{{ $data->contact }}"  id="contact" placeholder="your contact">
                                     <x-input-error :messages="$errors->get('contact')" />
                                 </div>
-                                <div class="form-check">
-                                    <input type="checkbox" name="status" class="form-check-input" id="status">
-                                    <label class="form-check-label" for="status" {{ $data->status == 1 ? 'checked' : '' }}>Status</label>
-                                    <x-input-error :messages="$errors->get('status')" />
-                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">

@@ -14,8 +14,8 @@
             <div class="img-section">
                 <center>
 
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="" >
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="" >
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="">
                 </center>
             </div>
             <div>
@@ -47,7 +47,7 @@
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" id="">
                     <input type="hidden" name="product_id" value="{{ $product->product_id }}" id="">
-                    <input type="hidden" name="farmer_id" value="{{ $product->user->id}}" id="">
+                    <input type="hidden" name="farmer_id" value="{{ $product->user->id }}" id="">
                     <input type="hidden" name="market_place_id" value="{{ $product->id }}" id="">
                     <input type="hidden" name="price" value="{{ $product->price }}" id="">
                     <center>
@@ -138,12 +138,41 @@
                             'payment_method': payment_method
                         },
                         success: function(data) {
-                            // Handle success, e.g., display a success message
-                            console.log('Order placed successfully');
+                            $(function() {
+                                var Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000
+                                });
+
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Order placed successfully'
+                                }).then(function() {
+                                    // Reload the page
+                                    window.location.reload();
+                                });
+                            });
                         },
                         error: function(data) {
-                            // Handle errors, e.g., show an error message
-                            console.log('Error placing order');
+                            // Handle errors, e.g., show an error message 
+                            $(function() {
+                                var Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000
+                                });
+
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: 'Something went wrong. Please try again.'
+                                }).then(function() {
+                                    // Reload the page
+                                    window.location.reload();
+                                });
+                            });
                         }
                     });
                 });

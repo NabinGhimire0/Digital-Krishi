@@ -26,7 +26,7 @@ class CommentController extends Controller
             $comment->post_id = $request->post_id;
             $comment->save();
         }
-        return redirect()->back()->with('success', 'Comment posted successfully');
+        return redirect()->back()->with('status', 'Comment posted successfully');
     }
 
 }

@@ -1,7 +1,7 @@
 <x-farmer-dashboard>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ ('My Products') }}
+            {{ 'My Products' }}
         </h2>
     </x-slot>
     <!-- Main content -->
@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Image</th>
-                                        <th>price</th>
+                                        <th>Rate</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -75,4 +75,25 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    @section('scripts')
+        @if (session('status'))
+            @section('scripts')
+                <script>
+                    $(function() {
+                        var Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+
+                        Toast.fire({
+                            icon: 'success',
+                            title: '{{ session('status') }}'
+                        });
+                    });
+                </script>
+            @endsection
+        @endif
+    @endsection
 </x-farmer-dashboard>

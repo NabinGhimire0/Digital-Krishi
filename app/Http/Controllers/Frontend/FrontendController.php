@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\AgroExpert;
 use App\Models\Disease;
+use App\Models\FarmingEquipment;
 use App\Models\Fertilizer;
 use App\Models\MarketPlace;
 use App\Models\Notice;
@@ -18,10 +19,11 @@ class FrontendController extends Controller
     {
         $notices = Notice::orderBy('created_at', 'asc')->take(4)->get();
         //get only 5 random seeds
+        $diseases = Disease::inRandomOrder()->take(5)->get();
         $seeds = Seed::inRandomOrder()->take(5)->get();
         $pesticides = Pesticide::inRandomOrder()->take(5)->get();
         $fertilizers = Fertilizer::inRandomOrder()->take(5)->get();
-        return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers', 'notices'));
+        return view('frontend.pages.home', compact('seeds', 'pesticides', 'fertilizers', 'notices', 'diseases'));
     }
 
     public function expert()
@@ -80,7 +82,7 @@ class FrontendController extends Controller
 
     public function marketplace()
     {
-        $products = MarketPlace::where('status', 0)->where('quantity', '>', 0)->get();
+        $products = MarketPlace::where('quantity', '>', 0)->get();
         return view('frontend.pages.marketplace', compact('products'));
     }
 
@@ -106,7 +108,7 @@ class FrontendController extends Controller
 
     public function notice()
     {
-        $notices = Notice::all();
+        $notices = Notice::orderBy('created_at', 'desc')->where('status', 1)->get();
         return view('frontend.pages.notices', compact('notices'));
     }
 
@@ -114,5 +116,17 @@ class FrontendController extends Controller
     {
         $notice = Notice::where('id', $id)->first();
         return view('frontend.pages.notice', compact('notice'));
+    }
+
+    public function equipment()
+    {
+        $equipment = FarmingEquipment::all();
+        return view('frontend.pages.equipment',compact('equipment'));
+    }
+
+    public function equipmentDetail($id)
+    {
+        $equipment = FarmingEquipment::where('id', $id)->first();
+        return view('frontend.pages.equipmentDetail',compact('equipment'));
     }
 }

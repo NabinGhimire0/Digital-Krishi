@@ -37,14 +37,15 @@
                                         @foreach ($subadmin as $subadmin)
                                             <tr>
                                                 <td>{{ $subadmin->name }}</td>
-                                                <td><img src="{{ asset('storage/' . $subadmin->image) }}"
-                                                        width="100px" height="100px"></td>
+                                                <td><img src="{{ asset('storage/' . $subadmin->image) }}" width="100px"
+                                                        height="100px"></td>
                                                 <td>{{ $subadmin->phone }}</td>
                                                 <td>{{ $subadmin->role }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
                                                         href="{{ '/admin/subadmin/' . $subadmin->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ '/admin/subadmin/' . $subadmin->id }}" method="post">
+                                                    <form action="{{ '/admin/subadmin/' . $subadmin->id }}"
+                                                        method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"
@@ -79,4 +80,23 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    @if (session('status'))
+        @section('scripts')
+            <script>
+                $(function() {
+                    var Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{ session('status') }}'
+                    });
+                });
+            </script>
+        @endsection
+    @endif
 </x-app-layout>

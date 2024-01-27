@@ -35,8 +35,9 @@ class ProductController extends Controller
         ]);
         $product = new Product();
         $product->name = $request->name;
+        $product->market_price = $request->market_price;
         $product->save();
-        return redirect('/admin/product')->with('success', 'Product created successfully');
+        return redirect('/admin/product')->with('status', 'Product created successfully');
     }
 
     /**
@@ -66,8 +67,9 @@ class ProductController extends Controller
         ]);
         $product = Product::find($id);
         $product->name = $request->name;
+        $product->market_price = $request->market_price;
         $product->update();
-        return redirect('/admin/product')->with('success', 'Product updated successfully');
+        return redirect('/admin/product')->with('status', 'Product updated successfully');
     }
 
     /**

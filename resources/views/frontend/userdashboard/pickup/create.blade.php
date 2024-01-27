@@ -40,7 +40,8 @@
                                     <select class="form-control select2" name="product_id" style="width: 100%;">
                                         <option selected="selected">Select Product</option>
                                         @foreach ($products as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }} (Market Price:{{ $item->market_price }})</option>
+                                            <option value="{{ $item->id }}">{{ $item->name }} (Market
+                                                Price:{{ $item->market_price }})</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -64,14 +65,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Contact:</label>
-                                    <input type="number" class="form-control" name="farmer_contact" {{ old('farmer_contact') }}
-                                        id="farmer_contact" placeholder="your farmer_contact">
+                                    <input type="number" class="form-control" name="farmer_contact"
+                                        {{ old('farmer_contact') }} id="farmer_contact"
+                                        placeholder="your farmer_contact">
                                     <x-input-error :messages="$errors->get('farmer_contact')" />
                                 </div>
                                 <div class="form-group">
                                     <label for="name">PickUp Address:</label>
-                                    <input type="text" class="form-control" name="pickup_address" {{ old('pickup_address') }}
-                                        id="pickup_address" placeholder="your pickup_address">
+                                    <input type="text" class="form-control" name="pickup_address"
+                                        {{ old('pickup_address') }} id="pickup_address"
+                                        placeholder="your pickup_address">
                                     <x-input-error :messages="$errors->get('pickup_address')" />
                                 </div>
                             </div>
@@ -89,5 +92,23 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    @if (session('status'))
+        @section('scripts')
+            <script>
+                $(function() {
+                    var Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
 
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{ session('status') }}'
+                    });
+                });
+            </script>
+        @endsection
+    @endif
 </x-farmer-dashboard>

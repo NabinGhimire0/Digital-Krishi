@@ -36,13 +36,14 @@
                                         @foreach ($fertilizer as $fertilizer)
                                             <tr>
                                                 <td>{{ $fertilizer->name }}</td>
-                                                <td><img src="{{ asset('storage/' . $fertilizer->image) }}" alt=""
-                                                        style="width: 80px; height: 80px"></td>
+                                                <td><img src="{{ asset('storage/' . $fertilizer->image) }}"
+                                                        alt="" style="width: 80px; height: 80px"></td>
                                                 <td>{{ $fertilizer->price }}</td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
                                                         href="{{ 'fertilizer/' . $fertilizer->id . '/edit' }}">Edit</a>
-                                                    <form action="{{ '/admin/fertilizer/' . $fertilizer->id }}" method="post">
+                                                    <form action="{{ '/admin/fertilizer/' . $fertilizer->id }}"
+                                                        method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"
@@ -74,4 +75,23 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    @if (session('status'))
+        @section('scripts')
+            <script>
+                $(function() {
+                    var Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{ session('status') }}'
+                    });
+                });
+            </script>
+        @endsection
+    @endif
 </x-app-layout>

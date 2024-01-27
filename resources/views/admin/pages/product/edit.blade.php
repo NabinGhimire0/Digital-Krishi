@@ -33,6 +33,12 @@
                                         id="name" placeholder="Enter Product Name">
                                     <x-input-error :messages="$errors->get('name')" />
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Market Price:</label>
+                                    <input type="text" class="form-control" name="market_price" value="{{ $product->market_price }}" {{ old('market_price') }}
+                                        id="market_price" placeholder="Enter Product Name">
+                                    <x-input-error :messages="$errors->get('market_price')" />
+                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">

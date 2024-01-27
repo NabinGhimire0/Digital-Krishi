@@ -60,7 +60,6 @@ Route::middleware('auth')->group(function () {
             Route::resource('/subadmin', RegisterSubAdmins::class);
             Route::resource('/notice', NoticeController::class);
             Route::resource('/disease', DiseaseController::class);
-            Route::resource('/cure', CureController::class);
             Route::resource('/seeds', SeedController::class);
             Route::resource('/pesticide', PesticideController::class);
             Route::resource('/fertilizer', FertilizerController::class);
@@ -70,6 +69,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/pickup/{id}/edit', [AdminController::class, 'pickupDetail']);
         });
     });
+
+    //for farmer and can also be used for subadmin
     Route::group(['middleware' => 'rolebasedauth:admin,subadmin,farmer'], function () {
         //marketplace
         Route::get('/market', [FrontendController::class, 'marketplace']);
@@ -124,13 +125,11 @@ Route::get("/fertilizer/{id}", [FrontendController::class, 'fertilizerDetail']);
 Route::get('/about-us', [FrontendController::class, 'about']);
 Route::get('/contact-us', [FrontendController::class, 'contact']);
 
+Route::get('/farming-equipment', [FrontendController::class, 'equipment']);
+Route::get('/farming-equipment/{id}', [FrontendController::class, 'equipmentDetail']);
+
 Route::get('/google/translate/change', [GoogleTranslateController::class, 'change'])->name('google.translate.change');
 Route::get('/submit', [ImageController::class, 'showForm']);
 Route::get('/report', [ImageController::class, 'showReport']);
 Route::post('/submit', [ImageController::class, 'submitForm']);
-
-
-Route::get('/footer',function(){
-    return view('frontend.pages.footer');
-});
 require __DIR__ . '/auth.php';
