@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\GoogleTranslateController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProfileController;
 use App\Models\AgroExpert;
 use App\Models\CommunityPost;
@@ -116,5 +117,7 @@ Route::get('/weather', [WeatherController::class, 'weather']);
 Route::get('/weather/{city}', [WeatherController::class, 'weatherCity']);
 
 Route::get('/google/translate/change', [GoogleTranslateController::class, 'change'])->name('google.translate.change');
-
+Route::get('/submit', [ImageController::class, 'showForm']);
+Route::get('/report', [ImageController::class, 'showReport']);
+Route::post('/submit', [ImageController::class, 'submitForm']);
 require __DIR__ . '/auth.php';
