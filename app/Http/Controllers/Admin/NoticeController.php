@@ -43,7 +43,7 @@ class NoticeController extends Controller
         $notice->user_id = auth()->user()->id;
         $notice->status = $request->status ? 1 : 0;
         $notice->save();
-        return redirect('admin/notice')->with('success', 'Notice created successfully.');
+        return redirect('admin/notice')->with('status', 'Notice created successfully.');
     }
 
     /**
@@ -78,7 +78,7 @@ class NoticeController extends Controller
         $notice->user_id = auth()->user()->id;
         $notice->status = $request->status ? 1 : 0;
         $notice->save();
-        return redirect('/notice')->with('success', 'Notice updated successfully.');
+        return redirect('/admin/notice')->with('status', 'Notice updated successfully.');
     }
 
     /**
@@ -88,6 +88,6 @@ class NoticeController extends Controller
     {
         $notice = Notice::find($id);
         $notice->delete();
-        return redirect('/notice')->with('success', 'Notice deleted successfully.');
+        return redirect('/admin/notice')->with('status', 'Notice deleted successfully.');
     }
 }

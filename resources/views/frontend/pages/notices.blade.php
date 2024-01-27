@@ -20,6 +20,9 @@
                         <th class="w-10-6">
                             <p class="font-semibold">{{ GoogleTranslate::trans('Notices',\App::getLocale()) }}</p>
                         </th>
+                        <th class="w-10-6">
+                            <p class="font-semibold">{{ GoogleTranslate::trans('Published',\App::getLocale()) }}</p>
+                        </th>
                         <th>
                             <p class="font-semibold">{{ GoogleTranslate::trans('Action',\App::getLocale()) }}</p>
                         </th>
@@ -29,6 +32,7 @@
                     @foreach ($notices as $notice)
                         <tr>
                             <td>{{ GoogleTranslate::trans($notice->title,\App::getLocale()) }}</td>
+                            <td>{{ GoogleTranslate::trans($notice->created_at->diffForHumans(),\App::getLocale()) }}</td>
                             <td>
                                 <a href="notice/{{ $notice->id }}">
                                     <button>{{ GoogleTranslate::trans('View',\App::getLocale()) }}</button>

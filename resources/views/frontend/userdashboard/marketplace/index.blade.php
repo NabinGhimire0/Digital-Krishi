@@ -1,7 +1,7 @@
 <x-farmer-dashboard>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ ('My Products') }}
+            {{ 'My Products' }}
         </h2>
     </x-slot>
     <!-- Main content -->
@@ -37,8 +37,8 @@
                                         @foreach ($data as $data)
                                             <tr>
                                                 <td>{{ $data->product_name }}</td>
-                                                <td><img src="{{ asset('storage/' . $data->image) }}"
-                                                        alt="" style="width: 80px; height: 80px"></td>
+                                                <td><img src="{{ asset('storage/' . $data->image) }}" alt=""
+                                                        style="width: 80px; height: 80px"></td>
                                                 <td>{{ $data->price }}</td>
                                                 <td>{{ $data->quantity }}</td>
                                                 <td>
@@ -78,4 +78,23 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    @if (session('status'))
+        @section('scripts')
+            <script>
+                $(function() {
+                    var Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{ session('status') }}'
+                    });
+                });
+            </script>
+        @endsection
+    @endif
 </x-farmer-dashboard>

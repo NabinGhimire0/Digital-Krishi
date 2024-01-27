@@ -79,4 +79,23 @@
             </div>
         </div>
     </div>
+    @if (session('status'))
+        @section('scripts')
+            <script>
+                $(function() {
+                    var Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{ session('status') }}'
+                    });
+                });
+            </script>
+        @endsection
+    @endif
 </x-farmer-dashboard>

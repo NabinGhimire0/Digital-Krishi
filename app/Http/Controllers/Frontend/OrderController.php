@@ -61,7 +61,7 @@ class OrderController extends Controller
         $order->status = $request->status ? 1 : 0;
         $order->is_paid = $request->is_paid ? 1 : 0;
         $order->update();
-        return redirect('/orders')->with('success', 'Order updated successfully');
+        return redirect('/orders')->with('status', 'Order updated successfully');
     }
 
     /**

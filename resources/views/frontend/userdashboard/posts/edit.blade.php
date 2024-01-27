@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-farmer-dashboard>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('post/create') }}
@@ -47,7 +47,8 @@
                                     @foreach ($images as $item)
                                         <div class="col-md-3">
                                             @if ($item['type'] === 'image')
-                                                <img src="{{ asset('storage/' . $item['path']) }}" alt="Image" class="img-fluid">
+                                                <img src="{{ asset('storage/' . $item['path']) }}" alt="Image"
+                                                    class="img-fluid">
                                             @else
                                                 <video width="100%" controls class="img-fluid">
                                                     <source src="{{ asset('storage/' . $item['path']) }}"
@@ -74,6 +75,25 @@
     </section>
     <!-- /.content -->
     @section('scripts')
+        @if (session('status'))
+            @section('scripts')
+                <script>
+                    $(function() {
+                        var Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+
+                        Toast.fire({
+                            icon: 'success',
+                            title: '{{ session('status') }}'
+                        });
+                    });
+                </script>
+            @endsection
+        @endif
         <script>
             function displaySelectedImages() {
                 const input = document.getElementById('media');
@@ -116,4 +136,4 @@
         </script>
     @endsection
 
-</x-app-layout>
+</x-farmer-dashboard>

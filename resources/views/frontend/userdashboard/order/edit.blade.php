@@ -46,7 +46,8 @@
                                     <label for="">Payment:</label>
                                     <select name="is_paid" id="">
                                         <option value="" selected disabled>Status</option>
-                                        <option value="0" {{ $order->is_paid == 0 ? 'selected' : '' }}>Not Received
+                                        <option value="0" {{ $order->is_paid == 0 ? 'selected' : '' }}>Not
+                                            Received
                                         </option>
                                         <option value="1" {{ $order->is_paid == 1 ? 'selected' : '' }}>Received
                                         </option>
@@ -62,4 +63,23 @@
             </div>
         </form>
     </div>
+    @if (session('status'))
+        @section('scripts')
+            <script>
+                $(function() {
+                    var Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{ session('status') }}'
+                    });
+                });
+            </script>
+        @endsection
+    @endif
 </x-farmer-dashboard>

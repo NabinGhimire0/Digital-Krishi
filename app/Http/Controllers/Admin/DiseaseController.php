@@ -33,6 +33,7 @@ class DiseaseController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg|max:1024',
             'symptoms' => 'required',
             'solution' => 'required',
         ]);
@@ -44,7 +45,7 @@ class DiseaseController extends Controller
         $disease->symptoms = $request->symptoms;
         $disease->solution = $request->solution;
         $disease->save();
-        return redirect('admin/disease')->with('success', 'Disease created successfully!');
+        return redirect('admin/disease')->with('status', 'Disease created successfully!');
     }
 
     /**
@@ -85,7 +86,7 @@ class DiseaseController extends Controller
         $disease->symptoms = $request->symptoms;
         $disease->solution = $request->solution;
         $disease->update();
-        return redirect('admin/disease')->with('success', 'Disease updated successfully!');
+        return redirect('admin/disease')->with('status', 'Disease updated successfully!');
     }
 
     /**
@@ -95,6 +96,6 @@ class DiseaseController extends Controller
     {
         $disease = Disease::find($id);
         $disease->delete();
-        return redirect('admin/disease')->with('success', 'Disease deleted successfully!');
+        return redirect('admin/disease')->with('status', 'Disease deleted successfully!');
     }
 }

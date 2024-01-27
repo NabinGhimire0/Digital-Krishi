@@ -58,17 +58,49 @@
 
                 <div style="display:grid">
                     <center>
-                        <a href="/login">
-                            <button>login</button>
-                        </a>
+                        {{-- if user is not logged in --}}
+                        @if (!Auth::check())
+                            <a href="/login">
+                                <button>login</button>
+                            </a>
+                        @endif
+                        {{-- if user is logged in --}}
+                        @if (Auth::check())
+                            @if (Auth::user()->role == 'farmer' || Auth::user()->role == 'seller')
+                                <a href="/dashboard">
+                                    <button>Dashboard</button>
+                                </a>
+                            @endif
+                            @if (Auth::user()->role == 'admin' || Auth::user()->role == 'subadmin')
+                                <a href="/admin/dashboard">
+                                    <button>Dashboard</button>
+                                </a>
+                            @endif
+                        @endif
                     </center>
                 </div>
 
             </div>
             <div class="nav__button ">
-                <a href="login">
-                    <button>login</button>
-                </a>
+                {{-- if user is not logged in --}}
+                @if (!Auth::check())
+                    <a href="/login">
+                        <button>login</button>
+                    </a>
+                @endif
+                {{-- if user is logged in --}}
+                @if (Auth::check())
+                    @if (Auth::user()->role == 'farmer' || Auth::user()->role == 'seller')
+                        <a href="/dashboard">
+                            <button>Dashboard</button>
+                        </a>
+                    @endif
+                    @if (Auth::user()->role == 'admin' || Auth::user()->role == 'subadmin')
+                        <a href="/admin/dashboard">
+                            <button>Dashboard</button>
+                        </a>
+                    @endif
+                @endif
             </div>
             <div class="cross hidden" id="ham-menu">
                 <div id="top-bar" class="top "></div>

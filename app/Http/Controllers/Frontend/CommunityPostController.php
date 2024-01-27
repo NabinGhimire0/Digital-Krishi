@@ -32,11 +32,12 @@ class CommunityPostController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->file('media'));
         $request->validate([
             'title' => 'required',
-            'media.*' => 'required|mimes:jpg,jpeg,png,gif,mp4',
+            // max size of media should be 25MB
+            'media.*' => 'nullable|mimes:jpg,jpeg,png,gif,mp4|max:25000',
         ]);
+
         $post = new CommunityPost();
         $post->title = $request->title;
         $post->user_id = auth()->user()->id;
@@ -47,24 +48,27 @@ class CommunityPostController extends Controller
             $content = json_decode($request->content, true);
         }
 
-        foreach ($request->file('media') as $mediaFile) {
-            $mediaType = $mediaFile->getClientOriginalExtension() == 'mp4' ? 'video' : 'image';
-            $mediaPath = $mediaFile->store('community', 'public');
+        if ($request->hasFile('media')) {
+            foreach ($request->file('media') as $mediaFile) {
+                $mediaType = $mediaFile->getClientOriginalExtension() == 'mp4' ? 'video' : 'image';
+                $mediaPath = $mediaFile->store('community', 'public');
 
-            $mediaData = [
-                'type' => $mediaType,
-                'path' => $mediaPath,
-            ];
+                $mediaData = [
+                    'type' => $mediaType,
+                    'path' => $mediaPath,
+                ];
 
-            $content[] = $mediaData;
+                $content[] = $mediaData;
+            }
         }
 
         $post->content = json_encode($content);
 
         $post->save();
 
-        return redirect('/dashboard')->with('success', 'Post created successfully');
+        return redirect('/dashboard')->with('status', 'Posted');
     }
+
 
     /**
      * Display the specified resource.
@@ -94,6 +98,7 @@ class CommunityPostController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'media.*' => 'nullable|mimes:jpg,jpeg,png,gif,mp4|max:25000',
         ]);
         $post = CommunityPost::find($id);
         if ($post->user_id == auth()->user()->id) {
@@ -104,21 +109,23 @@ class CommunityPostController extends Controller
                 $content = json_decode($request->content, true);
             }
 
-            foreach ($request->file('media') as $mediaFile) {
-                $mediaType = $mediaFile->getClientOriginalExtension() == 'mp4' ? 'video' : 'image';
-                $mediaPath = $mediaFile->store('community', 'public');
+            if ($request->hasFile('media')) {
+                foreach ($request->file('media') as $mediaFile) {
+                    $mediaType = $mediaFile->getClientOriginalExtension() == 'mp4' ? 'video' : 'image';
+                    $mediaPath = $mediaFile->store('community', 'public');
 
-                $mediaData = [
-                    'type' => $mediaType,
-                    'path' => $mediaPath,
-                ];
+                    $mediaData = [
+                        'type' => $mediaType,
+                        'path' => $mediaPath,
+                    ];
 
-                $content[] = $mediaData;
+                    $content[] = $mediaData;
+                }
             }
 
             $post->content = json_encode($content);
             $post->update();
-            return redirect()->back()->with('success', 'Post updated successfully');
+            return redirect()->back()->with('status', 'Post updated successfully');
         } else {
             return redirect('/dashboard')->with('error', 'Unauthorized access');
         }
@@ -132,7 +139,7 @@ class CommunityPostController extends Controller
         $post = CommunityPost::find($id);
         if ($post->user_id == auth()->user()->id) {
             $post->delete();
-            return redirect()->back()->with('success', 'Post deleted successfully');
+            return redirect()->back()->with('status', 'Post deleted successfully');
         } else {
             return redirect()->back()->with('error', 'Unauthorized access');
         }

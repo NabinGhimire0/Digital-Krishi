@@ -48,7 +48,7 @@ class FarmingEquipmentController extends Controller
         $equipment->contact = $request->contact;
         $equipment->user_id = auth()->user()->id;
         $equipment->save();
-        return redirect('/equipment')->with('success', 'Equipment added successfully');
+        return redirect('/equipment')->with('status', 'Equipment added successfully');
     }
 
     /**
@@ -77,6 +77,7 @@ class FarmingEquipmentController extends Controller
             'name' => 'required',
             'contact' => 'required',
             'price' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg|max:1024',
         ]);
         $equipment = FarmingEquipment::find($id);
         $equipment->name = $request->name;
@@ -92,7 +93,7 @@ class FarmingEquipmentController extends Controller
             $equipment->image = $imagePath;
         }
         $equipment->update();
-        return redirect('/equipment')->with('success', 'Equipment updated successfully');
+        return redirect('/equipment')->with('status', 'Equipment updated successfully');
     }
 
     /**
@@ -105,6 +106,6 @@ class FarmingEquipmentController extends Controller
             Storage::delete($equipment->image);
         }
         $equipment->delete();
-        return redirect('/equipment')->with('success', 'Equipment deleted successfully');
+        return redirect('/equipment')->with('status', 'Equipment deleted successfully');
     }
 }
