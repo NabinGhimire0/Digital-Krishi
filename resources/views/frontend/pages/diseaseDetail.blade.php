@@ -18,23 +18,23 @@
                 <thead>
                     <tr style="color:black">
                         <th class="w-10-6">
-                            <p class="font-semibold">Symptoms</p>
+                            <p class="font-semibold">{{ GoogleTranslate::trans('Symptoms',\App::getLocale()) }}</p>
                         </th>
 
                         <th>
-                            <p class="font-semibold">Solutions</p>
+                            <p class="font-semibold">{{ GoogleTranslate::trans('Solution',\App::getLocale()) }}</p>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style="width: 25%">
-                            {{  $diseases->symptoms  }}
+                            {{  GoogleTranslate::trans($diseases->symptoms,\App::getLocale()) }}
                         </td>
 
                         <td>
                             <div>
-                                {!! $diseases->solution !!}
+                                {!! GoogleTranslate::trans($diseases->solution,\App::getLocale()) !!}
                             </div>
                         </td>
                     </tr>

@@ -14,23 +14,23 @@
             <div class="seed__detail">
             <div class="seed__detail-card">
                 <center>
-                    <h1>{{ $fertilizer->name }}</h1>
-                    <p>{{ $fertilizer->shortdesc }}</p>
+                    <h1>{{ GoogleTranslate::trans($fertilizer->name,\App::getLocale()) }}</h1>
+                    <p>{{ GoogleTranslate::trans($fertilizer->shortdesc,\App::getLocale()) }}</p>
                 </center>
             </div>
             <div class="seed_detail-info">
                 <p>
                     <span style="color:green;margin-inline-end: 1rem">
-                        market price
+                        {{ GoogleTranslate::trans('Market Price',\App::getLocale()) }}
                     </span>
-                    : {{ $fertilizer->price }}<br>
+                    : {{ GoogleTranslate::trans( $fertilizer->price,\App::getLocale()) }}<br>
                 </p>
             </div>
         </div>
         <div class="wrapper" style="margin-block: 1.5rem;width:66%">
             <p>
 
-                {!! $fertilizer->description !!}
+                {!! GoogleTranslate::trans($fertilizer->description,\App::getLocale()) !!}
             </p>
         </div>
 

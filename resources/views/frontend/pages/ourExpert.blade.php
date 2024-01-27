@@ -15,8 +15,8 @@
 
         <div class="wrapper">
             <center>
-                <h1>Our Agro Expert</h1>
-                <p>Here are our expert who are very helpful top provide support to your filed </p>
+                <h1>{{ GoogleTranslate::trans('Our Agro Expert',\App::getLocale()) }}</h1>
+                <p>{{ GoogleTranslate::trans('Here are our expert who are very helpful top provide support to your filed',\App::getLocale()) }}</p>
             </center>
           
 
@@ -29,7 +29,7 @@
                             </div>
                             <center>
     
-                                <p>{{ $item->name }}</p>
+                                <p>{{ GoogleTranslate::trans($item->name,\App::getLocale()) }}</p>
                             </center>
                         </div>
                     </a>

@@ -16,11 +16,11 @@
            
 <h3>
 
-    {{$notice->title}}
+    {{GoogleTranslate::trans($notice->title,\App::getLocale())}}
 </h3>
 <p>
 
-    {!! $notice->description !!}
+    {!! GoogleTranslate::trans($notice->description,\App::getLocale()) !!}
 </p>
                       
 

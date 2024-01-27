@@ -9,7 +9,7 @@
 
     <div class="wrapper">
         <div style="text-align: center;margin-block-start: 2rem">
-            <h1>Fertilizers</h1>
+            <h1>{{ GoogleTranslate::trans('Fertilizers',\App::getLocale()) }}</h1>
         </div>
         <div class="notices" style="margin-block: 2rem">
   
@@ -24,7 +24,7 @@
                                 </div>
                                 <center>
                     
-                                    <p>{{ $category->name }}</p>
+                                    <p>{{ GoogleTranslate::trans($category->name,\App::getLocale()) }}</p>
                                 </center>
                             </div>
                         </a>

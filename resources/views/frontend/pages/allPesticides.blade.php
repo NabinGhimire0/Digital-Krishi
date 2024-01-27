@@ -10,33 +10,16 @@
 
     <div class="wrapper">
         <div style="text-align: center;margin-block-start: 2rem">
-            <h1>Pesticides</h1>
+            <h1>{{ GoogleTranslate::trans('Pesticides',\App::getLocale()) }}</h1>
         </div>
         <div class="notices" style="margin-block: 2rem">
   
                 <div class="seed wrapper">
-                   
                     <div class="seed__grid">
                         @foreach ($pesticides as $category)
-                      
-                            {{-- <x-seed-card categoryName="{{ $category->name }}" src="{{ asset('storage/' . $category->image) }}"
-                                url="/pesticides-/{{ $category->id }}" /> --}}
-                                <a href="seed/{{ $category->id }}" >
-                                    <div>
-                                        <div style="display: flex;align-items: center;justify-content: center;overflow:hidden">
-                                            <center>
-    
-                                                <img src="{{ asset('storage/' . $category->image) }}" alt="" >
-                                            </center>
-                                        </div>
-                                        <center>
-                
-                                            <p>{{ $category->name }}</p>
-                                        </center>
-                                    </div>
-                                </a>
+                            <x-seed-card categoryName="{{ $category->name }}" src="{{ asset('storage/' . $category->image) }}"
+                                url="/pesticides-/{{ $category->id }}" />
                     @endforeach
-                        
                     </div>
                 
             </div>

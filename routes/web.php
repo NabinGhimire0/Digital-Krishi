@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AgroExpertController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CureController;
@@ -13,9 +14,11 @@ use App\Http\Controllers\Admin\RegisterSubAdmins;
 use App\Http\Controllers\Admin\SeedController;
 use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\CommunityPostController;
+use App\Http\Controllers\Frontend\FarmingEquipmentController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\MarketPlaceController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Frontend\PickupController;
 use App\Http\Controllers\GoogleTranslateController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProfileController;
@@ -61,6 +64,8 @@ Route::group(['middleware' => 'rolebasedauth:admin,subadmin'], function () {
         Route::resource('/fertilizer', FertilizerController::class);
         Route::resource('/agroexpert', AgroExpertController::class);
         Route::resource('/product', ProductController::class);
+        Route::get('/pickup', [AdminController::class, 'pickup']);
+        Route::get('/pickup/{id}/edit', [AdminController::class, 'pickupDetail']);
     });
 });
 Route::post('/comment', [CommentController::class, 'store']);
@@ -106,6 +111,11 @@ Route::get('/contact-us',[FrontendController::class, 'contact']);
 Route::resource('posts', CommunityPostController::class);
 Route::resource('orders', OrderController::class);
 //
+
+Route::resource('/equipment',FarmingEquipmentController::class);
+Route::resource('/pickup',PickupController::class);
+
+//
 Route::post('/place-order', [MarketPlaceController::class, 'placeOrder']);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -114,7 +124,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/weather', [WeatherController::class, 'weather']);
-Route::get('/weather/{city}', [WeatherController::class, 'weatherCity']);
+Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);
 
 Route::get('/google/translate/change', [GoogleTranslateController::class, 'change'])->name('google.translate.change');
 Route::get('/submit', [ImageController::class, 'showForm']);

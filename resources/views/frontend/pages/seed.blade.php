@@ -15,8 +15,8 @@
             <div class="seed__detail-card">
                 <center>
 
-                    <h1>{{ $seed->name }}</h1>
-                    <p>{{ $seed->shortdesc }}</p>
+                    <h1>{{ GoogleTranslate::trans($seed->name,\App::getLocale()) }}</h1>
+                    <p>{{ GoogleTranslate::trans($seed->shortdesc,\App::getLocale()) }}</p>
                 </center>
             </div>
             <div class="seed_detail-info">
@@ -29,16 +29,16 @@
                 </p> --}}
                 <table class="seed-table" border="0">
                     <tr>
-                        <td    style="color: green;width: 100px">Climate</td>
-                        <td >{{ $seed->climate }}</td>
+                        <td    style="color: green;width: 100px">{{ GoogleTranslate::trans('Climate',\App::getLocale()) }}</td>
+                        <td >{{ GoogleTranslate::trans($seed->climate,\App::getLocale()) }}</td>
                     </tr>
                     <tr>
-                        <td style="color: green;">Altitude</td>
-                        <td >{{ $seed->altitude }}</td>
+                        <td style="color: green;">{{ GoogleTranslate::trans('Altitude',\App::getLocale()) }}</td>
+                        <td >{{GoogleTranslate::trans( $seed->altitude,\App::getLocale()) }}</td>
                     </tr>
                     <tr>
-                        <td style="color: green;">Market Price</td>
-                        <td >{{ $seed->market_price }}</td>
+                        <td style="color: green;">{{ GoogleTranslate::trans('Market Price',\App::getLocale()) }}</td>
+                        <td >{{ GoogleTranslate::trans($seed->market_price,\App::getLocale()) }}</td>
                     </tr>
                 </table>
             </div>
