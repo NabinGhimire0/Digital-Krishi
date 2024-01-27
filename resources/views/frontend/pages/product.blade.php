@@ -8,14 +8,14 @@
         @include('frontend/layouts/inc/nav')
 
     </div>
-    <div class="product-grid">
+    <div class="product-grid wrapper">
         <div class="right">
 
             <div class="img-section">
                 <center>
 
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="" >
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="" >
                 </center>
             </div>
             <div>
@@ -47,7 +47,7 @@
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" id="">
                     <input type="hidden" name="product_id" value="{{ $product->product_id }}" id="">
-                    <input type="hidden" name="farmer_id" value="{{ $product->user->id }}" id="">
+                    <input type="hidden" name="farmer_id" value="{{ $product->user->id}}" id="">
                     <input type="hidden" name="market_place_id" value="{{ $product->id }}" id="">
                     <input type="hidden" name="price" value="{{ $product->price }}" id="">
                     <center>

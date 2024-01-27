@@ -9,7 +9,7 @@
     </div>
     @if($pythonApiResponse!== null)
 
-    <div class="imgarea">
+    <div class="imgarea" style="overflow: hidden">
         <img src=" {{ $pythonApiResponse["res"]["image_url"] }}" width="100%" alt="">
     </div>
     <div style="min-height:25vh;">
