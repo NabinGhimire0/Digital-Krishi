@@ -2,17 +2,17 @@
     <div class="gif-area">
         {{-- <div class="bg-blur"> --}}
 
-        @include('frontend/layouts/inc/nav')
-        <div class="hero wrapper" style="color:black">
-            <div class="hero__content">
-                <h1>{{ GoogleTranslate::trans('Digital Krishi', \App::getLocale()) }}</h1>
-                <p>{{ GoogleTranslate::trans('Hajur ko parishram maa hamro saath', \App::getLocale()) }}</p>
-                <a href="#seed">
-                    <button>
-                        Explore
-                    </button>
-                </a>
-            </div>
+            @include('frontend/layouts/inc/nav')
+            <div class="hero wrapper" style="color:black">
+                <div class="hero__content">
+                    <h1>{{ GoogleTranslate::trans('Digital Krishi',\App::getLocale()) }}</h1>
+                    <p>{{ GoogleTranslate::trans('Hajur ko parishram maa hamro saath',\App::getLocale()) }}</p>
+                    <a href="#seed">
+                        <button>
+                            Explore
+                        </button>
+                    </a>
+                </div>
 
 
             <div class="hero__notice" id="notice" style="overflow: hidden;cursor:pointer">

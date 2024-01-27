@@ -32,12 +32,7 @@
                         <a id="supportButton">Support</a>
                     </li>
                     <li>
-                        <select style="background: transparent;" class="changeLanguage">
-                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English
-                            </option>
-                            <option value="ne" {{ session()->get('locale') == 'ne' ? 'selected' : '' }}>नेपाली
-                            </option>
-                        </select>
+                        
                     </li>
                 </ul>
             </div>
@@ -79,28 +74,23 @@
                         @endif
                     </center>
                 </div>
+                <div style="display:grid;margin-block: 0.6rem">
+                    <center>
+                        <select style="background: transparent;text-align: center;color:white;padding: 0.2rem" class="changeLanguage">
+                    
+                            <option style="background: rgb(107, 106, 106)" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English
+                            </option>
+                            <option value="ne" style="background: rgb(107, 106, 106)" {{ session()->get('locale') == 'ne' ? 'selected' : '' }}>नेपाली
+                            </option>
+                        </select>
+                    </center>
+                </div>
 
             </div>
             <div class="nav__button ">
-                {{-- if user is not logged in --}}
-                @if (!Auth::check())
-                    <a href="/login">
-                        <button>login</button>
-                    </a>
-                @endif
-                {{-- if user is logged in --}}
-                @if (Auth::check())
-                    @if (Auth::user()->role == 'farmer' || Auth::user()->role == 'seller')
-                        <a href="/dashboard">
-                            <button>Dashboard</button>
-                        </a>
-                    @endif
-                    @if (Auth::user()->role == 'admin' || Auth::user()->role == 'subadmin')
-                        <a href="/admin/dashboard">
-                            <button>Dashboard</button>
-                        </a>
-                    @endif
-                @endif
+                <a href="login">
+                    <button>login</button>
+                </a>
             </div>
             <div class="cross hidden" id="ham-menu">
                 <div id="top-bar" class="top "></div>
