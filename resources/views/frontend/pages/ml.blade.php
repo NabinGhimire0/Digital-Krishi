@@ -24,5 +24,4 @@
         </div>
     </div>
 
-    @include('frontend/layouts/inc/footer')
 </x-guest-layout>

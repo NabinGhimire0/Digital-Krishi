@@ -21,6 +21,7 @@ use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\PickupController;
 use App\Http\Controllers\GoogleTranslateController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\MessengerController;
 use App\Http\Controllers\ProfileController;
 use App\Models\AgroExpert;
 use App\Models\CommunityPost;
@@ -127,4 +128,9 @@ Route::get('/google/translate/change', [GoogleTranslateController::class, 'chang
 Route::get('/submit', [ImageController::class, 'showForm']);
 Route::get('/report', [ImageController::class, 'showReport']);
 Route::post('/submit', [ImageController::class, 'submitForm']);
+
+
+Route::get('/footer',function(){
+    return view('frontend.pages.footer');
+});
 require __DIR__ . '/auth.php';
