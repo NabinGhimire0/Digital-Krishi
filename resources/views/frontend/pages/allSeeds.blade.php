@@ -18,10 +18,13 @@
                    
                     <div class="seed__grid">
                         @foreach ($seeds as $seed)
-                            <a href="seed/{{ $seed->id }}">
+                            <a href="seed/{{ $seed->id }}" >
                                 <div>
                                     <div style="display: flex;align-items: center;justify-content: center">
-                                        <img src="{{ 'storage/' . $seed->image }}" alt="">
+                                        <center>
+
+                                            <img src="{{ 'storage/' . $seed->image }}" alt="" width="100%">
+                                        </center>
                                     </div>
                                     <center>
                                         <p>{{ GoogleTranslate::trans($seed->name,\App::getLocale()) }}</p>

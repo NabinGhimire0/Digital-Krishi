@@ -17,10 +17,9 @@
                 <div class="seed wrapper">
                     <div class="seed__grid">
                         @foreach ($pesticides as $category)
-                            <x-seed-card categoryName="{{GoogleTranslate::trans($category->name,\App::getLocale())}}" src="{{ asset('storage/' . $category->image) }}"
+                            <x-seed-card categoryName="{{ $category->name }}" src="{{ asset('storage/' . $category->image) }}"
                                 url="/pesticides-/{{ $category->id }}" />
                     @endforeach
-                        
                     </div>
                 
             </div>

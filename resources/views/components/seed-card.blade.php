@@ -6,7 +6,9 @@
         </div>
         <center>
             
-            <p>{{ $categoryName }}</p>
+            <p style="white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;">{{ $categoryName }}</p>
         </center>
     </div>
     
