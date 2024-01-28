@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Notices') }}
+            {{ __('Crop disease') }}
         </h2>
     </x-slot>
     <!-- Main content -->
@@ -26,6 +26,7 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>image</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -34,6 +35,7 @@
                                         @foreach ($disease as $disease)
                                             <tr>
                                                 <td>{{ $disease->name }}</td>
+                                                <td><img src="{{ asset('storage/' . $disease->images) }}" alt="" style="width: 80px; height: 80px"></td>
                                                 <td>
                                                     <a class="btn btn-block btn-primary"
                                                         href="{{ '/admin/disease/' . $disease->id . '/edit' }}">Edit</a>
@@ -52,6 +54,7 @@
                                 <tfoot>
                                     <tr>
                                         <th>Name</th>
+                                        <th>image</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

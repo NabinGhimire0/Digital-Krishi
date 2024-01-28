@@ -34,7 +34,7 @@
 
                         <td>
                             <div>
-                                {!! GoogleTranslate::trans($diseases->solution,\App::getLocale()) !!}
+                                {!! $diseases->solution !!}
                             </div>
                         </td>
                     </tr>

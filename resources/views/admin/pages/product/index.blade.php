@@ -16,7 +16,7 @@
                                     <h3 class="card-title">Products</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a class="btn btn-block btn-primary" href="admin/product/create">Add</a>
+                                    <a class="btn btn-block btn-primary" href="/admin/product/create">Add</a>
                                 </div>
                             </div>
                         </div>

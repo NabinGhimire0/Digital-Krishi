@@ -33,7 +33,7 @@ class DiseaseController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg|max:1024',
+            'images' => 'required|image|mimes:jpg,png,jpeg|max:1024',
             'symptoms' => 'required',
             'solution' => 'required',
         ]);
