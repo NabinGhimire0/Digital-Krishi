@@ -24,7 +24,7 @@
                             <tr>
                                 <td>
                                     <p style="font-weight: 600;font-size:14px">
-                                        {{ GoogleTranslate::trans('Posted:', \App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at->diffForHumans(), \App::getLocale()) }}
+                                        {{ GoogleTranslate::trans('Posted:', \App::getLocale()) }}{{ GoogleTranslate::trans($post->created_at, \App::getLocale()) }}
                                     </p>
                                 </td>
                             </tr>
@@ -37,7 +37,8 @@
                     {{-- image and comment --}}
                     <div class="post_image">
                         <div class="post_left">
-                            <div class="fotorama" data-width="100%" data-nav="thumbs" data-ratio="1250/467" data-max-width="100%">
+                            <div class="fotorama" data-width="100%" data-ratio="16/9"
+                                data-max-width="100%">
                                 @php
                                     $contentArray = json_decode($post->content, true);
                                 @endphp
@@ -68,12 +69,13 @@
                                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                                     <div class="comment__buttons"
                                         style="display: flex; place-content: end; margin-block:0.5rem">
-                                        <button id="uploadButton" style="  outline: none;
+                                        <button id="uploadButton"
+                                            style="  outline: none;
                                         border: thick;
                                         color: white;
                                         padding: 0.2rem 2rem;
                                         background-color: #6aa96c;
-                                        border-radius: 0.5rem;">Upload</button>
+                                        border-radius: 0.5rem; cursor: pointer">Upload</button>
                                         <br><br>
                                     </div>
                                 </form>
@@ -102,7 +104,7 @@
                                                         <td>
                                                             <p style="font-weight: 600;font-size:15px">
                                                                 {{ GoogleTranslate::trans('Posted:', \App::getLocale()) }}
-                                                                {{ GoogleTranslate::trans($item->created_at->diffForHumans(), \App::getLocale()) }}
+                                                                {{ GoogleTranslate::trans($item->created_at, \App::getLocale()) }}
                                                             </p>
                                                         </td>
                                                     </tr>
@@ -140,8 +142,22 @@
                                 'post_id': postId
                             },
                             success: function(data) {
-                                // Load and replace only the comment section
-                                // window.location.reload();
+                                $(function() {
+                                    var Toast = Swal.mixin({
+                                        toast: true,
+                                        position: 'top-end',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    });
+
+                                    Toast.fire({
+                                        icon: 'success',
+                                        title: 'Commented'
+                                    }).then(function() {
+                                        // Reload the page
+                                        window.location.reload();
+                                    });
+                                });
                             },
                             error: function(data) {
                                 // Handle errors, e.g., show an error message

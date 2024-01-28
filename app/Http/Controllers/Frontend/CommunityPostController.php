@@ -15,7 +15,7 @@ class CommunityPostController extends Controller
     {
         $perPage = 10;
         $page = request('page', 1);
-        $posts = CommunityPost::latest()->paginate($perPage, ['*'], 'page', $page);
+        $posts = CommunityPost::inRandomOrder()->paginate($perPage, ['*'], 'page', $page);
         return view('frontend.pages.community', compact('posts'));
     }
 

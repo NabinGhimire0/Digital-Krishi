@@ -6,6 +6,7 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\VarDumper\VarDumper;
 
 class WeatherController extends Controller
@@ -24,8 +25,9 @@ class WeatherController extends Controller
         return view('get_location');
     }
 
-        public function getWeather($city)
+        public function getWeather()
         {
+            $city = Auth::user()->city->name;
             $url = "http://api.weatherapi.com/v1/current.json?key={$this->apiKey}&q={$city}&aqi=no";
         
             try {

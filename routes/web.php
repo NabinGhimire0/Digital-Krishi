@@ -92,8 +92,7 @@ Route::middleware('auth')->group(function () {
             return view('frontend.userdashboard.dashboard', compact('post'));
         })->middleware(['auth', 'verified'])->name('userdashboard');
 
-        Route::get('/weather', [WeatherController::class, 'weather']);
-        Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);
+        Route::get('/weather', [WeatherController::class, 'getweather']);
     });
 });
 

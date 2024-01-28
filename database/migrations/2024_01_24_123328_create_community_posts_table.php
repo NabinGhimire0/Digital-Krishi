@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('community_posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('content'); //store video or image in json format
+            $table->longText('content'); //store video or image in json format
             $table->tinyInteger('status')->default(0);
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

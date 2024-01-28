@@ -42,23 +42,35 @@ class RegisteredUserController extends Controller
             'province_id' => ['required'],
             'city_id' => ['required'],
         ]);
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'role' => $request->role,
-            'province_id' => $request->province_id,
-            'city_id' => $request->city_id,
-            'address' => $request->address,
-            'crop_area' => $request->crop_area,
-            'status' => $request->status ? 1 : 0,
-            'password' => Hash::make($request->password),
-        ]);
-
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role = 'farmer';
+        $user->province_id = $request->province_id;
+        $user->city_id = $request->city_id;
+        $user->address = $request->address;
+        $user->crop_area = $request->crop_area;
+        $user->status = 0;
+        $user->password = Hash::make($request->password);
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('users', 'public');
             $user->image = $imagePath;
         };
+        $user->save();
+
+        // $user = User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'phone' => $request->phone,
+        //     'role' => $request->role,
+        //     'province_id' => $request->province_id,
+        //     'city_id' => $request->city_id,
+        //     'address' => $request->address,
+        //     'crop_area' => $request->crop_area,
+        //     'status' => $request->status ? 1 : 0,
+        //     'password' => Hash::make($request->password),
+        // ]);
 
         event(new Registered($user));
 

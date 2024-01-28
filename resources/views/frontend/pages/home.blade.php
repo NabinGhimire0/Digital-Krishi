@@ -7,11 +7,28 @@
             <div class="hero__content">
                 <h1>{{ GoogleTranslate::trans('Digital Krishi', \App::getLocale()) }}</h1>
                 <p>{{ GoogleTranslate::trans('Hajur ko parishram maa hamro saath', \App::getLocale()) }}</p>
-                <a href="login">
-                    <button>
-                        Login
-                    </button>
-                </a>
+                @if (!Auth::check())
+                    <a href="login">
+                        <button>
+                            Login
+                        </button>
+                    </a>
+                @endif
+                @if (Auth::check())
+                    @if (Auth::user()->role == 'admin' || Auth::user()->role == 'subadmin')
+                        <a href="admin/dashboard">
+                            <button>
+                                Dashboard
+                            </button>
+                        </a>  
+                    @else
+                        <a href="dashboard">
+                            <button>
+                                Dashboard
+                            </button>
+                        </a>
+                    @endif
+                @endif
             </div>
 
 
